@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DatabaseConnecter {
 
-    public static String browserUser(String query) {
+    public static String browserString(String query) {
         Connection conn = null;
         String str = null;
         try {
@@ -22,7 +22,7 @@ public class DatabaseConnecter {
                 ResultSet resultSet = statement.executeQuery(query);
                     if (!resultSet.isBeforeFirst() ) {
                         System.out.println("No data");
-                        str = "0";
+//                        str = "0";
                     }
                     else{
                         str = resultSet.getString(1);
