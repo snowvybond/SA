@@ -1,4 +1,4 @@
-package returnTheCar;
+package request;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,9 +10,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("return.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("request.fxml"));
         primaryStage.setTitle("Management Car System");
-        primaryStage.setScene(new Scene(root, 600, 450));
+        primaryStage.setScene(new Scene(root,425,660));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
