@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DatabaseConnecter {
 
-    public static String browserString(String query) {
+    public static String browserUser(String query) {
         Connection conn = null;
         String str = null;
         try {
@@ -18,10 +18,16 @@ public class DatabaseConnecter {
 //                System.out.println("Driver name: "+dm.getDriverName());
 //                System.out.println("Product name: "+dm.getDatabaseProductName());
 //                System.out.println("----------------DATA----------------");
-                query = "select username from user";
                 Statement statement = conn.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
-                str = resultSet.getString(1);
+                    if (!resultSet.isBeforeFirst() ) {
+                        System.out.println("No data");
+                        str = "0";
+                    }
+                    else{
+                        str = resultSet.getString(1);
+                    }
+
             }
         }
         catch (SQLException e) {

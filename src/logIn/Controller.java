@@ -1,7 +1,6 @@
 package logIn;
 
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,7 +14,6 @@ import menu.ControllerFinance;
 import model.DatabaseConnecter;
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class Controller {
 
@@ -51,7 +49,7 @@ public class Controller {
 
     private void check(){
         String usernameQuery = "select username from user where username='"+username.getText()+"' AND password='"+password.getText()+"'";
-        String user = DatabaseConnecter.browserString(usernameQuery);
+        String user = DatabaseConnecter.browserUser(usernameQuery);
         String type = "0";
         if (user.equals(username.getText())){
             type = user.substring(0,1);
