@@ -15,6 +15,7 @@ import java.util.Optional;
 public class ControllerFinance extends Controller {
 
     private boolean isCreate = false;
+    private String userID;
 
     public void handleBtnCreateAction(){
 
