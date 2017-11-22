@@ -61,7 +61,10 @@ public class Controller {
             case "4" :
                 showMenu("/menu/menuCar.fxml" , new ControllerCar());
                 break;
-
+            default:
+                username.clear();
+                password.clear();
+                username.setPromptText("Wrong Username");
         }
     }
 
