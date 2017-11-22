@@ -12,6 +12,7 @@ import menu.ControllerCar;
 import menu.ControllerCivil;
 import menu.ControllerDriver;
 import menu.ControllerFinance;
+import model.DatabaseConnecter;
 
 import java.io.IOException;
 
@@ -48,7 +49,13 @@ public class Controller {
     public void handleBtnOKClickAction(){ check(); }
 
     private void check(){
-        switch (username.getText()){
+        String usernameQuery = "select username from user where username='"+username.getText()+"' AND password='"+password.getText()+"'";
+        String user = DatabaseConnecter.browserString(usernameQuery);
+        String type = "0";
+        if (username.getText().equals(user)) {
+                type = user.substring(0, 1);
+        }
+        switch (type){
             case "1" :
                 showMenu("/menu/menuFinance.fxml" , new ControllerFinance());
                 break;
@@ -64,7 +71,8 @@ public class Controller {
             default:
                 username.clear();
                 password.clear();
-                username.setPromptText("Wrong Username");
+                //username.setPromptText("Wrong Username");
+                alert();
         }
     }
 
@@ -85,5 +93,16 @@ public class Controller {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+
+    private void alert(){
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        javafx.scene.control.Label text = new javafx.scene.control.Label();
+        text.setFont(javafx.scene.text.Font.font(20));
+        text.setText("ไม่พบชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
+        alert.getDialogPane().setContent(text);
+        alert.showAndWait();
     }
 }
