@@ -65,6 +65,7 @@ public class Controller {
                 username.clear();
                 password.clear();
                 username.setPromptText("Wrong Username");
+                password.setPromptText("Wrong Password");
         }
     }
 
@@ -78,7 +79,7 @@ public class Controller {
             controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("Car system");
-            stage.setScene(new Scene(root, 885, 525));
+            stage.setScene(new Scene(root, 875, 515));
             stage.setResizable(false);
             stage.show();
 

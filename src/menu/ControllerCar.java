@@ -4,32 +4,55 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-import javax.swing.table.TableColumn;
 import java.io.IOException;
-import java.util.Optional;
 
 public class ControllerCar extends Controller{
 
+
     public void handleBtnReturnAction(){
-        ShowAlertReturn();
+        showAlertReturn();
     }
 
-    private void ShowAlertReturn(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText(null);
-        Label text = new Label();
-        text.setFont(Font.font(20));
-        text.setText("ยืนยันการคืนรถ (ไม่สามารถยกเลิกได้!!)");
-        alert.getDialogPane().setContent(text);
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            // ... user chose OK
+    private void showAlertReturn(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/returnCar/returnCar.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            returnCar.Controller controller = loader.getController();
+            controller.setStage(stage);
+            stage.setTitle("Confirmation");
+            stage.setScene(new Scene(root, 550, 150));
+            stage.setResizable(false);
+            controller.setStage(stage);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    public void handleBtnChangeStutusAction(){
+        showAlertChangeStatusCar();
+    }
+
+    private void showAlertChangeStatusCar(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/returnCar/statusCar.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            returnCar.Controller controller = loader.getController();
+            controller.setStage(stage);
+            stage.setTitle("Car system");
+            stage.setScene(new Scene(root, 375, 235));
+            stage.setResizable(false);
+            controller.setStage(stage);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
     }
 

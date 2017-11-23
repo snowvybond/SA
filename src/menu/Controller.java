@@ -25,7 +25,7 @@ public class Controller {
     private final ToggleGroup group = new ToggleGroup();
 
     @FXML
-    private RadioButton c1 , c2;
+    private RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8 , c9;
 
     @FXML
     public void initialize(){
@@ -57,7 +57,7 @@ public class Controller {
     }
 
     private void radioAction(){
-        System.out.println(group.getSelectedToggle().getUserData().toString());
+//        System.out.println(group.getSelectedToggle().getUserData().toString());
         switch (group.getSelectedToggle().getUserData().toString()){
             case "id":
                 chooseIdRadioButton();
@@ -65,7 +65,17 @@ public class Controller {
             case "date":
                 chooseDateRadioButton();
                 break;
+            default:
+                chooseFilter();
         }
+    }
+
+    private void chooseFilter(){
+        id.setDisable(true);
+        startDay.setDisable(true);
+        startDate.setDisable(true);
+        endDay.setDisable(true);
+        endDate.setDisable(true);
     }
 
     private void chooseIdRadioButton(){
@@ -85,10 +95,22 @@ public class Controller {
     }
 
     private void addGroup(){
-        c1.setUserData("id");
-        c2.setUserData("date");
+        c1.setUserData("all");
+        c2.setUserData("wait");
+        c3.setUserData("yes");
+        c4.setUserData("id");
+        c5.setUserData("working");
+        c6.setUserData("return");
+        c7.setUserData("reject");
+        c8.setUserData("date");
         c1.setToggleGroup(group);
         c2.setToggleGroup(group);
+        c3.setToggleGroup(group);
+        c4.setToggleGroup(group);
+        c5.setToggleGroup(group);
+        c6.setToggleGroup(group);
+        c7.setToggleGroup(group);
+        c8.setToggleGroup(group);
     }
 
     public void setStage(Stage stage){

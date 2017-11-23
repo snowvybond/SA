@@ -12,6 +12,28 @@ import java.util.Optional;
 
 public class ControllerCivil extends Controller{
 
+    public void handkeBtnConfirmClickAction(){
+        showConfirmRequest();
+    }
+
+    private void showConfirmRequest(){
+        try {
+            getStage().close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/confirmRequest/confirmRequest.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            confirmRequest.Controller controller = loader.getController();
+            controller.setStage(stage);
+            stage.setTitle("Confirm Request");
+            stage.setScene(new Scene(root, 490, 590));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
     public void handleBtnRejectAction(){
         ShowAlertReject();
     }

@@ -138,7 +138,7 @@
             </GridPane>
          </children>
       </GridPane>
-      <Button alignment="TOP_CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBtnBackClickAction" prefHeight="35.0" prefWidth="97.0" text="Back" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Button alignment="TOP_CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBtnBackClickAction" prefHeight="35.0" prefWidth="97.0" text="กลับ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
@@ -146,7 +146,7 @@
             <Insets bottom="5.0" right="10.0" />
          </GridPane.margin>
       </Button>
-      <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="503.0" layoutY="387.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="Print" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="503.0" layoutY="387.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="พิมพ์" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
