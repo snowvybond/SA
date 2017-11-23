@@ -57,7 +57,9 @@ public class Controller {
         }
         switch (type){
             case "1" :
-                showMenu("/menu/menuFinance.fxml" , new ControllerFinance());
+                ControllerFinance fin = new ControllerFinance();
+                fin.setUserID(user);
+                showMenu("/menu/menuFinance.fxml" , fin);
                 break;
             case "2" :
                 showMenu("/menu/menuCivil.fxml" , new ControllerCivil());

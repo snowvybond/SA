@@ -23,6 +23,9 @@ public class ControllerFinance extends Controller {
         else createRequest();
         isCreate = !isCreate;
     }
+    public void setUserID(String u){
+        userID = u;
+    }
 
     private void ShowAlertWarning(){
         Alert alert = new Alert(Alert.AlertType.WARNING);
