@@ -17,22 +17,6 @@ public class ControllerFinance extends Controller {
 
 
     private boolean isCreate = false;
-    @FXML
-    protected RadioButton c1;
-    @FXML
-    protected RadioButton c2;
-    @FXML
-    protected RadioButton c3;
-    @FXML
-    protected RadioButton c4;
-    @FXML
-    protected RadioButton c5;
-    @FXML
-    protected RadioButton c6;
-    @FXML
-    protected RadioButton c7;
-    @FXML
-    protected RadioButton c8;
 
     public void handleBtnCreateAction(){
 

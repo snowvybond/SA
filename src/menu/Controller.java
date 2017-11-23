@@ -29,26 +29,26 @@ public class Controller {
     private final ToggleGroup group = new ToggleGroup();
 
     @FXML
-    private RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8;
+    protected RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8;
 
     @FXML
     private TableView<RequestTable> table;
 
-    @FXML private TableColumn<RequestTable , String> idColumn;
-    @FXML private TableColumn<RequestTable , String> nameColumn;
-    @FXML private TableColumn<RequestTable , String> causeTextColumn;
-    @FXML private TableColumn<RequestTable , String> startDateColumn;
-    @FXML private TableColumn<RequestTable , String> endDateColumn;
-    @FXML private TableColumn<RequestTable , String> destinationColumn;
-    @FXML private TableColumn<RequestTable , String> distanceColumn;
-    @FXML private TableColumn<RequestTable , String> priceGasColumn;
-    @FXML private TableColumn<RequestTable , String> idDriverColumn;
-    @FXML private TableColumn<RequestTable , String> nameDriverColumn;
-    @FXML private TableColumn<RequestTable , String> liscensePlateColumn;
-    @FXML private TableColumn<RequestTable , String> typeCarColumn;
-    @FXML private TableColumn<RequestTable , String> brandCarColumn;
-    @FXML private TableColumn<RequestTable , String> genCarColumn;
-    @FXML private TableColumn<RequestTable , String> detailColumn;
+    @FXML protected TableColumn<RequestTable , String> idColumn;
+    @FXML protected TableColumn<RequestTable , String> nameColumn;
+    @FXML protected TableColumn<RequestTable , String> causeTextColumn;
+    @FXML protected TableColumn<RequestTable , String> startDateColumn;
+    @FXML protected TableColumn<RequestTable , String> endDateColumn;
+    @FXML protected TableColumn<RequestTable , String> destinationColumn;
+    @FXML protected TableColumn<RequestTable , String> distanceColumn;
+    @FXML protected TableColumn<RequestTable , String> priceGasColumn;
+    @FXML protected TableColumn<RequestTable , String> idDriverColumn;
+    @FXML protected TableColumn<RequestTable , String> nameDriverColumn;
+    @FXML protected TableColumn<RequestTable , String> liscensePlateColumn;
+    @FXML protected TableColumn<RequestTable , String> typeCarColumn;
+    @FXML protected TableColumn<RequestTable , String> brandCarColumn;
+    @FXML protected TableColumn<RequestTable , String> genCarColumn;
+    @FXML protected TableColumn<RequestTable , String> detailColumn;
 
 
     @FXML
