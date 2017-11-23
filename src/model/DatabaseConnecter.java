@@ -74,7 +74,7 @@ public class DatabaseConnecter {
                     String provience = resultSet.getString("provience");
                     String distance = DatabaseConnecter.browserString("select distance from destination where provience='"+provience+"'");
                     String fuelCost = DatabaseConnecter.browserString("select fuelcost from destination where provience='"+provience+"'");
-                    String user = resultSet.getString("user");
+//                    String user = resultSet.getString("user");
                     String driverID = DatabaseConnecter.browserString("select driverid from workassign where requestforcarid='"+id+"'");
                     String driverName = DatabaseConnecter.browserString("select name from user where username='"+driverID+"'");
                     String liscense = DatabaseConnecter.browserString("select liscenseplate from workassign where requestforcarid='"+id+"'");
@@ -89,7 +89,7 @@ public class DatabaseConnecter {
                     data.add(provience);
                     data.add(distance);
                     data.add(fuelCost);
-                    data.add(user);
+                    data.add(driverID);
                     data.add(driverName);
                     data.add(liscense);
                     data.add(carBrand);

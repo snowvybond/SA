@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerFinance">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerFinance">
    <children>
       <GridPane prefHeight="526.0" prefWidth="885.0">
         <columnConstraints>
@@ -230,18 +230,18 @@
                   <TableView focusTraversable="false" prefHeight="373.0" prefWidth="3160.0">
                     <columns>
                       <TableColumn fx:id="idColumn" maxWidth="155.0" prefWidth="147.0" style="-fx-font-size: 18;" text="ID" />
-                        <TableColumn minWidth="0.0" prefWidth="175.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
-                        <TableColumn minWidth="0.0" prefWidth="209.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
-                        <TableColumn minWidth="0.0" prefWidth="206.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการปฎิบัติงาน" />
-                        <TableColumn minWidth="0.0" prefWidth="212.0" style="-fx-font-size: 18;" text="ปลายทาง" />
-                        <TableColumn minWidth="0.0" prefWidth="162.0" style="-fx-font-size: 18;" text="ระยะทาง(กิโลเมตร)" />
-                        <TableColumn minWidth="0.0" prefWidth="130.0" style="-fx-font-size: 18;" text="ค่าน้ำมัน(บาท)" />
-                        <TableColumn minWidth="0.0" prefWidth="159.0" style="-fx-font-size: 18;" text="รหัสพนักงาน" />
-                        <TableColumn minWidth="0.0" prefWidth="473.0" style="-fx-font-size: 18;" text="ชื่อพนักงานขับรถ" />
-                        <TableColumn minWidth="0.0" prefWidth="144.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
-                        <TableColumn minWidth="0.0" prefWidth="182.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
-                        <TableColumn minWidth="0.0" prefWidth="202.0" style="-fx-font-size: 18;" text="รุ่น" />
-                        <TableColumn minWidth="0.0" prefWidth="399.0" style="-fx-font-size: 18;" text="รายละเอียดเพิ่มเติม" />
+                        <TableColumn fx:id="causeTextColumn" minWidth="0.0" prefWidth="175.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
+                        <TableColumn fx:id="startDateColumn" minWidth="0.0" prefWidth="209.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
+                        <TableColumn fx:id="endDateColumn" minWidth="0.0" prefWidth="206.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการปฎิบัติงาน" />
+                        <TableColumn fx:id="destinationColumn" minWidth="0.0" prefWidth="212.0" style="-fx-font-size: 18;" text="ปลายทาง" />
+                        <TableColumn fx:id="distanceColumn" minWidth="0.0" prefWidth="162.0" style="-fx-font-size: 18;" text="ระยะทาง(กิโลเมตร)" />
+                        <TableColumn fx:id="priceGasColumn" minWidth="0.0" prefWidth="130.0" style="-fx-font-size: 18;" text="ค่าน้ำมัน(บาท)" />
+                        <TableColumn fx:id="idDriverColumn" minWidth="0.0" prefWidth="159.0" style="-fx-font-size: 18;" text="รหัสพนักงาน" />
+                        <TableColumn fx:id="nameDriverColumn" minWidth="0.0" prefWidth="473.0" style="-fx-font-size: 18;" text="ชื่อพนักงานขับรถ" />
+                        <TableColumn fx:id="liscensePlateColumn" minWidth="0.0" prefWidth="144.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
+                        <TableColumn fx:id="brandCarColumn" minWidth="0.0" prefWidth="182.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
+                        <TableColumn fx:id="modelCarColumn" minWidth="0.0" prefWidth="202.0" style="-fx-font-size: 18;" text="รุ่น" />
+                        <TableColumn fx:id="detailColumn" minWidth="0.0" prefWidth="399.0" style="-fx-font-size: 18;" text="รายละเอียดเพิ่มเติม" />
                     </columns>
                   </TableView>
                </content>

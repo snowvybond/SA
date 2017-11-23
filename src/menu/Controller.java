@@ -47,7 +47,7 @@ public class Controller {
     @FXML protected TableColumn<RequestTable , String> liscensePlateColumn;
     @FXML protected TableColumn<RequestTable , String> typeCarColumn;
     @FXML protected TableColumn<RequestTable , String> brandCarColumn;
-    @FXML protected TableColumn<RequestTable , String> genCarColumn;
+    @FXML protected TableColumn<RequestTable , String> modelCarColumn;
     @FXML protected TableColumn<RequestTable , String> detailColumn;
 
 
