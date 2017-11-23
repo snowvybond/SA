@@ -217,7 +217,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="138.0" layoutY="94.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button layoutX="138.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>

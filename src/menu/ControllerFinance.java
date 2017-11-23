@@ -60,6 +60,8 @@ public class ControllerFinance extends Controller {
         }
     }
 
+    public void handleBtnSeeDetailClickAction(){ seeDetail(this,"/menu/menuFinance.fxml"); }
+
     @FXML
     public void handleBtnSignOutClickAction(){
         signOut();

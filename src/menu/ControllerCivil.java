@@ -74,6 +74,26 @@ public class ControllerCivil extends Controller{
         }
     }
 
+    public void handleBtnSeeDetailClickAction(){
+        try {
+            getStage().close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/see/Detail.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            see.Controller c = loader.getController();
+            c.setStage(stage);
+            c.setController(this);
+            c.setLocation("/menu/menuCivil.fxml");
+            stage.setTitle("Detail");
+            stage.setScene(new Scene(root, 490, 590));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
     @FXML
     public void handleBtnSignOutClickAction(){
         signOut();

@@ -56,6 +56,26 @@ public class Controller {
         radioAction();
     }
 
+    public void seeDetail(Controller controller ,String location){
+        try {
+            this.stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/see/Detail2.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            see.Controller c = loader.getController();
+            c.setStage(stage);
+            c.setController(controller);
+            c.setLocation(location);
+            stage.setTitle("Detail");
+            stage.setScene(new Scene(root, 490, 590));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
     private void radioAction(){
 //        System.out.println(group.getSelectedToggle().getUserData().toString());
         switch (group.getSelectedToggle().getUserData().toString()){

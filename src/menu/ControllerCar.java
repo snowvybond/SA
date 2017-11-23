@@ -57,6 +57,10 @@ public class ControllerCar extends Controller{
         }
     }
 
+    public void handleBtnSeeDetailClickAction(){
+        seeDetail(this,"/menu/menuCar.fxml");
+    }
+
     @FXML
     public void handleBtnSignOutClickAction(){
         signOut();

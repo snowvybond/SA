@@ -201,7 +201,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="135.0" layoutY="25.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                    <Button layoutX="135.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -222,7 +222,6 @@
                   <TableView focusTraversable="false" prefHeight="373.0" prefWidth="3160.0">
                     <columns>
                       <TableColumn maxWidth="155.0" prefWidth="147.0" style="-fx-font-size: 18;" text="ID" />
-                      <TableColumn prefWidth="359.0" style="-fx-font-size: 18;" text="ชื่อผู้ขอใช้รถ" />
                         <TableColumn minWidth="0.0" prefWidth="175.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
                         <TableColumn minWidth="0.0" prefWidth="209.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
                         <TableColumn minWidth="0.0" prefWidth="206.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการปฎิบัติงาน" />

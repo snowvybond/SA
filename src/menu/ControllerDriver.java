@@ -13,4 +13,6 @@ public class ControllerDriver  extends Controller{
         signOut();
     }
 
+    public void handleBtnSeeDetailClickAction(){ seeDetail(this,"/menu/menuDriver.fxml"); }
+
 }
