@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerCar">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerCar">
    <children>
       <GridPane prefHeight="526.0" prefWidth="885.0">
         <columnConstraints>
@@ -91,30 +91,11 @@
                                  </font>
                               </Label>
                               <DatePicker fx:id="endDate" editable="false" focusTraversable="false" prefHeight="35.0" prefWidth="253.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                              <RadioButton fx:id="c2" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="group1" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="c3" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="group11" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="c7" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="group2" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="c1" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" selected="true" textFill="TRANSPARENT" GridPane.halignment="RIGHT">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="group12" />
-                                 </toggleGroup>
-                              </RadioButton>
-                              <RadioButton fx:id="c5" layoutX="10.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="group111" />
-                                 </toggleGroup>
+                              <RadioButton fx:id="c2" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="c3" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="c7" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="c1" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" selected="true" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" />
+                              <RadioButton fx:id="c5" layoutX="10.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
                                  <GridPane.margin>
                                     <Insets />
                                  </GridPane.margin>
@@ -147,11 +128,7 @@
                                     <Insets />
                                  </GridPane.margin>
                               </Label>
-                              <RadioButton fx:id="c6" layoutX="38.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="group1111" />
-                                 </toggleGroup>
-                              </RadioButton>
+                              <RadioButton fx:id="c6" layoutX="38.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                               <Label fx:id="startDay111112" focusTraversable="false" layoutX="59.0" layoutY="159.0" prefHeight="17.0" prefWidth="390.0" text="คืนแล้ว" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="18.0" />
