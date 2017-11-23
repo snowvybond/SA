@@ -101,12 +101,13 @@ public class ControllerFinance extends Controller {
         ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
         int count = 0;
         for (ArrayList<String> i : allData){
-            for (String j:i){
-                System.out.println(j);
-            }
+//            for (String j:i){
+//                System.out.println(j);
+//            }
 
-            table.getItems().add(count++,new RequestTable(i.get(0) , i.get(1) , i.get(2) , i.get(3) , i.get(4) , i.get(5) , i.get(6) , i.get(7) , i.get(8) , i.get(9) , i.get(10) , i.get(11) , i.get(12) , "gen" , "detail"));
+            table.getItems().add(count++,new RequestTable(i.get(0) ,"" ,i.get(1) , i.get(2) , i.get(3) , i.get(4) , i.get(5) , i.get(6) , i.get(7) , i.get(8) , i.get(9) ,"", i.get(10) , i.get(11)  , i.get(12)));
 
+            System.out.println(i.get(1));
             idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
             causeTextColumn.setCellValueFactory(new PropertyValueFactory<>("causeText"));
             startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
