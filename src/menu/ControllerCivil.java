@@ -46,7 +46,7 @@ public class ControllerCivil extends Controller{
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);
-            controller.setHeaderConfirm("ยืนยันคำปฎิเสธการขอใช้รถ");
+            controller.setHeaderConfirm("ยืนยันคำปฎิเสธการขอใช้รถรหัส XXXXX");
             stage.show();
 
         } catch (IOException e1) {

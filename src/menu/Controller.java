@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import view.RequestTable;
+
 import java.io.IOException;
 
 public class Controller {
@@ -27,7 +29,27 @@ public class Controller {
     private final ToggleGroup group = new ToggleGroup();
 
     @FXML
-    private RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8 , c9;
+    private RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8;
+
+    @FXML
+    private TableView<RequestTable> table;
+
+    @FXML private TableColumn<RequestTable , String> idColumn;
+    @FXML private TableColumn<RequestTable , String> nameColumn;
+    @FXML private TableColumn<RequestTable , String> causeTextColumn;
+    @FXML private TableColumn<RequestTable , String> startDateColumn;
+    @FXML private TableColumn<RequestTable , String> endDateColumn;
+    @FXML private TableColumn<RequestTable , String> destinationColumn;
+    @FXML private TableColumn<RequestTable , String> distanceColumn;
+    @FXML private TableColumn<RequestTable , String> priceGasColumn;
+    @FXML private TableColumn<RequestTable , String> idDriverColumn;
+    @FXML private TableColumn<RequestTable , String> nameDriverColumn;
+    @FXML private TableColumn<RequestTable , String> liscensePlateColumn;
+    @FXML private TableColumn<RequestTable , String> typeCarColumn;
+    @FXML private TableColumn<RequestTable , String> brandCarColumn;
+    @FXML private TableColumn<RequestTable , String> genCarColumn;
+    @FXML private TableColumn<RequestTable , String> detailColumn;
+
 
     @FXML
     public void initialize(){
