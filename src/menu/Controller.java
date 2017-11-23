@@ -20,16 +20,16 @@ public class Controller {
     protected static String userID;
 
     @FXML
-    private TextField id;
+    protected TextField id;
 
     @FXML
-    private Label startDay , endDay;
+    protected Label startDay , endDay;
 
     @FXML
-    private DatePicker startDate , endDate;
+    protected DatePicker startDate , endDate;
 
     @FXML
-    private final ToggleGroup group = new ToggleGroup();
+    protected final ToggleGroup group = new ToggleGroup();
 
     @FXML
     protected RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8;
@@ -63,7 +63,7 @@ public class Controller {
 
     @FXML
     public void handleRadioClickAction(){
-        radioAction();
+//        radioAction();
     }
 
     public void seeDetail(Controller controller ,String location){
