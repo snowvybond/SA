@@ -7,16 +7,58 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import menu.ControllerCivil;
-import menu.ControllerFinance;
 
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class Controller {
+
+    @FXML
+    private TextField id;
+
+    @FXML
+    private TextField name;
+
+    @FXML
+    private TextField causeText;
+
+    @FXML
+    private TextField startDate;
+
+    @FXML
+    private TextField endDate;
+
+    @FXML
+    private TextField destination;
+
+    @FXML
+    private TextField distance;
+
+    @FXML
+    private TextField priceGas;
+
+    @FXML
+    private ChoiceBox idDriver;
+
+    @FXML
+    private TextField nameDriver;
+
+    @FXML
+    private ChoiceBox liscensePlate;
+
+    @FXML
+    private TextField typeCar;
+
+    @FXML
+    private TextField brandCar;
+
+    @FXML
+    private TextField genCar;
+
+    @FXML
+    private TextArea detail;
 
     @FXML
     private ScrollPane scrollPane;
@@ -39,12 +81,49 @@ public class Controller {
             scrollPane.setVvalue(0.0);
             isSet = true;
         }
-        System.out.println(scrollPane.getVvalue());
     }
 
     public void setStage(Stage stage){ this.stage = stage; }
 
     public void handleBtnOKClickAction(){
+        if(checkData()){
+            showConfirm();
+        }else{
+            showAlert();
+        }
+    }
+
+    private void showAlert(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertWarning.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            AlertMsg.Controller controller = loader.getController();
+            controller.setStage(stage);
+            controller.setHeaderWarning("กรอกข้อมูลไม่ครบ");
+            stage.setTitle("Alert Warning");
+            stage.setScene(new Scene(root, 380, 100));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    private boolean checkData(){
+
+        if(idDriver.getValue() == null) return false;
+        if(nameDriver.getText().isEmpty()) return false;
+        if(liscensePlate.getValue() == null) return false;
+        if(typeCar.getText().isEmpty()) return false;
+        if(brandCar.getText().isEmpty()) return false;
+        if(genCar.getText().isEmpty()) return false;
+
+        return true;
+    }
+
+    private void showConfirm(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertConfirm.fxml"));
             Parent root = loader.load();
@@ -55,7 +134,7 @@ public class Controller {
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);
-            controller.setHeader("ยืนยันคำอนุมัติการขอใช้รถ");
+            controller.setHeaderConfirm("ยืนยันคำอนุมัติการขอใช้รถ");
             stage.show();
 
         } catch (IOException e1) {

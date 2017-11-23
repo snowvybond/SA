@@ -24,7 +24,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" focusTraversable="false" layoutX="3.0" layoutY="14.0" prefHeight="30.0" prefWidth="381.0" text="ไม่พบผู้ใช้หรือรหัสผ่านไม่ถูกต้อง">
+            <Label fx:id="headerWarning" alignment="CENTER" focusTraversable="false" layoutX="3.0" layoutY="14.0" prefHeight="30.0" prefWidth="381.0" text="ไม่พบผู้ใช้หรือรหัสผ่านไม่ถูกต้อง">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

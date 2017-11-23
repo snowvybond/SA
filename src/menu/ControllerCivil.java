@@ -4,11 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.io.IOException;
-import java.util.Optional;
 
 public class ControllerCivil extends Controller{
 
@@ -49,7 +46,7 @@ public class ControllerCivil extends Controller{
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);
-            controller.setHeader("ยืนยันคำปฎิเสธการขอใช้รถ");
+            controller.setHeaderConfirm("ยืนยันคำปฎิเสธการขอใช้รถ");
             stage.show();
 
         } catch (IOException e1) {
@@ -68,7 +65,7 @@ public class ControllerCivil extends Controller{
             report.Controller controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("Report");
-            stage.setScene(new Scene(root, 600, 420));
+            stage.setScene(new Scene(root, 940, 600));
             stage.setResizable(false);
             stage.show();
 

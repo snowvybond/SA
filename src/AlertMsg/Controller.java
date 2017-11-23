@@ -15,7 +15,10 @@ public class Controller {
     private Label status;
 
     @FXML
-    private Label header;
+    private Label headerConfirm;
+
+    @FXML
+    private Label  headerWarning;
 
     @FXML
     private Button ok = new Button();
@@ -38,8 +41,8 @@ public class Controller {
 
     public void setcRequest(request.Controller cRequest) { this.cRequest = cRequest; }
     public void setcConfirmRequest(confirmRequest.Controller cConfirmRequest) { this.cConfirmRequest = cConfirmRequest; }
-
-    public void setHeader(String header) { this.header.setText(header); }
+    public void setHeaderWarning(String headerWarning) { this.headerWarning.setText(headerWarning); }
+    public void setHeaderConfirm(String headerConfirm) { this.headerConfirm.setText(headerConfirm); }
     public Button getOk() { return ok; }
 
     public void setStage(Stage stage) { this.stage = stage; }
@@ -49,7 +52,7 @@ public class Controller {
     }
 
     private void ok() {
-        
+
         close();
     }
 
@@ -72,6 +75,7 @@ public class Controller {
         status.setText("พบ");
 
         if(status.getText().equals("พบ")) status.setTextFill(Color.GREEN);
+        else if(status.getText().equals("ไม่พบ")) status.setTextFill(Color.RED);
     }
 
     public void checkInput(){

@@ -29,7 +29,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="header" alignment="CENTER" focusTraversable="false" layoutX="3.0" layoutY="12.0" prefHeight="30.0" prefWidth="381.0" text="ยืนยันการเปลี่ยนแปลง">
+            <Label fx:id="headerConfirm" alignment="CENTER" focusTraversable="false" layoutX="3.0" layoutY="12.0" prefHeight="30.0" prefWidth="381.0" text="ยืนยันการเปลี่ยนแปลง">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

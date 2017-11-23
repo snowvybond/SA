@@ -51,7 +51,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField cacheShape="false" centerShape="false" focusTraversable="false" maxHeight="39.0" maxWidth="-Infinity" prefHeight="39.0" prefWidth="389.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="name" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" maxHeight="39.0" maxWidth="-Infinity" mouseTransparent="true" prefHeight="39.0" prefWidth="389.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
@@ -63,8 +63,8 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ChoiceBox cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <TextField cacheShape="false" centerShape="false" disable="true" focusTraversable="false" layoutX="112.0" layoutY="11.0" maxHeight="0.0" prefWidth="480.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <ChoiceBox fx:id="cause" cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="causeText" cacheShape="false" centerShape="false" disable="true" focusTraversable="false" layoutX="112.0" layoutY="11.0" maxHeight="0.0" prefWidth="480.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
                               <Font size="18.0" />
                            </font></TextField>
@@ -76,7 +76,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <DatePicker cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="startDate" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                         <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="148.0" text="สิ้นสุดการปฎิบัติงาน" GridPane.rowIndex="5">
                            <GridPane.margin>
                               <Insets right="5.0" />
@@ -85,7 +85,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <DatePicker cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <DatePicker fx:id="endDate" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="148.0" text="ปลายทาง" GridPane.rowIndex="6">
                            <padding>
                               <Insets left="10.0" />
@@ -97,7 +97,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <ChoiceBox cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ChoiceBox fx:id="destination" cacheShape="false" centerShape="false" focusTraversable="false" prefHeight="40.0" prefWidth="261.0" scaleShape="false" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Label alignment="CENTER_RIGHT" layoutX="10.0" layoutY="49.0" prefHeight="17.0" prefWidth="154.0" text="รหัส">
                            <padding>
                               <Insets right="5.0" />
@@ -106,7 +106,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <TextField cacheShape="false" centerShape="false" editable="false" focusTraversable="false" layoutX="162.0" layoutY="47.0" mouseTransparent="true" prefHeight="0.0" prefWidth="480.0" scaleShape="false" GridPane.columnIndex="1">
+                        <TextField fx:id="id" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" layoutX="162.0" layoutY="47.0" mouseTransparent="true" prefHeight="0.0" prefWidth="480.0" scaleShape="false" GridPane.columnIndex="1">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -118,7 +118,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </GridPane.margin>
                      <content>
-                        <TextArea prefHeight="200.0" prefWidth="200.0" promptText="ไม่มี">
+                        <TextArea fx:id="detail" prefHeight="200.0" prefWidth="200.0" promptText="ไม่มี">
                            <font>
                               <Font size="18.0" />
                            </font></TextArea>

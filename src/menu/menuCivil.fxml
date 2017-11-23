@@ -207,12 +207,17 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="135.0" layoutY="25.0" mnemonicParsing="false" onAction="#handkeBtnConfirmClickAction" prefHeight="35.0" prefWidth="120.0" text="ใส่รายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button layoutX="135.0" layoutY="25.0" mnemonicParsing="false" onAction="#handkeBtnConfirmClickAction" prefHeight="35.0" prefWidth="120.0" text="ใส่รายละเอียด" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="10.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleBtnRejectAction" prefHeight="35.0" prefWidth="120.0" text="ปฎิเสธ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button layoutX="10.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleBtnRejectAction" prefHeight="35.0" prefWidth="120.0" text="ปฎิเสธ" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="138.0" layoutY="94.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -228,24 +233,24 @@
                   </GridPane>
                </children>
             </GridPane>
-            <ScrollPane focusTraversable="false" pannable="true" pickOnBounds="false" prefHeight="363.0" prefWidth="885.0" GridPane.rowIndex="1">
+            <ScrollPane focusTraversable="false" minViewportHeight="10.0" minViewportWidth="10.0" pannable="true" pickOnBounds="false" prefHeight="363.0" prefViewportHeight="10.0" prefViewportWidth="10.0" prefWidth="885.0" GridPane.rowIndex="1">
                <content>
-                  <TableView focusTraversable="false" prefHeight="373.0" prefWidth="1732.0">
+                  <TableView focusTraversable="false" prefHeight="373.0" prefWidth="3160.0">
                     <columns>
-                      <TableColumn maxWidth="105.0" prefWidth="98.0" text="ID" />
-                      <TableColumn prefWidth="96.0" text="ชื่อผู้ขอใช้รถ" />
-                        <TableColumn prefWidth="108.0" text="สาเหตุการขอใช้รถ" />
-                        <TableColumn prefWidth="147.0" text="วันเริ่มต้นการปฎิบัติงาน" />
-                        <TableColumn minWidth="0.0" prefWidth="135.0" text="วันสิ้นสุดการปฎิบัติงาน" />
-                        <TableColumn minWidth="0.0" prefWidth="81.0" text="ปลายทาง" />
-                        <TableColumn minWidth="0.0" prefWidth="115.0" text="ระยะทาง(กิโลเมตร)" />
-                        <TableColumn minWidth="0.0" prefWidth="101.0" text="ค่าน้ำมัน(บาท)" />
-                        <TableColumn minWidth="0.0" prefWidth="114.0" text="รหัสพนักงาน" />
-                        <TableColumn minWidth="0.0" prefWidth="114.0" text="ชื่อ - สกุล" />
-                        <TableColumn minWidth="0.0" prefWidth="114.0" text="ทะเบียนรถ" />
-                        <TableColumn minWidth="0.0" prefWidth="114.0" text="ยี่ห้อ" />
-                        <TableColumn minWidth="0.0" prefWidth="114.0" text="รุ่น" />
-                        <TableColumn minWidth="0.0" prefWidth="280.0" text="รายละเอียดเพิ่มเติม" />
+                      <TableColumn maxWidth="155.0" prefWidth="147.0" style="-fx-font-size: 18;" text="ID" />
+                      <TableColumn prefWidth="359.0" style="-fx-font-size: 18;" text="ชื่อผู้ขอใช้รถ" />
+                        <TableColumn minWidth="0.0" prefWidth="175.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
+                        <TableColumn minWidth="0.0" prefWidth="209.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
+                        <TableColumn minWidth="0.0" prefWidth="206.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการปฎิบัติงาน" />
+                        <TableColumn minWidth="0.0" prefWidth="212.0" style="-fx-font-size: 18;" text="ปลายทาง" />
+                        <TableColumn minWidth="0.0" prefWidth="162.0" style="-fx-font-size: 18;" text="ระยะทาง(กิโลเมตร)" />
+                        <TableColumn minWidth="0.0" prefWidth="130.0" style="-fx-font-size: 18;" text="ค่าน้ำมัน(บาท)" />
+                        <TableColumn minWidth="0.0" prefWidth="159.0" style="-fx-font-size: 18;" text="รหัสพนักงาน" />
+                        <TableColumn minWidth="0.0" prefWidth="473.0" style="-fx-font-size: 18;" text="ชื่อพนักงานขับรถ" />
+                        <TableColumn minWidth="0.0" prefWidth="144.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
+                        <TableColumn minWidth="0.0" prefWidth="182.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
+                        <TableColumn minWidth="0.0" prefWidth="202.0" style="-fx-font-size: 18;" text="รุ่น" />
+                        <TableColumn minWidth="0.0" prefWidth="399.0" style="-fx-font-size: 18;" text="รายละเอียดเพิ่มเติม" />
                     </columns>
                   </TableView>
                </content>
