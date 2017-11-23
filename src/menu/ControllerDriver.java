@@ -47,15 +47,37 @@ public class ControllerDriver  extends Controller{
 
     @FXML
     public void handleBtnSearchClickAction(){
-        System.out.println("eiiiiiiiiiiiiiiiiiiiiiiiii");search(); }
+        search(); }
 
     public void search(){
         table.getItems().clear();
         String query = "";
         if (c1.isSelected()){  //all
-            query = "select * from requestforcar";
-//            query = "select * from requestforcar where user='"+userID+"'";
+            query = "select * from requestforcar where id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
+        else if (c2.isSelected()){ //wait
+            query = "select * from requestforcar where staus='wait' and id in(select requestforcarid from workassign where driverid='"+userID+"')" ;
+        }
+        else if (c3.isSelected()){ //approve
+            query = "select * from requestforcar where staus='approve' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+        }
+        else if (c4.isSelected()){ //id
+            query = "select * from requestforcar where id='"+id.getText()+"' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+        }
+        else if (c5.isSelected()){ //working
+            query = "select * from requestforcar where staus='working' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+        }
+        else if (c6.isSelected()){ //returned
+            query = "select * from requestforcar where staus='returned' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+        }
+        else if (c7.isSelected()){ //reject
+            query = "select * from requestforcar where staus='reject' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+        }
+        else if (c8.isSelected()){ //date
+            query = "select * from requestforcar where staus='wait' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+        }
+        System.out.println(query);
+
         ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
         int count = 0;
         for (ArrayList<String> i : allData){

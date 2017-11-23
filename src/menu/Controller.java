@@ -42,6 +42,7 @@ public class Controller {
 
     public void setUserID(String u){
         userID = u;
+        System.out.println("setuserid");
     }
     protected void signOut(){
         try {
