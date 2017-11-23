@@ -18,10 +18,10 @@ public class ControllerCar extends Controller{
 
     private void showAlertReturn(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/returnCar/returnCar.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/returnCar.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
-            returnCar.Controller controller = loader.getController();
+            AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 550, 150));
@@ -40,15 +40,16 @@ public class ControllerCar extends Controller{
 
     private void showAlertChangeStatusCar(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/returnCar/statusCar.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/statusCar.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
-            returnCar.Controller controller = loader.getController();
+            AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("Car system");
             stage.setScene(new Scene(root, 375, 235));
             stage.setResizable(false);
             controller.setStage(stage);
+            controller.getOk().setDisable(true);
             stage.show();
 
         } catch (IOException e1) {

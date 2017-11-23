@@ -69,8 +69,14 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnOK" mnemonicParsing="false" onAction="#handleBtnOKClickAction" prefHeight="30.0" prefWidth="80.0" text="เข้าสู่ระบบ" GridPane.halignment="CENTER" />
-                  <Button layoutX="106.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleClickClear" prefHeight="30.0" prefWidth="80.0" text="ล้างข้อมูล" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                  <Button fx:id="btnOK" mnemonicParsing="false" onAction="#handleBtnOKClickAction" prefHeight="30.0" prefWidth="120.0" text="เข้าสู่ระบบ" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+                  <Button layoutX="106.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleClickClear" prefHeight="30.0" prefWidth="120.0" text="ล้างข้อมูล" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
                </children>
             </GridPane>
             <Label alignment="CENTER" prefHeight="17.0" prefWidth="659.0" text="LOG IN" GridPane.halignment="CENTER">

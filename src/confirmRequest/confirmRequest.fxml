@@ -21,7 +21,7 @@
             <Font size="25.0" />
          </font>
          <content>
-            <ScrollPane fx:id="scrollPane" cacheShape="false" centerShape="false" focusTraversable="false" hbarPolicy="NEVER" nodeOrientation="LEFT_TO_RIGHT" onMouseMoved="#ss" pannable="true" pickOnBounds="false" prefHeight="510.0" prefWidth="594.0" scaleShape="false">
+            <ScrollPane fx:id="scrollPane" cacheShape="false" centerShape="false" focusTraversable="false" hbarPolicy="NEVER" nodeOrientation="LEFT_TO_RIGHT" onMouseMoved="#fixScroll" pannable="true" pickOnBounds="false" prefHeight="510.0" prefWidth="594.0" scaleShape="false" vvalue="1.0">
                <content>
                   <GridPane cacheShape="false" centerShape="false" pickOnBounds="false" prefHeight="1175.0" prefWidth="460.0" scaleShape="false">
                     <columnConstraints>
@@ -169,7 +169,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Button>
-                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="32.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="ยกเลิก" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                              <Button alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" layoutY="32.0" mnemonicParsing="false" onAction="#handleBtnCancelClickAction" prefHeight="25.0" prefWidth="100.0" text="ยกเลิก" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                  <GridPane.margin>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </GridPane.margin>

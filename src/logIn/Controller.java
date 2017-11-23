@@ -4,10 +4,16 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBoxBuilder;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import menu.ControllerCar;
 import menu.ControllerCivil;
 import menu.ControllerDriver;
@@ -15,6 +21,7 @@ import menu.ControllerFinance;
 import model.DatabaseConnecter;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class Controller {
 
@@ -55,6 +62,7 @@ public class Controller {
         if (username.getText().equals(user)) {
             type = user.substring(0, 1);
         }
+//        switch (username.getText()){
         switch (type){
             case "1" :
                 showMenu("/menu/menuFinance.fxml" , new ControllerFinance());
@@ -71,8 +79,6 @@ public class Controller {
             default:
                 username.clear();
                 password.clear();
-                username.setPromptText("Wrong Username");
-                password.setPromptText("Wrong Password");
                 alert();
         }
     }
@@ -97,14 +103,19 @@ public class Controller {
     }
 
     private void alert(){
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Error");
-        alert.setHeaderText(null);
-        javafx.scene.control.Label text = new javafx.scene.control.Label();
-        text.setFont(javafx.scene.text.Font.font(20));
-        text.setText("ไม่พบชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง");
-        alert.getDialogPane().setContent(text);
-        alert.showAndWait();
-    }
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertWarning.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            AlertMsg.Controller controller = loader.getController();
+            controller.setStage(stage);
+            stage.setTitle("Alert Warning");
+            stage.setScene(new Scene(root, 380, 100));
+            stage.setResizable(false);
+            stage.show();
 
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
 }

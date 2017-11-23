@@ -22,6 +22,7 @@ public class Controller {
     private ScrollPane scrollPane;
     private Stage stage;
     private Tab tab = new Tab();
+    private boolean isSet;
 
     public void initialize(){
         tab.setOnSelectionChanged(new EventHandler<Event>() {
@@ -33,26 +34,32 @@ public class Controller {
 //        scrollPane.setVvalue(0.0);
     }
 
-    public void ss(){
-
+    public void fixScroll(){
+        if(!isSet) {
+            scrollPane.setVvalue(0.0);
+            isSet = true;
+        }
         System.out.println(scrollPane.getVvalue());
     }
 
     public void setStage(Stage stage){ this.stage = stage; }
 
     public void handleBtnOKClickAction(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText(null);
-        Label text = new Label();
-        text.setFont(Font.font(20));
-        text.setText("ยืนยันคำอนุมัติการขอใช้รถ (ไม่สามารถยกเลิกได้!!)");
-        alert.getDialogPane().setContent(text);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertConfirm.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            AlertMsg.Controller controller = loader.getController();
+            controller.setStage(stage);
+            controller.setcConfirmRequest(this);
+            stage.setTitle("Confirmation");
+            stage.setScene(new Scene(root, 380, 130));
+            stage.setResizable(false);
+            controller.setHeader("ยืนยันคำอนุมัติการขอใช้รถ");
+            stage.show();
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            // ... user chose OK
-            goToMenu();
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
     }
 

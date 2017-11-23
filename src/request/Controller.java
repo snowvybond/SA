@@ -21,23 +21,27 @@ public class Controller {
     private Stage stage;
 
     @FXML
-    public void handleBtnClickOKAction(ActionEvent event){
+    public void handleBtnClickOKAction(){
         showComfirmRequest();
     }
 
     public void showComfirmRequest(){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Confirmation");
-        alert.setHeaderText(null);
-        javafx.scene.control.Label text = new javafx.scene.control.Label();
-        text.setFont(javafx.scene.text.Font.font(20));
-        text.setText("ยืนยันคำขอใช้รถ (ไม่สามารถยกเลิกได้)");
-        alert.getDialogPane().setContent(text);
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            // ... user chose OK
-            goToMenu();
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertConfirm.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            AlertMsg.Controller controller = loader.getController();
+            controller.setStage(stage);
+            controller.setcRequest(this);
+            stage.setTitle("Confirmation");
+            stage.setScene(new Scene(root, 380, 130));
+            stage.setResizable(false);
+            controller.setHeader("ยืนยันคำขอใช้รถ");
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
     }
 
