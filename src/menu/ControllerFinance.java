@@ -36,6 +36,10 @@ public class ControllerFinance extends Controller {
 
     private boolean isCreate = false;
 
+    public void initialize(){
+        search();
+    }
+
     public void handleBtnCreateAction(){
 
         if(isCreate) { ShowAlertWarning(); }
@@ -89,6 +93,7 @@ public class ControllerFinance extends Controller {
 
     public void search(){
 
+        table.getItems().clear();
         String query = "";
         if (c1.isSelected()){  //all
             query = "select * from requestforcar where user='"+userID+"'";

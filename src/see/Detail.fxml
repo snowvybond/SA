@@ -39,7 +39,7 @@
                               <Insets bottom="5.0" />
                            </GridPane.margin>
                            <content>
-                              <TextArea fx:id="detail" editable="false" prefHeight="221.0" prefWidth="437.0" promptText="ไม่มี">
+                              <TextArea fx:id="detail" editable="false" focusTraversable="false" prefHeight="221.0" prefWidth="437.0" promptText="ไม่มี">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

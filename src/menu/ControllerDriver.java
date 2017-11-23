@@ -34,6 +34,10 @@ public class ControllerDriver  extends Controller{
     @FXML protected javafx.scene.control.TableColumn<RequestTable , String> detailColumn;
     @FXML protected TableView<RequestTable> table;
 
+    public void initialize(){
+        search();
+    }
+
     @FXML
     public void handleBtnSignOutClickAction(){
         signOut();
@@ -46,10 +50,11 @@ public class ControllerDriver  extends Controller{
         System.out.println("eiiiiiiiiiiiiiiiiiiiiiiiii");search(); }
 
     public void search(){
-
+        table.getItems().clear();
         String query = "";
         if (c1.isSelected()){  //all
-            query = "select * from requestforcar where user='"+userID+"'";
+            query = "select * from requestforcar";
+//            query = "select * from requestforcar where user='"+userID+"'";
         }
         ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
         int count = 0;

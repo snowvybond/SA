@@ -17,7 +17,7 @@ public class Controller {
 
     private Stage stage;
 
-    protected String userID;
+    protected static String userID;
 
     @FXML
     private TextField id;

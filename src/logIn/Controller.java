@@ -92,6 +92,7 @@ public class Controller {
             Parent root = loader.load();
             Stage stage = new Stage();
             controller = loader.getController();
+            controller.initialize();
             controller.setStage(stage);
             controller.setUserID(username.getText());
             stage.setTitle("Car system");
