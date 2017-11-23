@@ -12,6 +12,8 @@ public class Controller {
 
     private Stage stage;
 
+    protected String userID;
+
     @FXML
     private TextField id;
 
@@ -33,6 +35,9 @@ public class Controller {
         radioAction();
     }
 
+    public void setUserID(String u){
+        userID = u;
+    }
     protected void signOut(){
         try {
             this.stage.close();

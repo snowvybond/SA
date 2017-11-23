@@ -25,6 +25,7 @@ import java.util.Optional;
 
 public class Controller {
 
+    protected String userID;
     @FXML
     Stage stage;
 
@@ -92,6 +93,7 @@ public class Controller {
             Stage stage = new Stage();
             controller = loader.getController();
             controller.setStage(stage);
+            controller.setUserID(username.getText());
             stage.setTitle("Car system");
             stage.setScene(new Scene(root, 875, 515));
             stage.setResizable(false);

@@ -196,7 +196,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" text="ค้นหา" GridPane.halignment="CENTER">
+                                    <Button mnemonicParsing="false" onAction="#handleBtnSearchClickAction" prefHeight="35.0" prefWidth="120.0" text="ค้นหา" GridPane.halignment="CENTER">
                                        <font>
                                           <Font size="18.0" />
                                        </font>

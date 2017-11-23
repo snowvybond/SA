@@ -7,15 +7,32 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import model.DatabaseConnecter;
 
-import javax.swing.table.TableColumn;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class ControllerFinance extends Controller {
 
+
     private boolean isCreate = false;
-    private String userID;
+    @FXML
+    protected RadioButton c1;
+    @FXML
+    protected RadioButton c2;
+    @FXML
+    protected RadioButton c3;
+    @FXML
+    protected RadioButton c4;
+    @FXML
+    protected RadioButton c5;
+    @FXML
+    protected RadioButton c6;
+    @FXML
+    protected RadioButton c7;
+    @FXML
+    protected RadioButton c8;
 
     public void handleBtnCreateAction(){
 
@@ -23,9 +40,7 @@ public class ControllerFinance extends Controller {
         else createRequest();
         isCreate = !isCreate;
     }
-    public void setUserID(String u){
-        userID = u;
-    }
+
 
     private void ShowAlertWarning(){
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -66,4 +81,21 @@ public class ControllerFinance extends Controller {
     public void handleBtnSignOutClickAction(){
         signOut();
     }
+    @FXML
+    public void handleBtnSearchClickAction(){ search(); }
+
+    private void search(){
+        String query = "";
+        if (c1.isSelected()){  //all
+            query = "select * from requestforcar where user='"+userID+"'";
+        }
+        ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
+        for (ArrayList<String> i : allData){
+            for (String j:i){
+                System.out.println(j);
+            }
+        }
+
+    }
+
 }
