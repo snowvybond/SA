@@ -51,7 +51,7 @@ public class Controller {
     private void check(){
         String usernameQuery = "select username from user where username='"+username.getText()+"' AND password='"+password.getText()+"'";
         String user = DatabaseConnecter.browserString(usernameQuery);
-        String type = null;
+        String type = "0";
         if (username.getText().equals(user)) {
             type = user.substring(0, 1);
         }
