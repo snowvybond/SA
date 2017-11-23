@@ -15,12 +15,16 @@ import java.util.Optional;
 public class ControllerFinance extends Controller {
 
     private boolean isCreate = false;
+    private String userID;
 
     public void handleBtnCreateAction(){
 
         if(isCreate) { ShowAlertWarning(); }
         else createRequest();
         isCreate = !isCreate;
+    }
+    public void setUserID(String u){
+        userID = u;
     }
 
     private void ShowAlertWarning(){
