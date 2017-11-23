@@ -207,7 +207,7 @@
                               <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label alignment="CENTER_RIGHT" focusTraversable="false" prefHeight="17.0" prefWidth="154.0" text="ชื่อคนขอใช้รถ" GridPane.rowIndex="1">
+                              <Label alignment="CENTER_RIGHT" focusTraversable="false" prefHeight="17.0" prefWidth="154.0" text="ชื่อผู้ขอใช้รถ" GridPane.rowIndex="1">
                                  <padding>
                                     <Insets right="5.0" />
                                  </padding>

@@ -5,10 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import model.DatabaseConnecter;
 import view.RequestTable;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -30,26 +33,6 @@ public class Controller {
 
     @FXML
     protected RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8;
-
-    @FXML
-    private TableView<RequestTable> table;
-
-    @FXML protected TableColumn<RequestTable , String> idColumn;
-    @FXML protected TableColumn<RequestTable , String> nameColumn;
-    @FXML protected TableColumn<RequestTable , String> causeTextColumn;
-    @FXML protected TableColumn<RequestTable , String> startDateColumn;
-    @FXML protected TableColumn<RequestTable , String> endDateColumn;
-    @FXML protected TableColumn<RequestTable , String> destinationColumn;
-    @FXML protected TableColumn<RequestTable , String> distanceColumn;
-    @FXML protected TableColumn<RequestTable , String> priceGasColumn;
-    @FXML protected TableColumn<RequestTable , String> idDriverColumn;
-    @FXML protected TableColumn<RequestTable , String> nameDriverColumn;
-    @FXML protected TableColumn<RequestTable , String> liscensePlateColumn;
-    @FXML protected TableColumn<RequestTable , String> typeCarColumn;
-    @FXML protected TableColumn<RequestTable , String> brandCarColumn;
-    @FXML protected TableColumn<RequestTable , String> modelCarColumn;
-    @FXML protected TableColumn<RequestTable , String> detailColumn;
-
 
     @FXML
     public void initialize(){
@@ -159,6 +142,8 @@ public class Controller {
         c7.setToggleGroup(group);
         c8.setToggleGroup(group);
     }
+
+
 
     public void setStage(Stage stage){
         this.stage = stage;
