@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerFinance">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerFinance">
    <children>
       <GridPane prefHeight="526.0" prefWidth="885.0">
         <columnConstraints>
@@ -186,7 +186,7 @@
                                           <Insets />
                                        </GridPane.margin>
                                     </Button>
-                                    <Button layoutX="44.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button fx:id="btnSeeDetail" disable="true" layoutX="44.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -207,23 +207,23 @@
                   <Pane prefHeight="384.0" prefWidth="2336.0" />
                </content>
             </ScrollPane>
-            <TableView fx:id="table" focusTraversable="false" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
+            <TableView fx:id="table" focusTraversable="false" onContextMenuRequested="#checkChoice" onDragDetected="#checkChoice" onDragDone="#checkChoice" onDragEntered="#checkChoice" onDragOver="#checkChoice" onMouseClicked="#checkChoice" onMouseDragged="#checkChoice" onMouseEntered="#checkChoice" onMouseMoved="#checkChoice" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn fx:id="idColumn" maxWidth="155.0" prefWidth="110.0" style="-fx-font-size: 18;" text="ID" />
-                  <TableColumn fx:id="causeTextColumn" minWidth="0.0" prefWidth="167.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
-                  <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="138.0" style="-fx-font-size: 18;" text="สถานะ" />
-                  <TableColumn fx:id="startDateColumn" minWidth="0.0" prefWidth="195.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
-                  <TableColumn fx:id="endDateColumn" minWidth="0.0" prefWidth="192.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการปฎิบัติงาน" />
-                  <TableColumn fx:id="destinationColumn" minWidth="0.0" prefWidth="115.0" style="-fx-font-size: 18;" text="ปลายทาง" />
-                  <TableColumn fx:id="distanceColumn" minWidth="0.0" prefWidth="155.0" style="-fx-font-size: 18;" text="ระยะทาง(กิโลเมตร)" />
-                  <TableColumn fx:id="priceGasColumn" minWidth="0.0" prefWidth="135.0" style="-fx-font-size: 18;" text="ค่าน้ำมัน(บาท)" />
-                  <TableColumn fx:id="idDriverColumn" minWidth="0.0" prefWidth="159.0" style="-fx-font-size: 18;" text="รหัสพนักงานขับรถ" />
-                  <TableColumn fx:id="nameDriverColumn" minWidth="0.0" prefWidth="314.0" style="-fx-font-size: 18;" text="ชื่อพนักงานขับรถ" />
-                  <TableColumn fx:id="licensedPlateColumn" minWidth="0.0" prefWidth="128.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
-                  <TableColumn fx:id="typeCarColumn" minWidth="0.0" prefWidth="97.0" style="-fx-font-size: 18;" text="ประเภท" />
-                  <TableColumn fx:id="brandCarColumn" minWidth="0.0" prefWidth="107.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
-                  <TableColumn fx:id="modelCarColumn" minWidth="0.0" prefWidth="76.0" style="-fx-font-size: 18;" text="รุ่น" />
-                  <TableColumn fx:id="detailColumn" minWidth="0.0" prefWidth="236.0" style="-fx-font-size: 18;" text="รายละเอียดเพิ่มเติม" />
+                <TableColumn fx:id="idColumn" maxWidth="155.0" onEditCommit="#checkChoice" prefWidth="110.0" style="-fx-font-size: 18;" text="ID" />
+                  <TableColumn fx:id="causeTextColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="167.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
+                  <TableColumn fx:id="statusColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="138.0" style="-fx-font-size: 18;" text="สถานะ" />
+                  <TableColumn fx:id="startDateColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="195.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
+                  <TableColumn fx:id="endDateColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="192.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการปฎิบัติงาน" />
+                  <TableColumn fx:id="destinationColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="115.0" style="-fx-font-size: 18;" text="ปลายทาง" />
+                  <TableColumn fx:id="distanceColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="155.0" style="-fx-font-size: 18;" text="ระยะทาง(กิโลเมตร)" />
+                  <TableColumn fx:id="priceGasColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="135.0" style="-fx-font-size: 18;" text="ค่าน้ำมัน(บาท)" />
+                  <TableColumn fx:id="idDriverColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="159.0" style="-fx-font-size: 18;" text="รหัสพนักงานขับรถ" />
+                  <TableColumn fx:id="nameDriverColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="314.0" style="-fx-font-size: 18;" text="ชื่อพนักงานขับรถ" />
+                  <TableColumn fx:id="licensedPlateColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="128.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
+                  <TableColumn fx:id="typeCarColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="97.0" style="-fx-font-size: 18;" text="ประเภท" />
+                  <TableColumn fx:id="brandCarColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="107.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
+                  <TableColumn fx:id="modelCarColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="76.0" style="-fx-font-size: 18;" text="รุ่น" />
+                  <TableColumn fx:id="detailColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="236.0" style="-fx-font-size: 18;" text="รายละเอียดเพิ่มเติม" />
               </columns>
             </TableView>
          </children>

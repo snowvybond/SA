@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerCivil">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerCivil">
    <children>
       <GridPane prefHeight="526.0" prefWidth="885.0">
         <columnConstraints>
@@ -179,7 +179,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="44.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button fx:id="btnSeDetail" disable="true" layoutX="44.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -215,7 +215,7 @@
                   <Pane prefHeight="384.0" prefWidth="2336.0" />
                </content>
             </ScrollPane>
-            <TableView fx:id="table" focusTraversable="false" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
+            <TableView fx:id="table" focusTraversable="false" onDragOver="#checkChoice" onMouseDragged="#checkChoice" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="idColumn" maxWidth="155.0" prefWidth="110.0" style="-fx-font-size: 18;" text="ID" />
                   <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="314.0" style="-fx-font-size: 18;" text="ชื่อผู้ขอใช้รถ" />
