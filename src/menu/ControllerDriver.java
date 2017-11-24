@@ -1,5 +1,6 @@
 package menu;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,10 +17,6 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 public class ControllerDriver  extends Controller{
-    @FXML
-    public void handleBtnSignOutClickAction(){
-        signOut();
-    }
     @Override
     public void search(){
         table.getItems().clear();
@@ -49,6 +46,18 @@ public class ControllerDriver  extends Controller{
             query = "select * from requestforcar where staus='wait' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         displayTable(query);
+    }
+
+    @FXML
+    public void handleBtnSeeDetailClickAction (ActionEvent event){
+
+        if (table.getSelectionModel().isEmpty()){
+            selectAlert();
+        }
+        else {
+            RequestTable t = table.getSelectionModel().getSelectedItem();
+            seeDetail(this,"/menu/menuDriver.fxml",t);
+        }
     }
 
 }
