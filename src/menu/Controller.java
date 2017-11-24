@@ -97,6 +97,7 @@ public class Controller {
             c.setStage(stage);
             c.setController(controller);
             c.setLocation(location);
+            c.setData(table);
             stage.setTitle("Detail");
             stage.setScene(new Scene(root, 490, 590));
             stage.setResizable(false);

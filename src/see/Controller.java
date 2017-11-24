@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import menu.ControllerCivil;
+import model.DatabaseConnecter;
+import view.RequestTable;
 
 import java.io.IOException;
 
@@ -49,7 +51,7 @@ public class Controller {
     private TextField nameDriver;
 
     @FXML
-    private TextField liscensePlate;
+    private TextField liscensedPlate;
 
     @FXML
     private TextField typeCar;
@@ -102,9 +104,7 @@ public class Controller {
         this.nameDriver.setText(nameDriver);
     }
 
-    public void setLiscensePlate(String liscensePlate) {
-        this.liscensePlate.setText(liscensePlate);
-    }
+
 
     public void setTypeCar(String typeCar) {
         this.typeCar.setText(typeCar);
@@ -179,5 +179,21 @@ public class Controller {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+    public void setData (RequestTable table){
+        id.setText(table.getId());
+        causeText.setText(table.getCauseText());
+        status.setText("hahahaha");
+        startDate.setText(table.getStartDate());
+        endDate.setText(table.getEndDate());
+        destination.setText(table.getDestination());
+        distance.setText(table.getDistance());
+        priceGas.setText(table.getPriceGas());
+        idDriver.setText(table.getIdDriver());
+        nameDriver.setText(table.getNameDriver());
+        liscensedPlate.setText(table.getLicensedPlate());
+        typeCar.setText(table.getTypeCar());
+        brandCar.setText(table.getBrandCar());
+        genCar.setText(table.getGenCar());
     }
 }
