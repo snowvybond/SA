@@ -36,8 +36,8 @@ public class Controller {
     protected RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8;
 
     @FXML protected TableColumn<RequestTable , String> idColumn;
-    @FXML protected TableColumn<RequestTable , String> nameColumn;
     @FXML protected TableColumn<RequestTable , String> causeTextColumn;
+    @FXML protected TableColumn<RequestTable , String> statusColumn;
     @FXML protected TableColumn<RequestTable , String> startDateColumn;
     @FXML protected TableColumn<RequestTable , String> endDateColumn;
     @FXML protected TableColumn<RequestTable , String> destinationColumn;
@@ -50,6 +50,8 @@ public class Controller {
     @FXML protected TableColumn<RequestTable , String> brandCarColumn;
     @FXML protected TableColumn<RequestTable , String> modelCarColumn;
     @FXML protected TableColumn<RequestTable , String> detailColumn;
+
+
     @FXML protected TableView<RequestTable> table;
 
     @FXML
@@ -195,10 +197,14 @@ public class Controller {
         else if (c8.isSelected()){ //date
             query = "select * from requestforcar where staus='wait'";
         }
+        displayTable(query);
+    }
+
+    protected void displayTable(String query){
         ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
         int count = 0;
         for (ArrayList<String> i : allData){
-            table.getItems().add(count++,new RequestTable(i.get(0) , i.get(1) , i.get(2) , i.get(3) , i.get(4) , i.get(5) , i.get(6) , i.get(7) , i.get(8) , i.get(9) , i.get(10) , i.get(11) , i.get(12) , "gen" , "detail"));
+            table.getItems().add(count++,new RequestTable(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4),i.get(5),i.get(6),i.get(7),i.get(8),i.get(9),i.get(10),i.get(11),i.get(12),i.get(13),i.get(14),i.get(15)));
             idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
             causeTextColumn.setCellValueFactory(new PropertyValueFactory<>("causeText"));
             startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));

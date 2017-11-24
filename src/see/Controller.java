@@ -183,7 +183,7 @@ public class Controller {
     public void setData (RequestTable table){
         id.setText(table.getId());
         causeText.setText(table.getCauseText());
-        status.setText("hahahaha");
+        status.setText(table.getStatus());
         startDate.setText(table.getStartDate());
         endDate.setText(table.getEndDate());
         destination.setText(table.getDestination());

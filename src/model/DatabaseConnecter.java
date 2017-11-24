@@ -67,34 +67,39 @@ public class DatabaseConnecter {
                 ResultSet resultSet = statement.executeQuery(query);
                 while (resultSet.next()) {
                     String id = resultSet.getString("id");
-                    System.out.println("id");
+                    String user = resultSet.getString("user");
+                    String name = DatabaseConnecter.browserString("select name from user where username='"+user+"'");
                     String causeofuse = resultSet.getString("causeofuse");
+                    String staus = resultSet.getString("staus");
                     String start = resultSet.getString("startdate");
                     String end = resultSet.getString("enddate");
                     String provience = resultSet.getString("provience");
                     String distance = DatabaseConnecter.browserString("select distance from destination where provience='"+provience+"'");
                     String fuelCost = DatabaseConnecter.browserString("select fuelcost from destination where provience='"+provience+"'");
-//                    String user = resultSet.getString("user");
                     String driverID = DatabaseConnecter.browserString("select driverid from workassign where requestforcarid='"+id+"'");
                     String driverName = DatabaseConnecter.browserString("select name from user where username='"+driverID+"'");
                     String liscense = DatabaseConnecter.browserString("select liscenseplate from workassign where requestforcarid='"+id+"'");
                     String carBrand = DatabaseConnecter.browserString("select brand from car where liscenseplate='"+liscense+"'");
                     String carModel = DatabaseConnecter.browserString("select model from car where liscenseplate='"+liscense+"'");
+                    String carType = DatabaseConnecter.browserString("select type from car where liscenseplate='"+liscense+"'");
                     String detail = resultSet.getString("detail");
                     ArrayList<String> data = new ArrayList<>();
-                    data.add(id);
-                    data.add(causeofuse);
-                    data.add(start);
-                    data.add(end);
-                    data.add(provience);
-                    data.add(distance);
-                    data.add(fuelCost);
-                    data.add(driverID);
-                    data.add(driverName);
-                    data.add(liscense);
-                    data.add(carBrand);
-                    data.add(carModel);
-                    data.add(detail);
+                    data.add(id); //0
+                    data.add(name); //1
+                    data.add(causeofuse); //2
+                    data.add(staus);//3
+                    data.add(start);//4
+                    data.add(end);//5
+                    data.add(provience);//6
+                    data.add(distance);//7
+                    data.add(fuelCost);//8
+                    data.add(driverID);//9
+                    data.add(driverName);//10
+                    data.add(liscense);//11
+                    data.add(carType);//12
+                    data.add(carBrand);//13
+                    data.add(carModel);//14
+                    data.add(detail);//15
                     rfc.add(data);
                 }
 

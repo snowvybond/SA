@@ -17,11 +17,13 @@ public class RequestTable {
     private String brandCar;
     private String genCar;
     private String detail;
+    private String status;
 
-    public RequestTable(String id, String name, String causeText, String startDate, String endDate, String destination, String distance, String priceGas, String idDriver, String nameDriver, String liscensePlate, String typeCar, String brandCar, String genCar, String detail) {
+    public RequestTable(String id, String name, String causeText, String staus, String startDate, String endDate, String destination, String distance, String priceGas, String idDriver, String nameDriver, String liscensePlate, String typeCar, String brandCar, String genCar, String detail) {
         this.id = id;
         this.name = name;
         this.causeText = causeText;
+        this.status = staus;
         this.startDate = startDate;
         this.endDate = endDate;
         this.destination = destination;
@@ -46,6 +48,10 @@ public class RequestTable {
 
     public String getCauseText() {
         return causeText;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public String getStartDate() {
@@ -96,43 +102,4 @@ public class RequestTable {
         return detail;
     }
 
-
-//    public void search(){
-//
-//        String query = "";
-//        if (c1.isSelected()){  //all
-//            query = "select * from requestforcar where user='"+userID+"'";
-//        }
-//        ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
-//        int count = 0;
-//        for (ArrayList<String> i : allData){
-//            for (String j:i){
-//                System.out.println(j);
-//            }
-//
-//            table.getItems().add(count++,new RequestTable(i.get(0) , i.get(1) , i.get(2) , i.get(3) , i.get(4) , i.get(5) , i.get(6) , i.get(7) , i.get(8) , i.get(9) , i.get(10) , i.get(11) , i.get(12) , "gen" , "detail"));
-//
-//            idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
-//            causeTextColumn.setCellValueFactory(new PropertyValueFactory<>("causeText"));
-//            startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
-//            endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
-//
-////            @FXML protected TableColumn<RequestTable , String> idColumn;
-////            @FXML protected TableColumn<RequestTable , String> nameColumn;
-////            @FXML protected TableColumn<RequestTable , String> causeTextColumn;
-////            @FXML protected TableColumn<RequestTable , String> startDateColumn;
-////            @FXML protected TableColumn<RequestTable , String> endDateColumn;
-////            @FXML protected TableColumn<RequestTable , String> destinationColumn;
-////            @FXML protected TableColumn<RequestTable , String> distanceColumn;
-////            @FXML protected TableColumn<RequestTable , String> priceGasColumn;
-////            @FXML protected TableColumn<RequestTable , String> idDriverColumn;
-////            @FXML protected TableColumn<RequestTable , String> nameDriverColumn;
-////            @FXML protected TableColumn<RequestTable , String> licensedPlateColumn;
-////            @FXML protected TableColumn<RequestTable , String> typeCarColumn;
-////            @FXML protected TableColumn<RequestTable , String> brandCarColumn;
-////            @FXML protected TableColumn<RequestTable , String> modelCarColumn;
-////            @FXML protected TableColumn<RequestTable , String> detailColumn;
-////            @FXML private TableView<RequestTable> table;
-//        }
-//    }
 }
