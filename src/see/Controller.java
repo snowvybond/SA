@@ -25,6 +25,9 @@ public class Controller {
     private TextField causeText;
 
     @FXML
+    private TextField status;
+
+    @FXML
     private TextField startDate;
 
     @FXML
@@ -68,6 +71,8 @@ public class Controller {
     public void setCauseText(String causeText) {
         this.causeText.setText(causeText);
     }
+
+    public void setStatus(String status) { this.status.setText(status); }
 
     public void setStartDate(String startDate) {
         this.startDate.setText(startDate);
