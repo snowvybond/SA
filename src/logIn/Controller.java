@@ -92,9 +92,9 @@ public class Controller {
             Parent root = loader.load();
             Stage stage = new Stage();
             controller = loader.getController();
-            controller.initialize();
             controller.setStage(stage);
             controller.setUserID(username.getText());
+            controller.initialize();
             stage.setTitle("Car system");
             stage.setScene(new Scene(root, 875, 515));
             stage.setResizable(false);
