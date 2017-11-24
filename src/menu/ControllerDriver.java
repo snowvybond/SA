@@ -43,7 +43,15 @@ public class ControllerDriver  extends Controller{
         signOut();
     }
 
-    public void handleBtnSeeDetailClickAction(){ seeDetail(this,"/menu/menuDriver.fxml"); }
+    public void handleBtnSeeDetailClickAction(){
+        if (table.getSelectionModel().isEmpty()){
+            selectAlert();
+        }
+        else {
+            RequestTable t = table.getSelectionModel().getSelectedItem();
+            seeDetail(this,"/menu/menuDriver.fxml",t);
+        }
+    }
 
     @FXML
     public void handleBtnSearchClickAction(){

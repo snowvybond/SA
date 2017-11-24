@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class Controller {
 
+
     @FXML
     private TextField id;
 
@@ -55,6 +56,66 @@ public class Controller {
 
     @FXML
     private TextField genCar;
+
+    public void setId(String id) {
+        this.id.setText(id);
+    }
+
+    public void setName(String name) {
+        this.name.setText(name);
+    }
+
+    public void setCauseText(String causeText) {
+        this.causeText.setText(causeText);
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate.setText(startDate);
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate.setText(endDate);
+    }
+
+    public void setDestination(String destination) {
+        this.destination.setText(destination);
+    }
+
+    public void setDistance(String distance) {
+        this.distance.setText(distance);
+    }
+
+    public void setPriceGas(String priceGas) {
+        this.priceGas.setText(priceGas);
+    }
+
+    public void setIdDriver(String idDriver) {
+        this.idDriver.setText(idDriver);
+    }
+
+    public void setNameDriver(String nameDriver) {
+        this.nameDriver.setText(nameDriver);
+    }
+
+    public void setLiscensePlate(String liscensePlate) {
+        this.liscensePlate.setText(liscensePlate);
+    }
+
+    public void setTypeCar(String typeCar) {
+        this.typeCar.setText(typeCar);
+    }
+
+    public void setBrandCar(String brandCar) {
+        this.brandCar.setText(brandCar);
+    }
+
+    public void setGenCar(String genCar) {
+        this.genCar.setText(genCar);
+    }
+
+    public void setDetail(String detail) {
+        this.detail.setText(detail);
+    }
 
     @FXML
     private TextArea detail;

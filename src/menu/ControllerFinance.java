@@ -83,7 +83,16 @@ public class ControllerFinance extends Controller {
         }
     }
 
-    public void handleBtnSeeDetailClickAction(){ seeDetail(this,"/menu/menuFinance.fxml"); }
+    public void handleBtnSeeDetailClickAction(){
+        if (table.getSelectionModel().isEmpty()){
+            selectAlert();
+        }
+        else {
+            RequestTable t = table.getSelectionModel().getSelectedItem();
+            seeDetail(this,"/menu/menuFinance.fxml",t);
+        }
+
+    }
 
     @FXML
     public void handleBtnSignOutClickAction(){

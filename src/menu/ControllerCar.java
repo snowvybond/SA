@@ -141,7 +141,14 @@ public class ControllerCar extends Controller{
     }
 
     public void handleBtnSeeDetailClickAction(){
-        seeDetail(this,"/menu/menuCar.fxml");
+        if (table.getSelectionModel().isEmpty()){
+            selectAlert();
+        }
+        else {
+            RequestTable t = table.getSelectionModel().getSelectedItem();
+            seeDetail(this,"/menu/menuCar.fxml",t);
+        }
+
     }
 
     @FXML

@@ -13,7 +13,7 @@ public class DatabaseConnecter {
             String url = "jdbc:sqlite:databaseFile.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
-            System.out.println("Connection to SQLite has been established.");
+//            System.out.println("Connection to SQLite has been established.");
             if (conn != null){
                 DatabaseMetaData dm = (DatabaseMetaData)conn.getMetaData();
 //                System.out.println("Driver name: "+dm.getDriverName());
@@ -57,7 +57,7 @@ public class DatabaseConnecter {
             String url = "jdbc:sqlite:databaseFile.db";
             // create a connection to the database
             conn = DriverManager.getConnection(url);
-            System.out.println("Connection to SQLite has been established.");
+//            System.out.println("Connection to SQLite has been established.");
             if (conn != null){
                 DatabaseMetaData dm = (DatabaseMetaData)conn.getMetaData();
 //                System.out.println("Driver name: "+dm.getDriverName());

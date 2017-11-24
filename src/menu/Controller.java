@@ -67,7 +67,7 @@ public class Controller {
 //        radioAction();
     }
 
-    public void seeDetail(Controller controller ,String location){
+    public void seeDetail(Controller controller ,String location ,RequestTable table){
         try {
             this.stage.close();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/see/Detail2.fxml"));
@@ -150,4 +150,8 @@ public class Controller {
         this.stage = stage;
     }
     public Stage getStage() { return stage; }
+
+    protected void selectAlert(){
+        System.out.println("เลือกด้วยโว้ย");
+    }
 }

@@ -33,6 +33,7 @@ public class ControllerCivil extends Controller{
     @FXML protected TableColumn<RequestTable , String> detailColumn;
     @FXML protected TableView<RequestTable> table;
 
+
     public void initialize(){
         search();
     }
@@ -157,6 +158,7 @@ public class ControllerCivil extends Controller{
 //            for (String j:i){
 //                System.out.println(j);
 //            }
+
 
             table.getItems().add(count++,new RequestTable(i.get(0) , i.get(1) , i.get(2) , i.get(3) , i.get(4) , i.get(5) , i.get(6) , i.get(7) , i.get(8) , i.get(9) , i.get(10) , i.get(11) , i.get(12) , "gen" , "detail"));
 
