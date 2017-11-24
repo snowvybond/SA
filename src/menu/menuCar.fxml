@@ -116,7 +116,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="startDay1111" focusTraversable="false" layoutX="36.0" layoutY="126.0" prefHeight="17.0" prefWidth="390.0" text="อมุมัติแล้ว" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="startDay1111" focusTraversable="false" layoutX="36.0" layoutY="126.0" prefHeight="17.0" prefWidth="390.0" text="อนุมัติแล้ว" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
