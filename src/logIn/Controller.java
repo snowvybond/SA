@@ -47,13 +47,12 @@ public class Controller {
 
     @FXML
     public void initialize(){
-
-
-
         btnOK.setDisable(true);
         username.textProperty().addListener((ObservableValue <? extends String> observable, String oldValue, String newValue) -> {
             btnOK.setDisable(newValue.trim().isEmpty());
         });
+        System.out.println("Date now: "+LocalDateTime.now().toLocalDate());
+        System.out.println("Time now: "+LocalDateTime.now().toLocalTime());
     }
 
     public void setStage(Stage stage) { this.stage = stage; }
