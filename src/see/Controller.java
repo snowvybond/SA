@@ -172,7 +172,7 @@ public class Controller {
             controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("ตารางรายการขอใช้รถ");
-            stage.setScene(new Scene(root, 885, 525));
+            stage.setScene(new Scene(root, 875, 515));
             stage.setResizable(false);
             stage.show();
 

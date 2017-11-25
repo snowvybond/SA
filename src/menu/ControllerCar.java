@@ -50,7 +50,7 @@ public class ControllerCar extends Controller{
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("ตารางรายการขอใช้รถ");
-            stage.setScene(new Scene(root, 375, 235));
+            stage.setScene(new Scene(root, 370, 230));
             stage.setResizable(false);
             controller.setStage(stage);
             controller.getOk().setDisable(true);

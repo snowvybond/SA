@@ -120,7 +120,7 @@ public class Controller {
             ControllerFinance controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("ตารางรายการขอใช้รถ");
-            stage.setScene(new Scene(root, 885, 525));
+            stage.setScene(new Scene(root, 880, 520));
             stage.setResizable(false);
             stage.show();
 
