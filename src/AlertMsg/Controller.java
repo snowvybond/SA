@@ -70,6 +70,8 @@ public class Controller {
             DatabaseConnecter.updateString("update requestforcar set staus='ปฏิเสธคำขอ' where id='"+id+"'");
             controller.search();
         }
+        if(cConfirmRequest != null) cConfirmRequest.handleBtnCancelClickAction();
+        if (cRequest != null) cRequest.handleBtnCancelClickAction();
         close();
     }
 
@@ -78,9 +80,6 @@ public class Controller {
     }
 
     protected void close() {
-        if(cConfirmRequest != null) cConfirmRequest.handleBtnCancelClickAction();
-        if (cRequest != null) cRequest.handleBtnCancelClickAction();
-
         stage.close();
     }
 

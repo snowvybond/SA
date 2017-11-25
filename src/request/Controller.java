@@ -11,6 +11,7 @@ import menu.ControllerFinance;
 import model.DatabaseConnecter;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Controller {
@@ -68,21 +69,16 @@ public class Controller {
     }
 
     private boolean checkData(){
-        System.out.println(cause.getValue().toString());
+//        System.out.println(cause.getValue().toString());
         if(id.getText().isEmpty()) return false;
         if(name.getText().isEmpty()) return false;
         if(cause.getValue() == null) return false;
         if(cause.getValue().equals("อื่นๆ") && causeText.getText().isEmpty()) return false;
-        if(startDate.getValue().toString().isEmpty()) return false;
-        if(endDate.getValue().toString().isEmpty()) return false;
-
-        System.out.println(startDate.getValue().toString());
-
-        String[] start = startDate.getValue().toString().split("-");
-        String[] end = endDate.getValue().toString().split("-");
-        int checkDate =(Integer.parseInt(end[0])+Integer.parseInt(end[1])*10+Integer.parseInt(end[2])) - (Integer.parseInt(start[0])+Integer.parseInt(start[1])*10+Integer.parseInt(start[2]));
-
-        if(checkDate<0) return false;
+        if(startDate.getValue() == null) return false;
+        if(endDate.getValue() == null) return false;
+        if(startDate.getValue().isBefore(LocalDate.now())) return false;
+        if(endDate.getValue().isBefore(LocalDate.now())) return false;
+        if(startDate.getValue().isAfter(endDate.getValue())) return false;
         if(destination.getValue() == null) return false;
 
         return true;
@@ -95,7 +91,7 @@ public class Controller {
             Stage stage = new Stage();
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
-            controller.setHeaderWarning("กรอกข้อมูลไม่ครบ");
+            controller.setHeaderWarning("กรอกข้อมูลผิดพลาด");
             stage.setTitle("Warning");
             stage.setScene(new Scene(root, 380, 100));
             stage.setResizable(false);
