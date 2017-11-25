@@ -106,7 +106,7 @@ public class ControllerFinance extends Controller {
 
     private boolean isCreate(){
         boolean check;
-        String query = "select id from requestforcar where user='"+userID+"' and (staus='working' or staus='approve' or staus='wait') ";
+        String query = "select id from requestforcar where user='"+userID+"' and (staus='อนุมัติแล้ว' or staus='รออนุมัติ') ";
         ArrayList<String> idForRequestForCarS = DatabaseConnecter.browseStringInArray(query);
         int remainRequestForCar = idForRequestForCarS.size();
         System.out.println(remainRequestForCar);
