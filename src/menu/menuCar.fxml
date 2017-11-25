@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerCar">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.ControllerCar">
    <children>
       <GridPane prefHeight="526.0" prefWidth="885.0">
         <columnConstraints>
@@ -96,11 +96,6 @@
                               <RadioButton fx:id="c3" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                               <RadioButton fx:id="c7" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                               <RadioButton fx:id="c1" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" selected="true" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" />
-                              <RadioButton fx:id="c5" layoutX="10.0" layoutY="101.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT">
-                                 <GridPane.margin>
-                                    <Insets />
-                                 </GridPane.margin>
-                              </RadioButton>
                               <Label fx:id="startDay1" focusTraversable="false" layoutX="358.0" layoutY="21.0" prefHeight="17.0" prefWidth="390.0" text="เลือกทั้งหมด" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="18.0" />
@@ -120,14 +115,6 @@
                                  <font>
                                     <Font size="18.0" />
                                  </font>
-                              </Label>
-                              <Label fx:id="startDay11111" focusTraversable="false" layoutX="36.0" layoutY="89.0" prefHeight="17.0" prefWidth="390.0" text="กำลังปฎิบัติงาน" GridPane.columnIndex="3">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                                 <GridPane.margin>
-                                    <Insets />
-                                 </GridPane.margin>
                               </Label>
                               <RadioButton fx:id="c6" layoutX="38.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
                               <Label fx:id="startDay111112" focusTraversable="false" layoutX="59.0" layoutY="159.0" prefHeight="17.0" prefWidth="390.0" text="คืนแล้ว" GridPane.columnIndex="3" GridPane.rowIndex="1">

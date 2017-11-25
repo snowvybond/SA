@@ -68,12 +68,15 @@ public class Controller {
     }
 
     private boolean checkData(){
+        System.out.println(cause.getValue().toString());
         if(id.getText().isEmpty()) return false;
         if(name.getText().isEmpty()) return false;
         if(cause.getValue() == null) return false;
         if(cause.getValue().equals("อื่นๆ") && causeText.getText().isEmpty()) return false;
         if(startDate.getValue().toString().isEmpty()) return false;
         if(endDate.getValue().toString().isEmpty()) return false;
+
+        System.out.println(startDate.getValue().toString());
 
         String[] start = startDate.getValue().toString().split("-");
         String[] end = endDate.getValue().toString().split("-");

@@ -21,6 +21,7 @@ import menu.ControllerFinance;
 import model.DatabaseConnecter;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class Controller {
@@ -89,6 +90,9 @@ public class Controller {
     private void showMenu(String location , menu.Controller controller) {
         System.out.println(username.getText() + "  " + password.getText());
         try {
+
+            System.out.println(LocalDateTime.now().toLocalDate());
+
             this.stage.close();
             FXMLLoader loader = new FXMLLoader(getClass().getResource(location));
             Parent root = loader.load();
