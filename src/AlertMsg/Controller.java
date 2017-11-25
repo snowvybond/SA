@@ -11,8 +11,7 @@ public class Controller {
     private request.Controller cRequest;
     private confirmRequest.Controller cConfirmRequest;
 
-    @FXML
-    private Label status;
+
 
     @FXML
     private Label headerConfirm;
@@ -21,16 +20,14 @@ public class Controller {
     private Label  headerWarning;
 
     @FXML
-    private Button ok = new Button();
+    protected Button ok = new Button();
 
     @FXML
-    private TextField input;
+    protected RadioButton used , unused;
 
     @FXML
-    private RadioButton used , unused;
+    protected final ToggleGroup group = new ToggleGroup();
 
-    @FXML
-    private final ToggleGroup group = new ToggleGroup();
 
     public void addStatusCar(){
         used.setUserData("ใช้งานได้");
@@ -39,10 +36,16 @@ public class Controller {
         unused.setToggleGroup(group);
     }
 
+
+
+
+
     public void setcRequest(request.Controller cRequest) { this.cRequest = cRequest; }
     public void setcConfirmRequest(confirmRequest.Controller cConfirmRequest) { this.cConfirmRequest = cConfirmRequest; }
     public void setHeaderWarning(String headerWarning) { this.headerWarning.setText(headerWarning); }
     public void setHeaderConfirm(String headerConfirm) { this.headerConfirm.setText(headerConfirm); }
+
+
     public Button getOk() { return ok; }
 
     public void setStage(Stage stage) { this.stage = stage; }
@@ -50,9 +53,7 @@ public class Controller {
     public void handleBtnOKClickAction(){
         ok();
     }
-
-    private void ok() {
-
+    protected void ok(){
         close();
     }
 
@@ -60,28 +61,14 @@ public class Controller {
         close();
     }
 
-    private void close() {
+    protected void close() {
         if(cConfirmRequest != null) cConfirmRequest.handleBtnCancelClickAction();
         if (cRequest != null) cRequest.handleBtnCancelClickAction();
 
         stage.close();
     }
 
-    public void handleBtnFoundClickAction(){
-        found();
-    }
 
-    private void found() {
-        status.setText("พบ");
-
-        if(status.getText().equals("พบ")) status.setTextFill(Color.GREEN);
-        else if(status.getText().equals("ไม่พบ")) status.setTextFill(Color.RED);
-    }
-
-    public void checkInput(){
-        if(input.getText().isEmpty()) ok.setDisable(true);
-        else ok.setDisable(false);
-    }
 
 
 }

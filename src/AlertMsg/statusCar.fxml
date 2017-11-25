@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AlertMsg.Controller">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AlertMsg.StatusCarController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -28,7 +28,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="ok" focusTraversable="false" layoutX="165.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleBtnOKClickAction" prefWidth="100.0" text="ยืนยัน">
+            <Button fx:id="ok" disable="true" focusTraversable="false" layoutX="165.0" layoutY="196.0" mnemonicParsing="false" onAction="#handleBtnOKClickAction" prefWidth="100.0" text="ยืนยัน">
                <font>
                   <Font size="18.0" />
                </font>
@@ -38,7 +38,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <RadioButton fx:id="use" focusTraversable="false" layoutX="104.0" layoutY="149.0" mnemonicParsing="false" selected="true" text="ใช้งานได้">
+            <RadioButton fx:id="used" focusTraversable="false" layoutX="104.0" layoutY="149.0" mnemonicParsing="false" selected="true" text="ใช้งานได้">
                <font>
                   <Font size="18.0" />
                </font>
@@ -56,11 +56,6 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="input" focusTraversable="false" layoutX="13.0" layoutY="74.0" onContextMenuRequested="#checkInput" onDragDetected="#checkInput" onDragDone="#checkInput" onDragDropped="#checkInput" onDragEntered="#checkInput" onDragExited="#checkInput" onDragOver="#checkInput" onInputMethodTextChanged="#checkInput" onKeyPressed="#checkInput" onKeyReleased="#checkInput" onKeyTyped="#checkInput" onMouseClicked="#checkInput" onMouseDragEntered="#checkInput" onMouseDragExited="#checkInput" onMouseDragOver="#checkInput" onMouseDragReleased="#checkInput" onMouseDragged="#checkInput" onMouseEntered="#checkInput" onMouseExited="#checkInput" onMouseMoved="#checkInput" onMousePressed="#checkInput" onMouseReleased="#checkInput" onRotate="#checkInput" onRotationFinished="#checkInput" onRotationStarted="#checkInput" onScroll="#checkInput" onScrollFinished="#checkInput" onScrollStarted="#checkInput" onSwipeDown="#checkInput" onSwipeLeft="#checkInput" onSwipeRight="#checkInput" onSwipeUp="#checkInput" onTouchMoved="#checkInput" onTouchPressed="#checkInput" onTouchReleased="#checkInput" onTouchStationary="#checkInput" onZoom="#checkInput" onZoomFinished="#checkInput" onZoomStarted="#checkInput" prefHeight="39.0" prefWidth="148.0" promptText="ใส่เลขทะเบียนรถ">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
             <Button focusTraversable="false" layoutX="166.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleBtnFoundClickAction" prefHeight="39.0" prefWidth="68.0" text="ค้นหา">
                <font>
                   <Font size="18.0" />
@@ -74,21 +69,21 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="สถานะ" GridPane.halignment="CENTER" GridPane.valignment="TOP">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="status" layoutX="49.0" layoutY="10.0" text="-" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                  <Label fx:id="status" alignment="CENTER" layoutX="49.0" layoutY="10.0" prefHeight="23.0" prefWidth="141.0" text="-" textFill="RED" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <GridPane.margin>
-                        <Insets bottom="5.0" />
+                        <Insets />
                      </GridPane.margin>
                   </Label>
                </children>
             </GridPane>
+            <TextField fx:id="input" layoutX="13.0" layoutY="73.0" prefHeight="39.0" prefWidth="143.0" promptText="กรอกทะเบียนรถ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
          </children>
       </Pane>
    </children>

@@ -122,4 +122,39 @@ public class DatabaseConnecter {
         }
         return rfc;
     }
+
+
+    public static void updateString(String query) {
+        Connection conn = null;
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:databaseFile.db";
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+//            System.out.println("Connection to SQLite has been established.");
+            if (conn != null){
+                DatabaseMetaData dm = (DatabaseMetaData)conn.getMetaData();
+//                System.out.println("Driver name: "+ dm.getDriverName());
+//                System.out.println("Product name: "+dm.getDatabaseProductName());
+                Statement statement = conn.createStatement();
+                statement.executeUpdate(query);
+//                System.out.println("Insert finish");
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+//                    System.out.println("closeDB");
+                }
+            }
+            catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+    }
 }
