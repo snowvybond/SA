@@ -22,7 +22,7 @@ public class StatusCarController extends Controller{
 
     private void searchCar(){
         String liscenseInput = input.getText();
-        liscenseResult = DatabaseConnecter.browserString("select liscenseplate from car where liscenseplate='"+liscenseInput+"' and liscenseplate not in (select liscenseplate from workassign where requestforcarid in (select id from requestforcar where status='working' or status='approve' or status='wait'))");
+        liscenseResult = DatabaseConnecter.browserString("select liscenseplate from car where liscenseplate='"+liscenseInput+"' and liscenseplate not in (select liscenseplate from workassign where requestforcarid in (select id from requestforcar where staus='working' or staus='approve' or staus='wait'))");
         if (liscenseInput.equals(liscenseResult)){
             found();
         }else {
