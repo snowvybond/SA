@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import menu.ControllerCivil;
+import view.RequestTable;
 
 
 import java.io.IOException;
@@ -66,6 +67,8 @@ public class Controller {
     private Stage stage;
     private Tab tab = new Tab();
     private boolean isSet;
+
+    private RequestTable table;
 
     public void initialize(){
         tab.setOnSelectionChanged(new EventHandler<Event>() {
@@ -163,5 +166,21 @@ public class Controller {
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+
+    public void setTable(RequestTable table) {
+        this.table = table;
+    }
+
+    public void setUp(){
+        id.setText(table.getId());
+        name.setText(table.getName());
+        causeText.setText(table.getCauseText());
+        startDate.setText(table.getStartDate());
+        endDate.setText(table.getEndDate());
+        destination.setText(table.getDestination());
+        distance.setText(table.getDistance());
+        priceGas.setText(table.getPriceGas());
+        detail.setText(table.getDetail());
     }
 }

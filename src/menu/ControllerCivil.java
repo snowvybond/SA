@@ -33,6 +33,8 @@ public class ControllerCivil extends Controller{
             Stage stage = new Stage();
             confirmRequest.Controller controller = loader.getController();
             controller.setStage(stage);
+            controller.setTable(table.getSelectionModel().getSelectedItem());
+            controller.setUp();
             stage.setTitle("Confirm Request");
             stage.setScene(new Scene(root, 490, 590));
             stage.setResizable(false);
