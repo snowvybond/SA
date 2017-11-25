@@ -4,12 +4,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import model.DatabaseConnecter;
+
+import java.util.ArrayList;
 
 public class Controller {
     private Stage stage;
 
     private request.Controller cRequest;
     private confirmRequest.Controller cConfirmRequest;
+
+    private int check;
+    private ArrayList<String> data;
 
 
 
@@ -53,7 +59,14 @@ public class Controller {
     public void handleBtnOKClickAction(){
         ok();
     }
+
     protected void ok(){
+        if (check == 1){
+            DatabaseConnecter.insertStringByArray(data ,"INSERT INTO requestforcar(startdate, enddate, detail, provience, causeofuse, user, staus) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        }
+        else if(check == 2){
+            System.out.println("pppp");
+        }
         close();
     }
 
@@ -66,6 +79,11 @@ public class Controller {
         if (cRequest != null) cRequest.handleBtnCancelClickAction();
 
         stage.close();
+    }
+
+    public void setData(ArrayList<String> data,int check){
+        this.data = data;
+        this.check = check;
     }
 
 

@@ -23,7 +23,7 @@ public class DatabaseConnecter {
                 ResultSet resultSet = statement.executeQuery(query);
                     if (!resultSet.isBeforeFirst() ) {
                         System.out.println("No data");
-//                        str = "0";
+                        str = "";
                     }
                     else{
                         str = resultSet.getString(1);
@@ -77,13 +77,24 @@ public class DatabaseConnecter {
                     String provience = resultSet.getString("provience");
                     String distance = DatabaseConnecter.browserString("select distance from destination where provience='"+provience+"'");
                     String fuelCost = DatabaseConnecter.browserString("select fuelcost from destination where provience='"+provience+"'");
-                    String driverID = DatabaseConnecter.browserString("select driverid from workassign where requestforcarid='"+id+"'");
-                    String driverName = DatabaseConnecter.browserString("select name from user where username='"+driverID+"'");
-                    driverName += " "+DatabaseConnecter.browserString("select surname from user where username='"+driverID+"'");
-                    String liscense = DatabaseConnecter.browserString("select liscenseplate from workassign where requestforcarid='"+id+"'");
-                    String carBrand = DatabaseConnecter.browserString("select brand from car where liscenseplate='"+liscense+"'");
-                    String carModel = DatabaseConnecter.browserString("select model from car where liscenseplate='"+liscense+"'");
-                    String carType = DatabaseConnecter.browserString("select type from car where liscenseplate='"+liscense+"'");
+
+                    String driverID = "-";
+                    String driverName = "-";
+                    String liscense = "-";
+                    String carBrand = "-";
+                    String carModel = "-";
+                    String carType = "-";
+
+                    if (!staus.equals("wait")){
+                        driverID = DatabaseConnecter.browserString("select driverid from workassign where requestforcarid='"+id+"'");
+                        driverName = DatabaseConnecter.browserString("select name from user where username='"+driverID+"'");
+                        driverName += " "+DatabaseConnecter.browserString("select surname from user where username='"+driverID+"'");
+                        liscense = DatabaseConnecter.browserString("select liscenseplate from workassign where requestforcarid='"+id+"'");
+                        carBrand = DatabaseConnecter.browserString("select brand from car where liscenseplate='"+liscense+"'");
+                        carModel = DatabaseConnecter.browserString("select model from car where liscenseplate='"+liscense+"'");
+                        carType = DatabaseConnecter.browserString("select type from car where liscenseplate='"+liscense+"'");
+                    }
+
                     String detail = resultSet.getString("detail");
                     ArrayList<String> data = new ArrayList<>();
                     data.add(id); //0
@@ -276,6 +287,50 @@ public class DatabaseConnecter {
             }
         }
         return rfc;
+    }
+
+
+
+    public static void insertStringByArray(ArrayList<String> data, String query) {
+        Connection conn = null;
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:databaseFile.db";
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+//            System.out.println("Connection to SQLite has been established.");
+            if (conn != null){
+                DatabaseMetaData dm = (DatabaseMetaData)conn.getMetaData();
+//                System.out.println("Driver name: "+ dm.getDriverName());
+//                System.out.println("Product name: "+dm.getDatabaseProductName());
+//                System.out.println("Insert :"+name);
+                PreparedStatement pstmt = conn.prepareStatement(query);
+                pstmt.setString(1,data.get(0));
+                pstmt.setString(2,data.get(1));
+                pstmt.setString(3,data.get(2));
+                pstmt.setString(4,data.get(3));
+                pstmt.setString(5,data.get(4));
+                pstmt.setString(6,data.get(5));
+                pstmt.setString(7,data.get(6));
+                pstmt.executeUpdate();
+                System.out.println("Insert finish");
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+//                    System.out.println("closeDB");
+                }
+            }
+            catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
     }
 
 

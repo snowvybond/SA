@@ -20,7 +20,7 @@ public class Controller {
     private Stage stage;
 
     private String userID;
-    private ArrayList<String> data;
+    private ArrayList<String> data = new ArrayList<>();
 
     @FXML
     private TextField id;
@@ -111,6 +111,8 @@ public class Controller {
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
             controller.setcRequest(this);
+            this.createData();
+            controller.setData(data,1);
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);
@@ -165,6 +167,18 @@ public class Controller {
             destination.getItems().add(i);
         }
 
-
+    }
+    private void createData(){
+        data.add(startDate.getValue().toString());
+        data.add(endDate.getValue().toString());
+        data.add(detail.getText());
+        data.add(destination.getValue().toString());
+        if (cause.getValue().equals("อื่นๆ")){
+            data.add(causeText.getText());
+        }else{
+            data.add(cause.getValue().toString());
+        }
+        data.add(userID);
+        data.add("wait");
     }
 }
