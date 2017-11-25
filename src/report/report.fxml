@@ -130,7 +130,7 @@
             </GridPane>
          </children>
       </GridPane>
-      <Button alignment="TOP_CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBtnBackClickAction" prefHeight="35.0" prefWidth="97.0" style="-fx-font-size: ;" text="กลับ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Button alignment="TOP_CENTER" contentDisplay="TOP" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleBtnBackClickAction" prefHeight="35.0" prefWidth="97.0" style="-fx-font-size: 18;" text="กลับ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
