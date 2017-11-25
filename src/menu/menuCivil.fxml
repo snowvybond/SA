@@ -171,7 +171,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="13.0" layoutY="94.0" mnemonicParsing="false" onAction="#handkeBtnConfirmClickAction" prefHeight="35.0" prefWidth="120.0" text="อนุมัติ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button fx:id="btnApprove" disable="true" layoutX="13.0" layoutY="94.0" mnemonicParsing="false" onAction="#handkeBtnConfirmClickAction" prefHeight="35.0" prefWidth="120.0" text="อนุมัติ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -181,7 +181,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="13.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleBtnRejectAction" prefHeight="35.0" prefWidth="120.0" text="ปฎิเสธ" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button fx:id="btnReject" disable="true" layoutX="13.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleBtnRejectAction" prefHeight="35.0" prefWidth="120.0" text="ปฎิเสธ" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>

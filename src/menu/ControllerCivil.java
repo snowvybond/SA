@@ -16,6 +16,9 @@ import java.util.ArrayList;
 
 public class ControllerCivil extends Controller{
 
+    @FXML private Button btnApprove;
+    @FXML private Button btnReject;
+
     @FXML protected TableColumn<RequestTable , String> nameColumn;
 
     public void handkeBtnConfirmClickAction(){
@@ -55,11 +58,23 @@ public class ControllerCivil extends Controller{
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);
-            controller.setHeaderConfirm("ยืนยันคำปฎิเสธการขอใช้รถรหัส XXXXX");
+            controller.setHeaderConfirm("ยืนยันคำปฎิเสธการขอใช้รถรหัส "+table.getSelectionModel().getSelectedItem().getId());
             stage.show();
 
         } catch (IOException e1) {
             e1.printStackTrace();
+        }
+    }
+
+    @Override
+    public void checkChoice(){
+        super.checkChoice();
+        if(!table.getSelectionModel().isEmpty()&&table.getSelectionModel().getSelectedItem().getStatus().equals("รออนุมัติ")) {
+            btnApprove.setDisable(false);
+            btnReject.setDisable(false);
+        }else {
+            btnApprove.setDisable(true);
+            btnReject.setDisable(true);
         }
     }
 

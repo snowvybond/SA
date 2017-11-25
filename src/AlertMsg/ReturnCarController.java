@@ -1,6 +1,7 @@
 package AlertMsg;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import menu.ControllerCar;
@@ -9,10 +10,14 @@ import view.RequestTable;
 
 public class ReturnCarController extends Controller {
 
+    @FXML private Label headerReturnCar;
     private RequestTable table;
     private ControllerCar controllerCar;
     public void setTable (RequestTable table){
         this.table = table;
+    }
+    public void setHeaderReturnCar(String liscence) {
+        headerReturnCar.setText(headerReturnCar.getText()+liscence);
     }
     public void setControllerCar(ControllerCar controllerCar) {
         this.controllerCar = controllerCar;

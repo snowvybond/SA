@@ -43,6 +43,7 @@ public class ControllerCar extends Controller{
             controller.setStage(stage);
             controller.setControllerCar(this);
             controller.setTable(table.getSelectionModel().getSelectedItem());
+            controller.setHeaderReturnCar(table.getSelectionModel().getSelectedItem().getLicensedPlate());
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 550, 150));
             stage.setResizable(false);
