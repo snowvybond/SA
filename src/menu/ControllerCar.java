@@ -49,7 +49,7 @@ public class ControllerCar extends Controller{
             Stage stage = new Stage();
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
-            stage.setTitle("Car system");
+            stage.setTitle("ตารางรายการขอใช้รถ");
             stage.setScene(new Scene(root, 375, 235));
             stage.setResizable(false);
             controller.setStage(stage);

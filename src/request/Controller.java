@@ -78,7 +78,7 @@ public class Controller {
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
             controller.setHeaderWarning("กรอกข้อมูลไม่ครบ");
-            stage.setTitle("Alert Warning");
+            stage.setTitle("Warning");
             stage.setScene(new Scene(root, 380, 100));
             stage.setResizable(false);
             stage.show();
@@ -119,7 +119,7 @@ public class Controller {
             Stage stage = new Stage();
             ControllerFinance controller = loader.getController();
             controller.setStage(stage);
-            stage.setTitle("Car system");
+            stage.setTitle("ตารางรายการขอใช้รถ");
             stage.setScene(new Scene(root, 885, 525));
             stage.setResizable(false);
             stage.show();
