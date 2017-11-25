@@ -65,7 +65,8 @@ public class Controller {
             DatabaseConnecter.insertStringByArray(data ,"INSERT INTO requestforcar(startdate, enddate, detail, provience, causeofuse, user, staus) VALUES (?, ?, ?, ?, ?, ?, ?)");
         }
         else if(check == 2){
-            System.out.println("pppp");
+            String id = data.get(0);
+            DatabaseConnecter.updateString("update requestforcar set staus='ปฏิเสธคำขอ' where id='"+id+"'");
         }
         close();
     }

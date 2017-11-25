@@ -34,10 +34,15 @@ public class Controller {
     }
 
 
+    public void initialize(){
+        displayTable();
+    }
 
-
-    private void displayTable(String query){
-        ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
+    private void displayTable(){
+        String query = "select * from car";
+        ArrayList<ArrayList> allData = DatabaseConnecter.browseCar(query);
+        int totalMission = 0;
+        int totalDistance = 0;
         int count = 0;
         for (ArrayList<String> i : allData){
             table.getItems().add(count++,new TableReport(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4) , i.get(5)));
@@ -47,9 +52,11 @@ public class Controller {
             modelCarColumn.setCellValueFactory(new PropertyValueFactory<>("genCar"));
             totalHourColumn.setCellValueFactory(new PropertyValueFactory<>("totalHour"));
             totalDistanceColumn.setCellValueFactory(new PropertyValueFactory<>("totalDistance"));
-            hourText.setText((Integer.parseInt(hourText.getText()) + Integer.parseInt(i.get(4)))+"");
-            distanceText.setText((Integer.parseInt(distanceText.getText()) + Integer.parseInt(i.get(5)))+"");
+            totalMission += Integer.parseInt(i.get(4));
+            totalDistance += Integer.parseInt(i.get(5));
         }
+        hourText.setText(Integer.toString(totalMission));
+        distanceText.setText(Integer.toString(totalDistance));
     }
 
     private void showMenu() {

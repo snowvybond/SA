@@ -55,6 +55,9 @@ public class ControllerCivil extends Controller{
             Stage stage = new Stage();
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
+            ArrayList<String> data = new ArrayList<>();
+            data.add(table.getSelectionModel().getSelectedItem().getId());
+            controller.setData(data,2);
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);

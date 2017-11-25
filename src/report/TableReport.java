@@ -6,7 +6,7 @@ public class TableReport {
     private String licensedPlate;
     private String brandCar;
     private String genCar;
-    private String totalHour;
+    private String totalMission;
     private String totalDistance;
 
     public TableReport(String typeCar, String licensedPlate, String brandCar, String genCar, String totalHour, String totalDistance) {
@@ -14,7 +14,7 @@ public class TableReport {
         this.licensedPlate = licensedPlate;
         this.brandCar = brandCar;
         this.genCar = genCar;
-        this.totalHour = totalHour;
+        this.totalMission = totalHour;
         this.totalDistance = totalDistance;
     }
 
@@ -31,9 +31,10 @@ public class TableReport {
         return genCar;
     }
     public String getTotalHour() {
-        return totalHour;
+        return totalMission;
     }
     public String getTotalDistance() {
         return totalDistance;
     }
 }
+

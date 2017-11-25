@@ -2,6 +2,8 @@ package model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class DatabaseConnecter {
 
@@ -85,7 +87,7 @@ public class DatabaseConnecter {
                     String carModel = "-";
                     String carType = "-";
 
-                    if (!staus.equals("รออนุมัติ")){
+                    if (staus.equals("อนุมัติแล้ว")||staus.equals("คืนแล้ว")){
                         driverID = DatabaseConnecter.browserString("select driverid from workassign where requestforcarid='"+id+"'");
                         driverName = DatabaseConnecter.browserString("select name from user where username='"+driverID+"'");
                         driverName += " "+DatabaseConnecter.browserString("select surname from user where username='"+driverID+"'");
@@ -331,6 +333,60 @@ public class DatabaseConnecter {
                 System.out.println(ex.getMessage());
             }
         }
+    }
+
+    public static ArrayList browseCar(String query) {
+        Connection conn = null;
+        ArrayList<ArrayList> cars = new ArrayList<>();
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:databaseFile.db";
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+//            System.out.println("Connection to SQLite has been established.");
+            if (conn != null){
+                DatabaseMetaData dm = (DatabaseMetaData)conn.getMetaData();
+//                System.out.println("Driver name: "+dm.getDriverName());
+//                System.out.println("Product name: "+dm.getDatabaseProductName());
+//                System.out.println("----------------DATA----------------");
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+                while (resultSet.next()) {
+                    String type = resultSet.getString("type");
+                    String liscense = resultSet.getString("liscenseplate");
+                    String brand = resultSet.getString("brand");
+                    String gen = resultSet.getString("model");
+                    String totalMission = resultSet.getString("totalmission");
+                    String totalDistance = resultSet.getString("totaldistance");
+                    ArrayList<String> data = new ArrayList<>();
+//                    data.add(type);
+//                    data.add(liscense);
+//                    data.add(brand);
+//                    data.add(gen);
+//                    data.add(totalMission);
+//                    data.add(totalDistance);
+                    Collections.addAll(data,type,liscense,brand,gen,totalMission,totalDistance);
+                    cars.add(data);
+                }
+
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+//                    System.out.println("closeDB");
+                    return cars;
+                }
+            }
+            catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return cars;
     }
 
 
