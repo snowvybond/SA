@@ -218,7 +218,7 @@
             <TableView fx:id="table" focusTraversable="false" onDragOver="#checkChoice" onMouseDragOver="#checkChoice" onMouseDragged="#checkChoice" onMouseMoved="#checkChoice" onMousePressed="#checkChoice" onMouseReleased="#checkChoice" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="idColumn" maxWidth="155.0" prefWidth="110.0" style="-fx-font-size: 18;" text="ID" />
-                  <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="314.0" style="-fx-font-size: 18;" text="ชื่อผู้ขอใช้รถ" />
+                  <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="314.0" style="-fx-font-size: 18;" text="ชื่อ-สกุล ผู้ขอใช้รถ" />
                   <TableColumn fx:id="causeTextColumn" minWidth="0.0" prefWidth="167.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
                   <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="138.0" style="-fx-font-size: 18;" text="สถานะ" />
                   <TableColumn fx:id="startDateColumn" minWidth="0.0" prefWidth="195.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
