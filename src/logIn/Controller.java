@@ -112,7 +112,7 @@ public class Controller {
             Stage stage = new Stage();
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
-            stage.setTitle("Alert Warning");
+            stage.setTitle("Warning");
             stage.setScene(new Scene(root, 380, 100));
             stage.setResizable(false);
             stage.show();

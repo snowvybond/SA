@@ -179,7 +179,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </Button>
-                                    <Button fx:id="btnSeDetail" disable="true" layoutX="44.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                    <Button fx:id="btnSeeDetail" disable="true" layoutX="44.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleBtnSeeDetailClickAction" prefHeight="35.0" prefWidth="120.0" text="ดูรายละเอียด" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -215,7 +215,7 @@
                   <Pane prefHeight="384.0" prefWidth="2336.0" />
                </content>
             </ScrollPane>
-            <TableView fx:id="table" focusTraversable="false" onDragOver="#checkChoice" onMouseDragged="#checkChoice" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
+            <TableView fx:id="table" focusTraversable="false" onDragOver="#checkChoice" onMouseDragOver="#checkChoice" onMouseDragged="#checkChoice" onMouseMoved="#checkChoice" onMousePressed="#checkChoice" onMouseReleased="#checkChoice" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
               <columns>
                 <TableColumn fx:id="idColumn" maxWidth="155.0" prefWidth="110.0" style="-fx-font-size: 18;" text="ID" />
                   <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="314.0" style="-fx-font-size: 18;" text="ชื่อผู้ขอใช้รถ" />

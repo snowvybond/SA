@@ -1,6 +1,5 @@
 package menu;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -62,16 +61,8 @@ public class ControllerCar extends Controller{
         }
     }
 
-
     @FXML
-    public void handleBtnSeeDetailClickAction (ActionEvent event){
-
-        if (table.getSelectionModel().isEmpty()){
-            selectAlert();
-        }
-        else {
-            RequestTable t = table.getSelectionModel().getSelectedItem();
-            seeDetail(this,"/menu/menuCar.fxml",t);
-        }
+    public void handleBtnSignOutClickAction(){
+        signOut();
     }
 }

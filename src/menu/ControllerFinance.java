@@ -19,24 +19,27 @@ public class ControllerFinance extends Controller {
 
     public void handleBtnCreateAction(){
 
-        if(isCreate) { ShowAlertWarning(); }
+        if(true) { ShowAlertWarning(); }
         else createRequest();
-        isCreate = !isCreate;
+//        isCreate = !isCreate;
     }
 
 
     private void ShowAlertWarning(){
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Warning");
-        alert.setHeaderText(null);
-        Label text = new Label();
-        text.setFont(Font.font(20));
-        text.setText("คุณมีรายการขอใช้รถแล้ว!!");
-        alert.getDialogPane().setContent(text);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertWarning.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            AlertMsg.Controller controller = loader.getController();
+            controller.setStage(stage);
+            controller.setHeaderWarning("คุณมีรายการขอใช้รถแล้ว");
+            stage.setTitle("Warning");
+            stage.setScene(new Scene(root, 380, 100));
+            stage.setResizable(false);
+            stage.show();
 
-        Optional<ButtonType> result = alert.showAndWait();
-        if (result.get() == ButtonType.OK){
-            // ... user chose OK
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
     }
 

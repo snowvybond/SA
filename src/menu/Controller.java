@@ -174,13 +174,7 @@ public class Controller {
     }
 
     @FXML
-    public void handleBtnSearchClickAction(){ search();}
-
-    @FXML
-    public void handleBtnSignOutClickAction(){
-        signOut();
-    }
-
+    public void handleBtnSearchClickAction(){ search(); }
 
     public void search(){
         table.getItems().clear();
@@ -240,7 +234,16 @@ public class Controller {
         else btnSeeDetail.setDisable(true);
     }
 
+    public void handleBtnSeeDetailClickAction (ActionEvent event){
 
+        if (table.getSelectionModel().isEmpty()){
+            selectAlert();
+        }
+        else {
+            RequestTable t = table.getSelectionModel().getSelectedItem();
+            seeDetail(this,"/menu/menuFinance.fxml",t);
+        }
+    }
 
     public void setStage(Stage stage){
         this.stage = stage;
@@ -249,5 +252,10 @@ public class Controller {
 
     protected void selectAlert(){
         System.out.println("เลือกด้วยโว้ย");
+    }
+
+    @FXML
+    public void handleBtnSignOutClickAction(){
+        signOut();
     }
 }
