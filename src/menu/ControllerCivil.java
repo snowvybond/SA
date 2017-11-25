@@ -91,6 +91,7 @@ public class ControllerCivil extends Controller{
             table.getItems().add(count++,new RequestTable(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4),i.get(5),i.get(6),i.get(7),i.get(8),i.get(9),i.get(10),i.get(11),i.get(12),i.get(13),i.get(14),i.get(15)));
             idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
             nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+            statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
             causeTextColumn.setCellValueFactory(new PropertyValueFactory<>("causeText"));
             statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
             startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
@@ -117,6 +118,30 @@ public class ControllerCivil extends Controller{
         else {
             RequestTable t = table.getSelectionModel().getSelectedItem();
             seeDetail(this,"/menu/menuCivil.fxml",t);
+        }
+    }
+
+
+    public void seeDetail(Controller controller ,String location ,RequestTable table){
+        try {
+            this.stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/see/Detail.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            see.Controller c = loader.getController();
+            c.setStage(stage);
+            c.setController(controller);
+            c.setLocation(location);
+            c.setData(table);
+            c.setController(this);
+            c.setName(table.getName());
+            stage.setTitle("Detail");
+            stage.setScene(new Scene(root, 490, 590));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
         }
     }
 

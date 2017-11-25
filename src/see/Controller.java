@@ -195,5 +195,6 @@ public class Controller {
         typeCar.setText(table.getTypeCar());
         brandCar.setText(table.getBrandCar());
         genCar.setText(table.getGenCar());
+        detail.setText(table.getDetail());
     }
 }

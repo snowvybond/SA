@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class Controller {
 
-    private Stage stage;
+    protected Stage stage;
 
     protected static String userID;
 
@@ -213,6 +213,7 @@ public class Controller {
             table.getItems().add(count++,new RequestTable(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4),i.get(5),i.get(6),i.get(7),i.get(8),i.get(9),i.get(10),i.get(11),i.get(12),i.get(13),i.get(14),i.get(15)));
             idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
             causeTextColumn.setCellValueFactory(new PropertyValueFactory<>("causeText"));
+            statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
             startDateColumn.setCellValueFactory(new PropertyValueFactory<>("startDate"));
             endDateColumn.setCellValueFactory(new PropertyValueFactory<>("endDate"));
             destinationColumn.setCellValueFactory(new PropertyValueFactory<>("destination"));
@@ -234,16 +235,10 @@ public class Controller {
         else btnSeeDetail.setDisable(true);
     }
 
-    public void handleBtnSeeDetailClickAction (ActionEvent event){
-
-        if (table.getSelectionModel().isEmpty()){
-            selectAlert();
-        }
-        else {
-            RequestTable t = table.getSelectionModel().getSelectedItem();
-            seeDetail(this,"/menu/menuFinance.fxml",t);
-        }
-    }
+//    public void handleBtnSeeDetailClickAction (ActionEvent event){
+//
+//
+//    }
 
     public void setStage(Stage stage){
         this.stage = stage;
