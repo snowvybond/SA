@@ -29,7 +29,7 @@ public class ControllerCar extends Controller{
     @Override
     public void checkChoice(){
         super.checkChoice();
-        if(!table.getSelectionModel().isEmpty()&&table.getSelectionModel().getSelectedItem().getStatus().equals("working")) {
+        if(!table.getSelectionModel().isEmpty()&&table.getSelectionModel().getSelectedItem().getStatus().equals("อนุมัติแล้ว")) {
             btnReturnCar.setDisable(false);
         }else btnReturnCar.setDisable(true);
     }

@@ -36,7 +36,7 @@ public class Controller {
     protected final ToggleGroup group = new ToggleGroup();
 
     @FXML
-    protected RadioButton c1 , c2 , c3 , c4 , c5 , c6 , c7 , c8;
+    protected RadioButton c1 , c2 , c3 , c4 , c6 , c7 , c8;
 
     @FXML protected TableColumn<RequestTable , String> idColumn;
     @FXML protected TableColumn<RequestTable , String> causeTextColumn;
@@ -159,7 +159,6 @@ public class Controller {
         c2.setUserData("wait");
         c3.setUserData("yes");
         c4.setUserData("id");
-        c5.setUserData("working");
         c6.setUserData("return");
         c7.setUserData("reject");
         c8.setUserData("date");
@@ -167,7 +166,6 @@ public class Controller {
         c2.setToggleGroup(group);
         c3.setToggleGroup(group);
         c4.setToggleGroup(group);
-        c5.setToggleGroup(group);
         c6.setToggleGroup(group);
         c7.setToggleGroup(group);
         c8.setToggleGroup(group);
@@ -190,9 +188,6 @@ public class Controller {
         }
         else if (c4.isSelected()){ //id
             query = "select * from requestforcar where id='"+id.getText()+"'";
-        }
-        else if (c5.isSelected()){ //working
-            query = "select * from requestforcar where staus='กำลังปฏิบัติงาน'";
         }
         else if (c6.isSelected()){ //returned
             query = "select * from requestforcar where staus='คืนแล้ว'";

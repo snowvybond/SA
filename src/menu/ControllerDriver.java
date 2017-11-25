@@ -33,9 +33,6 @@ public class ControllerDriver  extends Controller{
         else if (c4.isSelected()){ //id
             query = "select * from requestforcar where id='"+id.getText()+"' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
-        else if (c5.isSelected()){ //working
-            query = "select * from requestforcar where staus='กำลังปฏิบัติงาน' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
-        }
         else if (c6.isSelected()){ //returned
             query = "select * from requestforcar where staus='คืนแล้ว' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }

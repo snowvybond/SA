@@ -80,9 +80,6 @@ public class ControllerFinance extends Controller {
         else if (c4.isSelected()){ //id
             query = "select * from requestforcar where user='"+userID+"'"+"and id='"+id.getText()+"'";
         }
-        else if (c5.isSelected()){ //working
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='กำลังปฏิบัติงาน'";
-        }
         else if (c6.isSelected()){ //returned
             query = "select * from requestforcar where user='"+userID+"'"+"and staus='คืนแล้ว'";
         }
