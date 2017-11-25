@@ -95,7 +95,7 @@ public class Controller {
             controller.setStage(stage);
             controller.setUserID(username.getText());
             controller.initialize();
-            stage.setTitle("Car system");
+            stage.setTitle("ตารางรายการขอใช้รถ");
             stage.setScene(new Scene(root, 875, 515));
             stage.setResizable(false);
             stage.show();
