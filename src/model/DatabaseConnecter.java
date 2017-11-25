@@ -85,7 +85,7 @@ public class DatabaseConnecter {
                     String carModel = "-";
                     String carType = "-";
 
-                    if (!staus.equals("wait")){
+                    if (!staus.equals("รออนุมัติ")){
                         driverID = DatabaseConnecter.browserString("select driverid from workassign where requestforcarid='"+id+"'");
                         driverName = DatabaseConnecter.browserString("select name from user where username='"+driverID+"'");
                         driverName += " "+DatabaseConnecter.browserString("select surname from user where username='"+driverID+"'");

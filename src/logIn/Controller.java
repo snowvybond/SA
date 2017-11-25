@@ -47,6 +47,8 @@ public class Controller {
     @FXML
     public void initialize(){
 
+
+
         btnOK.setDisable(true);
         username.textProperty().addListener((ObservableValue <? extends String> observable, String oldValue, String newValue) -> {
             btnOK.setDisable(newValue.trim().isEmpty());

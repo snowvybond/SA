@@ -25,25 +25,25 @@ public class ControllerDriver  extends Controller{
             query = "select * from requestforcar where id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         else if (c2.isSelected()){ //wait
-            query = "select * from requestforcar where staus='wait' and id in(select requestforcarid from workassign where driverid='"+userID+"')" ;
+            query = "select * from requestforcar where staus='รออนุมัติ' and id in(select requestforcarid from workassign where driverid='"+userID+"')" ;
         }
         else if (c3.isSelected()){ //approve
-            query = "select * from requestforcar where staus='approve' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+            query = "select * from requestforcar where staus='อนุมัติแล้ว' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         else if (c4.isSelected()){ //id
             query = "select * from requestforcar where id='"+id.getText()+"' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         else if (c5.isSelected()){ //working
-            query = "select * from requestforcar where staus='working' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+            query = "select * from requestforcar where staus='กำลังปฏิบัติงาน' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         else if (c6.isSelected()){ //returned
-            query = "select * from requestforcar where staus='returned' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+            query = "select * from requestforcar where staus='คืนแล้ว' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         else if (c7.isSelected()){ //reject
-            query = "select * from requestforcar where staus='reject' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+            query = "select * from requestforcar where staus='ปฏิเสธคำขอ' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         else if (c8.isSelected()){ //date
-            query = "select * from requestforcar where staus='wait' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+            query = "select * from requestforcar where staus='รอ' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         displayTable(query);
     }

@@ -72,25 +72,25 @@ public class ControllerFinance extends Controller {
             query = "select * from requestforcar where user='"+userID+"'";
         }
         else if (c2.isSelected()){ //wait
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='wait'";
+            query = "select * from requestforcar where user='"+userID+"'"+"and staus='รออนุมัติ'";
         }
         else if (c3.isSelected()){ //approve
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='approve'";
+            query = "select * from requestforcar where user='"+userID+"'"+"and staus='อนุมัติแล้ว'";
         }
         else if (c4.isSelected()){ //id
             query = "select * from requestforcar where user='"+userID+"'"+"and id='"+id.getText()+"'";
         }
         else if (c5.isSelected()){ //working
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='working'";
+            query = "select * from requestforcar where user='"+userID+"'"+"and staus='กำลังปฏิบัติงาน'";
         }
         else if (c6.isSelected()){ //returned
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='returned'";
+            query = "select * from requestforcar where user='"+userID+"'"+"and staus='คืนแล้ว'";
         }
         else if (c7.isSelected()){ //reject
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='reject'";
+            query = "select * from requestforcar where user='"+userID+"'"+"and staus='ปฏิเสธคำขอ'";
         }
         else if (c8.isSelected()){ //date
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='wait'";
+            query = "select * from requestforcar where user='"+userID+"'"+"and staus='รอ'";
         }
         displayTable(query);
     }

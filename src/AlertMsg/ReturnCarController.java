@@ -21,7 +21,7 @@ public class ReturnCarController extends Controller {
     @Override
     protected void ok() {
         String requestForCarId = table.getId();
-        String query = "update requestforcar set staus='returned' where id='"+requestForCarId+"'";
+        String query = "update requestforcar set staus='คืนแล้ว' where id='"+requestForCarId+"'";
         DatabaseConnecter.updateString(query);
         String liscensePlate = table.getLicensedPlate();
         String status ="";

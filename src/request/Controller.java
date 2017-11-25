@@ -179,6 +179,6 @@ public class Controller {
             data.add(cause.getValue().toString());
         }
         data.add(userID);
-        data.add("wait");
+        data.add("รออนุมัติ");
     }
 }

@@ -183,25 +183,25 @@ public class Controller {
             query = "select * from requestforcar";
         }
         else if (c2.isSelected()){ //wait
-            query = "select * from requestforcar where staus='wait'";
+            query = "select * from requestforcar where staus='รออนุมัติ'";
         }
         else if (c3.isSelected()){ //approve
-            query = "select * from requestforcar where staus='approve'";
+            query = "select * from requestforcar where staus='อนุมัติแล้ว'";
         }
         else if (c4.isSelected()){ //id
             query = "select * from requestforcar where id='"+id.getText()+"'";
         }
         else if (c5.isSelected()){ //working
-            query = "select * from requestforcar where staus='working'";
+            query = "select * from requestforcar where staus='กำลังปฏิบัติงาน'";
         }
         else if (c6.isSelected()){ //returned
-            query = "select * from requestforcar where staus='returned'";
+            query = "select * from requestforcar where staus='คืนแล้ว'";
         }
         else if (c7.isSelected()){ //reject
-            query = "select * from requestforcar where staus='reject'";
+            query = "select * from requestforcar where staus='ปฏิเสธคำขอ'";
         }
         else if (c8.isSelected()){ //date
-            query = "select * from requestforcar where staus='wait'";
+            query = "select * from requestforcar where staus=''";
         }
         displayTable(query);
     }
