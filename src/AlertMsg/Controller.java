@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import menu.ControllerCar;
 import model.DatabaseConnecter;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class Controller {
 
     @FXML
     protected final ToggleGroup group = new ToggleGroup();
+    protected menu.Controller controller;
 
 
     public void addStatusCar(){
@@ -42,10 +44,9 @@ public class Controller {
         unused.setToggleGroup(group);
     }
 
-
-
-
-
+    public void setController(menu.Controller controller) {
+        this.controller = controller;
+    }
     public void setcRequest(request.Controller cRequest) { this.cRequest = cRequest; }
     public void setcConfirmRequest(confirmRequest.Controller cConfirmRequest) { this.cConfirmRequest = cConfirmRequest; }
     public void setHeaderWarning(String headerWarning) { this.headerWarning.setText(headerWarning); }
@@ -67,6 +68,7 @@ public class Controller {
         else if(check == 2){
             String id = data.get(0);
             DatabaseConnecter.updateString("update requestforcar set staus='ปฏิเสธคำขอ' where id='"+id+"'");
+            controller.search();
         }
         close();
     }

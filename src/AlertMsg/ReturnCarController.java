@@ -12,15 +12,11 @@ public class ReturnCarController extends Controller {
 
     @FXML private Label headerReturnCar;
     private RequestTable table;
-    private ControllerCar controllerCar;
     public void setTable (RequestTable table){
         this.table = table;
     }
     public void setHeaderReturnCar(String liscence) {
         headerReturnCar.setText(headerReturnCar.getText()+liscence);
-    }
-    public void setControllerCar(ControllerCar controllerCar) {
-        this.controllerCar = controllerCar;
     }
 
     @Override
@@ -46,7 +42,7 @@ public class ReturnCarController extends Controller {
         }
         String query4 = "update car set status='"+status+"' where liscenseplate='"+liscensePlate+"'";
         DatabaseConnecter.updateString(query4);
-        controllerCar.search();
+        controller.search();
         close();
     }
 

@@ -107,7 +107,7 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="hourText" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="152.0" text="A" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                              <Label fx:id="missionText" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="152.0" text="A" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

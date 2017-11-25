@@ -58,6 +58,7 @@ public class ControllerCivil extends Controller{
             ArrayList<String> data = new ArrayList<>();
             data.add(table.getSelectionModel().getSelectedItem().getId());
             controller.setData(data,2);
+            controller.setController(this);
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);

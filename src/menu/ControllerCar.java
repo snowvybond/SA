@@ -41,7 +41,7 @@ public class ControllerCar extends Controller{
             Stage stage = new Stage();
             ReturnCarController controller = loader.getController();
             controller.setStage(stage);
-            controller.setControllerCar(this);
+            controller.setController(this);
             controller.setTable(table.getSelectionModel().getSelectedItem());
             controller.setHeaderReturnCar(table.getSelectionModel().getSelectedItem().getLicensedPlate());
             stage.setTitle("Confirmation");

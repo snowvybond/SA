@@ -21,7 +21,7 @@ public class Controller {
     @FXML protected TableColumn<TableReport , String> totalHourColumn;
     @FXML protected TableColumn<TableReport , String> totalDistanceColumn;
     @FXML protected TableView<TableReport> table;
-    @FXML protected Label hourText;
+    @FXML protected Label missionText;
     @FXML protected Label distanceText;
 
 
@@ -55,7 +55,7 @@ public class Controller {
             totalMission += Integer.parseInt(i.get(4));
             totalDistance += Integer.parseInt(i.get(5));
         }
-        hourText.setText(Integer.toString(totalMission));
+        missionText.setText(Integer.toString(totalMission));
         distanceText.setText(Integer.toString(totalDistance));
     }
 
@@ -67,7 +67,7 @@ public class Controller {
             Stage stage = new Stage();
             ControllerCivil controller = loader.getController();
             controller.setStage(stage);
-            stage.setTitle("Car system");
+            stage.setTitle("ตารางรายการขอใช้รถ");
             stage.setScene(new Scene(root, 885, 525));
             stage.setResizable(false);
             stage.show();
