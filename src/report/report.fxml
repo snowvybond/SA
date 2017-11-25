@@ -48,7 +48,7 @@
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Label alignment="CENTER" layoutX="1.0" layoutY="5.0" prefHeight="30.0" prefWidth="938.0" text="รายงานค่าน้ำมันประจำปี">
+                              <Label alignment="CENTER" layoutX="1.0" layoutY="5.0" prefHeight="30.0" prefWidth="938.0" text="รายงานการใช้รถยนต์ประจำปี">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
@@ -83,10 +83,12 @@
                      <children>
                         <TableView prefHeight="449.0" prefWidth="626.0">
                           <columns>
-                              <TableColumn prefWidth="142.0" style="-fx-font-size: 18;" text="รหัสพนักงาน" />
-                            <TableColumn prefWidth="389.0" style="-fx-font-size: 18;" text="ชื่อพนักงานขับรถ" />
-                              <TableColumn prefWidth="203.0" style="-fx-font-size: 18;" text="จำนวนงานที่ทำทั้งหมด" />
-                            <TableColumn prefWidth="203.0" style="-fx-font-size: 18;" text="ชั่วโมงการทำงานทั้งหมด" />
+                              <TableColumn prefWidth="142.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
+                            <TableColumn prefWidth="105.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
+                              <TableColumn prefWidth="93.0" style="-fx-font-size: 18;" text="รุ่น" />
+                              <TableColumn prefWidth="201.0" style="-fx-font-size: 18;" />
+                              <TableColumn minWidth="0.0" prefWidth="212.0" style="-fx-font-size: 18;" text="จำนวนงานที่ทำทั้งหมด" />
+                            <TableColumn maxWidth="184.0" prefWidth="184.0" style="-fx-font-size: 18;" text="ระยะทางทั้งหมด" />
                           </columns>
                         </TableView>
                         <GridPane GridPane.rowIndex="1">

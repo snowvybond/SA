@@ -108,7 +108,6 @@ public class ControllerCivil extends Controller{
         }
     }
 
-
     @FXML
     public void handleBtnSeeDetailClickAction (ActionEvent event){
 
@@ -117,7 +116,7 @@ public class ControllerCivil extends Controller{
         }
         else {
             RequestTable t = table.getSelectionModel().getSelectedItem();
-            seeDetail(this,"/menu/meneCivil.fxml",t);
+            seeDetail(this,"/menu/menuCivil.fxml",t);
         }
     }
 
