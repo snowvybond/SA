@@ -1,5 +1,6 @@
 package request;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,13 +8,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import menu.ControllerFinance;
+import model.DatabaseConnecter;
+
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Controller {
 
     @FXML
     private Button ok , cancel;
     private Stage stage;
+
+    private String userID;
+    private ArrayList<String> data;
 
     @FXML
     private TextField id;
@@ -39,6 +46,7 @@ public class Controller {
     @FXML
     private TextArea detail;
 
+
     @FXML
     public void handleBtnClickOKAction(){
         showComfirmRequest();
@@ -50,6 +58,13 @@ public class Controller {
         }else{
             showAlert();
         }
+    }
+
+    @FXML
+    public void checkCause(){
+//        System.out.println(cause.getSelectionModel().getSelectedItem());
+        if(!cause.getSelectionModel().isEmpty() && cause.getSelectionModel().getSelectedItem().equals("อื่นๆ")) causeText.setDisable(false);
+        else causeText.setDisable(true);
     }
 
     private boolean checkData(){
@@ -130,4 +145,26 @@ public class Controller {
     }
 
     public void setStage(Stage stage){ this.stage = stage; }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
+    }
+
+    public void setUp (){
+        String userName = DatabaseConnecter.browserString("select name from user where username='"+userID+"'");
+        userName += " "+ DatabaseConnecter.browserString("select surname from user where username='"+userID+"'");
+        int idData = Integer.parseInt(DatabaseConnecter.browserString("select max(id) from requestforcar"))+1;
+        ArrayList<String> causeOfUse = DatabaseConnecter.browseStringInArray("select cause from causeofuse");
+        ArrayList<String> provience = DatabaseConnecter.browseStringInArray("select provience from destination");
+        id.setText(Integer.toString(idData));
+        name.setText(userName);
+        for (String i :causeOfUse){
+            cause.getItems().add(i);
+        }
+        for (String i: provience){
+            destination.getItems().add(i);
+        }
+
+
+    }
 }

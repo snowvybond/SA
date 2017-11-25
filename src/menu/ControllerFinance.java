@@ -51,6 +51,8 @@ public class ControllerFinance extends Controller {
             Stage stage = new Stage();
             request.Controller controller = loader.getController();
             controller.setStage(stage);
+            controller.setUserID(userID);
+            controller.setUp();
             stage.setTitle("รายละเอียดขอใช้รถ");
             stage.setScene(new Scene(root, 425, 660));
             stage.setResizable(false);
