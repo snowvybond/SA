@@ -1,5 +1,6 @@
 package menu;
 
+import AlertMsg.ReturnCarController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,9 +26,10 @@ public class ControllerCar extends Controller{
         showAlertReturn();
     }
 
+    @Override
     public void checkChoice(){
         super.checkChoice();
-        if(table.getSelectionModel().getSelectedItem().getStatus().equals("working")) {
+        if(!table.getSelectionModel().isEmpty()&&table.getSelectionModel().getSelectedItem().getStatus().equals("working")) {
             btnReturnCar.setDisable(false);
         }else btnReturnCar.setDisable(true);
     }
@@ -37,8 +39,10 @@ public class ControllerCar extends Controller{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/returnCar.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
-            AlertMsg.Controller controller = loader.getController();
+            ReturnCarController controller = loader.getController();
             controller.setStage(stage);
+            controller.setControllerCar(this);
+            controller.setTable(table.getSelectionModel().getSelectedItem());
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 550, 150));
             stage.setResizable(false);

@@ -5,27 +5,27 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import model.DatabaseConnecter;
 import view.RequestTable;
 
 import java.io.IOException;
-import java.util.Optional;
+import java.util.ArrayList;
 
 public class ControllerFinance extends Controller {
 
-    private boolean isCreate = false;
 
     public void handleBtnCreateAction(){
-
-        if(true) { ShowAlertWarning(); }
-        else createRequest();
-//        isCreate = !isCreate;
+        if (isCreate()){
+            showAlertWarning();
+        }
+        else{
+            createRequest();
+        }
     }
 
 
-    private void ShowAlertWarning(){
+    private void showAlertWarning(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertWarning.fxml"));
             Parent root = loader.load();
@@ -103,6 +103,21 @@ public class ControllerFinance extends Controller {
             RequestTable t = table.getSelectionModel().getSelectedItem();
             seeDetail(this,"/menu/menuFinance.fxml",t);
         }
+    }
+
+    private boolean isCreate(){
+        boolean check;
+        String query = "select id from requestforcar where user='"+userID+"' and (staus='working' or staus='approve' or staus='wait') ";
+        ArrayList<String> idForRequestForCarS = DatabaseConnecter.browseStringInArray(query);
+        int remainRequestForCar = idForRequestForCarS.size();
+        System.out.println(remainRequestForCar);
+        if (remainRequestForCar == 0){
+            check = false;
+        }
+        else {
+            check = true;
+        }
+        return check;
     }
 
 }
