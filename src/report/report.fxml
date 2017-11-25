@@ -81,21 +81,22 @@
                       <RowConstraints maxHeight="159.0" minHeight="0.0" prefHeight="45.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TableView prefHeight="449.0" prefWidth="626.0">
+                        <TableView fx:id="table" prefHeight="449.0" prefWidth="626.0">
                           <columns>
-                              <TableColumn prefWidth="142.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
-                            <TableColumn prefWidth="105.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
-                              <TableColumn prefWidth="93.0" style="-fx-font-size: 18;" text="รุ่น" />
-                              <TableColumn prefWidth="201.0" style="-fx-font-size: 18;" />
-                              <TableColumn minWidth="0.0" prefWidth="212.0" style="-fx-font-size: 18;" text="จำนวนงานที่ทำทั้งหมด" />
-                            <TableColumn maxWidth="184.0" prefWidth="184.0" style="-fx-font-size: 18;" text="ระยะทางทั้งหมด" />
+                              <TableColumn fx:id="typeCarColumn" prefWidth="110.0" style="-fx-font-size: 18;" text="ประเภทรถ" />
+                              <TableColumn fx:id="licensedPlateColumn" prefWidth="120.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
+                            <TableColumn fx:id="brandCarColumn" prefWidth="100.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
+                              <TableColumn fx:id="modelCarColumn" prefWidth="85.0" style="-fx-font-size: 18;" text="รุ่น" />
+                              <TableColumn prefWidth="108.0" style="-fx-font-size: 18;" />
+                              <TableColumn fx:id="totalHourColumn" minWidth="0.0" prefWidth="200.0" style="-fx-font-size: 18;" text="จำนวนงานที่ทำทั้งหมด" />
+                            <TableColumn fx:id="totalDistanceColumn" maxWidth="214.0" prefWidth="214.0" style="-fx-font-size: 18;" text="ระยะทางทั้งหมด(กิโลเมตร)" />
                           </columns>
                         </TableView>
                         <GridPane GridPane.rowIndex="1">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="533.0" minWidth="10.0" prefWidth="532.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="206.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="199.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="533.0" minWidth="10.0" prefWidth="523.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="201.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="391.0" minWidth="10.0" prefWidth="214.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -106,7 +107,7 @@
                                     <Font size="20.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="152.0" text="A" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+                              <Label fx:id="hourText" alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="152.0" text="A" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -114,7 +115,7 @@
                                     <Insets right="5.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label alignment="CENTER_RIGHT" layoutX="221.0" layoutY="29.0" prefHeight="27.0" prefWidth="193.0" text="B" GridPane.columnIndex="2">
+                              <Label fx:id="distanceText" alignment="CENTER_RIGHT" layoutX="221.0" layoutY="29.0" prefHeight="27.0" prefWidth="193.0" text="B" GridPane.columnIndex="2">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
