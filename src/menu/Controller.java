@@ -229,7 +229,6 @@ public class Controller {
         }
     }
 
-    @FXML
     public void checkChoice(){
         if(table.getSelectionModel().getSelectedIndex() >= 0) btnSeeDetail.setDisable(false);
         else btnSeeDetail.setDisable(true);

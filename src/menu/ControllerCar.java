@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -17,8 +18,18 @@ import java.util.ArrayList;
 
 public class ControllerCar extends Controller{
 
+    @FXML
+    private Button btnReturnCar;
+
     public void handleBtnReturnAction(){
         showAlertReturn();
+    }
+
+    public void checkChoice(){
+        super.checkChoice();
+        if(table.getSelectionModel().getSelectedItem().getStatus().equals("working")) {
+            btnReturnCar.setDisable(false);
+        }else btnReturnCar.setDisable(true);
     }
 
     private void showAlertReturn(){
@@ -67,13 +78,11 @@ public class ControllerCar extends Controller{
         signOut();
     }
 
-
     public void handleBtnSeeDetailClickAction (ActionEvent event){
-
         if (table.getSelectionModel().isEmpty()){
             selectAlert();
         }
-        else {
+        else{
             RequestTable t = table.getSelectionModel().getSelectedItem();
             seeDetail(this,"/menu/menuCar.fxml",t);
         }
