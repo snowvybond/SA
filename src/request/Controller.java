@@ -69,6 +69,8 @@ public class Controller {
     }
 
     private boolean checkData(){
+        System.out.println(startDate.getValue().getDayOfYear());
+        System.out.println(endDate.getValue().getDayOfYear());
 //        System.out.println(cause.getValue().toString());
         if(id.getText().isEmpty()) return false;
         if(name.getText().isEmpty()) return false;
@@ -137,7 +139,7 @@ public class Controller {
             ControllerFinance controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("ตารางรายการขอใช้รถ");
-            stage.setScene(new Scene(root, 880, 520));
+            stage.setScene(new Scene(root, 875, 515));
             stage.setResizable(false);
             stage.show();
 

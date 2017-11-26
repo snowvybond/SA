@@ -57,6 +57,7 @@ public class Controller {
         }
         missionText.setText(Integer.toString(totalMission));
         distanceText.setText(Integer.toString(totalDistance));
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
     }
 
     private void showMenu() {
@@ -68,7 +69,7 @@ public class Controller {
             ControllerCivil controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("ตารางรายการขอใช้รถ");
-            stage.setScene(new Scene(root, 885, 525));
+            stage.setScene(new Scene(root, 875, 515));
             stage.setResizable(false);
             stage.show();
 

@@ -24,6 +24,8 @@ public class Controller {
 
     @FXML
     protected Button btnSeeDetail;
+    @FXML
+    protected Button btnSearch;
 
     @FXML
     protected TextField id;
@@ -236,6 +238,13 @@ public class Controller {
     public void checkChoice(){
         if(table.getSelectionModel().getSelectedIndex() >= 0) btnSeeDetail.setDisable(false);
         else btnSeeDetail.setDisable(true);
+        System.out.println(group.getSelectedToggle().getUserData().toString());
+        System.out.println(startDate.getValue());
+        if(group.getSelectedToggle().getUserData().toString().equals("date")) {
+            if (startDate.getValue() != null && endDate.getValue() != null && !startDate.getValue().isAfter(endDate.getValue())) {
+                btnSearch.setDisable(false);
+            }else btnSearch.setDisable(true);
+        }
     }
 
 //    public void handleBtnSeeDetailClickAction (ActionEvent event){
