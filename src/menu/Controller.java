@@ -12,7 +12,9 @@ import model.DatabaseConnecter;
 import view.RequestTable;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Controller {
 
@@ -196,13 +198,20 @@ public class Controller {
             query = "select * from requestforcar where staus='ปฏิเสธคำขอ'";
         }
         else if (c8.isSelected()){ //date
-            query = "select * from requestforcar where staus=''";
+            ArrayList<String> ids = DatabaseConnecter.browseRfcIDByDate(startDate.getValue(),endDate.getValue(),"");
+            if (!ids.isEmpty()){
+                query = "select * from requestforcar where id='" + ids.get(0) + "'";
+                for (int i = 1; i < ids.size(); i++) {
+                    query += "or id='" + ids.get(i) + "'";
+                }
+            }
         }
         displayTable(query);
     }
 
     protected void displayTable(String query){
         ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
+        Collections.reverse(allData);
         int count = 0;
         for (ArrayList<String> i : allData){
             table.getItems().add(count++,new RequestTable(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4),i.get(5),i.get(6),i.get(7),i.get(8),i.get(9),i.get(10),i.get(11),i.get(12),i.get(13),i.get(14),i.get(15)));

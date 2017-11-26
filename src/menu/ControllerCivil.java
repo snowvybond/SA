@@ -13,6 +13,7 @@ import view.RequestTable;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ControllerCivil extends Controller{
 
@@ -108,6 +109,7 @@ public class ControllerCivil extends Controller{
     @Override
     protected void displayTable(String query) {
         ArrayList<ArrayList> allData = DatabaseConnecter.browseRequestForCar(query);
+        Collections.reverse(allData);
         int count = 0;
         for (ArrayList<String> i : allData){
             table.getItems().add(count++,new RequestTable(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4),i.get(5),i.get(6),i.get(7),i.get(8),i.get(9),i.get(10),i.get(11),i.get(12),i.get(13),i.get(14),i.get(15)));

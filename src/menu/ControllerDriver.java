@@ -40,7 +40,14 @@ public class ControllerDriver  extends Controller{
             query = "select * from requestforcar where staus='ปฏิเสธคำขอ' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
         }
         else if (c8.isSelected()){ //date
-            query = "select * from requestforcar where staus='รอ' and id in(select requestforcarid from workassign where driverid='"+userID+"')";
+            ArrayList<String> ids = DatabaseConnecter.browseRfcIDByDate(startDate.getValue(),endDate.getValue(),"where id in(select requestforcarid from workassign where driverid='"+userID+"')");
+            if (!ids.isEmpty()){
+                query = "select * from requestforcar where id='" + ids.get(0) + "'";
+                for (int i = 1; i < ids.size(); i++) {
+                    query += "or id='" + ids.get(i) + "'";
+                }
+            }
+
         }
         displayTable(query);
     }

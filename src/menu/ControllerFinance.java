@@ -87,7 +87,14 @@ public class ControllerFinance extends Controller {
             query = "select * from requestforcar where user='"+userID+"'"+"and staus='ปฏิเสธคำขอ'";
         }
         else if (c8.isSelected()){ //date
-            query = "select * from requestforcar where user='"+userID+"'"+"and staus='รอ'";
+            ArrayList<String> ids = DatabaseConnecter.browseRfcIDByDate(startDate.getValue(),endDate.getValue(),"where user='"+userID+"'");
+            if (!ids.isEmpty()){
+                query = "select * from requestforcar where id='" + ids.get(0) + "'";
+                for (int i = 1; i < ids.size(); i++) {
+                    query += "or id='" + ids.get(i) + "'";
+                }
+            }
+
         }
         displayTable(query);
     }

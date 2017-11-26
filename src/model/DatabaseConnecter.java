@@ -55,6 +55,7 @@ public class DatabaseConnecter {
     public static ArrayList browseRequestForCar(String query) {
         Connection conn = null;
         ArrayList<ArrayList> rfc = new ArrayList<>();
+        if(query.equals("")) {return rfc;}
         try {
             // db parameters
             String url = "jdbc:sqlite:databaseFile.db";
