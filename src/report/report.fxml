@@ -55,7 +55,7 @@
                               </Label>
                            </children>
                         </Pane>
-                        <Label alignment="CENTER" prefHeight="30.0" prefWidth="939.0" text="ค้นหาเมื่อวันที่ dd/ mm/ yyyy" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                        <Label fx:id="date" alignment="CENTER" prefHeight="30.0" prefWidth="939.0" text="ค้นหาเมื่อวันที่ " GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>

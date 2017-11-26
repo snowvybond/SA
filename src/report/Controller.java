@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import menu.ControllerCivil;
 import model.DatabaseConnecter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Controller {
@@ -23,6 +25,7 @@ public class Controller {
     @FXML protected TableView<TableReport> table;
     @FXML protected Label missionText;
     @FXML protected Label distanceText;
+    @FXML protected Label date;
 
 
     private Stage stage;
@@ -35,6 +38,10 @@ public class Controller {
 
 
     public void initialize(){
+        String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd MMM yyyy"));
+        System.out.println(date);
+        this.date.setText(this.date.getText()+date);
+
         displayTable();
     }
 

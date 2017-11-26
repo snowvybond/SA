@@ -134,6 +134,7 @@ public class Controller {
     private boolean isSet;
 
     public void initialize(){
+
         tab.setOnSelectionChanged(new EventHandler<Event>() {
             @Override
             public void handle(Event arg0) {

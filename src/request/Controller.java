@@ -71,7 +71,6 @@ public class Controller {
     private boolean checkData(){
         System.out.println(startDate.getValue().getDayOfYear());
         System.out.println(endDate.getValue().getDayOfYear());
-//        System.out.println(cause.getValue().toString());
         if(id.getText().isEmpty()) return false;
         if(name.getText().isEmpty()) return false;
         if(cause.getValue() == null) return false;
@@ -81,6 +80,7 @@ public class Controller {
         if(startDate.getValue().isBefore(LocalDate.now())) return false;
         if(endDate.getValue().isBefore(LocalDate.now())) return false;
         if(startDate.getValue().isAfter(endDate.getValue())) return false;
+        if(endDate.getValue().getDayOfYear()>361) return false;
         if(destination.getValue() == null) return false;
 
 
@@ -157,7 +157,11 @@ public class Controller {
     public void setUp (){
         String userName = DatabaseConnecter.browserString("select name from user where username='"+userID+"'");
         userName += " "+ DatabaseConnecter.browserString("select surname from user where username='"+userID+"'");
-        int idData = Integer.parseInt(DatabaseConnecter.browserString("select max(id) from requestforcar"))+1;
+        String lastId = DatabaseConnecter.browserString("select max(id) from requestforcar");
+        int idData = 1001;
+        if (lastId != null) {
+            idData = Integer.parseInt(lastId) + 1;
+        }
         ArrayList<String> causeOfUse = DatabaseConnecter.browseStringInArray("select cause from causeofuse");
         ArrayList<String> provience = DatabaseConnecter.browseStringInArray("select provience from destination");
         id.setText(Integer.toString(idData));

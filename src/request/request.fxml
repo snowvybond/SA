@@ -14,17 +14,17 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#checkCause" onDragDetected="#checkCause" onDragDone="#checkCause" onDragDropped="#checkCause" onDragEntered="#checkCause" onDragExited="#checkCause" onDragOver="#checkCause" onInputMethodTextChanged="#checkCause" onKeyPressed="#checkCause" onKeyReleased="#checkCause" onKeyTyped="#checkCause" onMouseClicked="#checkCause" onMouseDragEntered="#checkCause" onMouseDragExited="#checkCause" onMouseDragOver="#checkCause" onMouseDragReleased="#checkCause" onMouseDragged="#checkCause" onMouseEntered="#checkCause" onMouseExited="#checkCause" onMouseMoved="#checkCause" onMousePressed="#checkCause" onMouseReleased="#checkCause" onRotationFinished="#checkCause" onScroll="#checkCause" onScrollFinished="#checkCause" onScrollStarted="#checkCause" onSwipeDown="#checkCause" onSwipeLeft="#checkCause" onSwipeRight="#checkCause" onSwipeUp="#checkCause" onTouchMoved="#checkCause" onTouchPressed="#checkCause" onTouchReleased="#checkCause" prefHeight="673.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="request.Controller">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onContextMenuRequested="#checkCause" onDragDetected="#checkCause" onDragDone="#checkCause" onDragDropped="#checkCause" onDragEntered="#checkCause" onDragExited="#checkCause" onDragOver="#checkCause" onInputMethodTextChanged="#checkCause" onKeyPressed="#checkCause" onKeyReleased="#checkCause" onKeyTyped="#checkCause" onMouseClicked="#checkCause" onMouseDragEntered="#checkCause" onMouseDragExited="#checkCause" onMouseDragOver="#checkCause" onMouseDragReleased="#checkCause" onMouseDragged="#checkCause" onMouseEntered="#checkCause" onMouseExited="#checkCause" onMouseMoved="#checkCause" onMousePressed="#checkCause" onMouseReleased="#checkCause" onRotationFinished="#checkCause" onScroll="#checkCause" onScrollFinished="#checkCause" onScrollStarted="#checkCause" onSwipeDown="#checkCause" onSwipeLeft="#checkCause" onSwipeRight="#checkCause" onSwipeUp="#checkCause" onTouchMoved="#checkCause" onTouchPressed="#checkCause" onTouchReleased="#checkCause" prefHeight="753.0" prefWidth="438.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="request.Controller">
    <children>
-      <TitledPane animated="false" cacheShape="false" collapsible="false" focusTraversable="false" prefHeight="673.0" prefWidth="438.0" text="รายละเอียดขอใช้รถ">
+      <TitledPane animated="false" cacheShape="false" collapsible="false" focusTraversable="false" prefHeight="753.0" prefWidth="438.0" text="รายละเอียดขอใช้รถ">
          <content>
             <GridPane prefHeight="385.0" prefWidth="145.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="578.0" minWidth="10.0" prefWidth="578.0" />
               </columnConstraints>
               <rowConstraints>
-                  <RowConstraints maxHeight="420.0" minHeight="0.0" prefHeight="348.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="296.0" minHeight="10.0" prefHeight="204.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="420.0" minHeight="0.0" prefHeight="400.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="296.0" minHeight="10.0" prefHeight="221.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="55.0" minHeight="0.0" prefHeight="51.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
@@ -37,6 +37,7 @@
                         <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
                       <RowConstraints maxHeight="51.0" minHeight="0.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
@@ -111,6 +112,13 @@
                               <Font size="18.0" />
                            </font>
                         </TextField>
+                        <Label minHeight="-Infinity" minWidth="-Infinity" prefHeight="55.0" prefWidth="378.0" text="*หมายเหตุ โปรดกรอกวันสิ้นสุดการปฎิบัติงานก่อนวันที่ &#10;  28 เดือนธันวาคม ของทุก ๆ ปี" textFill="#ff3434" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin></Label>
                      </children>
                   </GridPane>
                   <TitledPane animated="false" collapsible="false" text="รายละเอียดเพิ่มเติม" GridPane.rowIndex="1">

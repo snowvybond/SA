@@ -54,7 +54,7 @@ public class ControllerFinance extends Controller {
             controller.setUserID(userID);
             controller.setUp();
             stage.setTitle("รายละเอียดขอใช้รถ");
-            stage.setScene(new Scene(root, 425, 660));
+            stage.setScene(new Scene(root, 425, 740));
             stage.setResizable(false);
             stage.show();
 
