@@ -412,7 +412,8 @@ public class DatabaseConnecter {
             LocalDate endRfc = LocalDate.parse(i.get(2));
             int startRfcDayOfY = startRfc.getDayOfYear();
             int endRfcDayOfY = endRfc.getDayOfYear();
-            if (startRequest <= startRfcDayOfY && startRequest <= endRfcDayOfY){
+//            if (startRequest <= startRfcDayOfY && startRequest <= endRfcDayOfY){
+            if (startRequest <= startRfcDayOfY && startRfcDayOfY <= endRequest){
                 if (endRfcDayOfY<=endRequest){
                     unUseAbleId.add(id);
                 }
