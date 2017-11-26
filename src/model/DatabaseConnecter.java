@@ -403,6 +403,8 @@ public class DatabaseConnecter {
         ArrayList<ArrayList> allId = DatabaseConnecter.browseAllIDAndDate(s);
         int startRequest = startR.getDayOfYear();
         int endRequest = endR.getDayOfYear();
+        System.out.println("startK = "+startRequest);
+        System.out.println("endK = "+endRequest);
 
         for (ArrayList<String> i : allId){
             String id = i.get(0);
@@ -410,12 +412,12 @@ public class DatabaseConnecter {
             LocalDate endRfc = LocalDate.parse(i.get(2));
             int startRfcDayOfY = startRfc.getDayOfYear();
             int endRfcDayOfY = endRfc.getDayOfYear();
-
-            if (startRfcDayOfY <= startRequest && startRequest <= endRfcDayOfY){
-                unUseAbleId.add(id);
-            }else if(startRfcDayOfY <= endRequest && endRequest <= endRfcDayOfY){
-                unUseAbleId.add(id);
+            if (startRequest <= startRfcDayOfY && startRequest <= endRfcDayOfY){
+                if (endRfcDayOfY<=endRequest){
+                    unUseAbleId.add(id);
+                }
             }
+
 
         }
         return unUseAbleId;
