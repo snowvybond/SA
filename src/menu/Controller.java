@@ -182,7 +182,7 @@ public class Controller {
         table.getItems().clear();
         String query = "";
         if (c1.isSelected()){  //all
-            query = "select * from requestforcar";
+            query = "select * from requestforcar ";
         }
         else if (c2.isSelected()){ //wait
             query = "select * from requestforcar where staus='รออนุมัติ'";

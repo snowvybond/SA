@@ -16,6 +16,7 @@ import view.RequestTable;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ControllerCar extends Controller{
 
@@ -53,6 +54,40 @@ public class ControllerCar extends Controller{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+
+    @Override
+    public void search(){
+        table.getItems().clear();
+        String query = "";
+        if (c1.isSelected()){  //all
+            query = "select * from requestforcar where not staus='ปฏิเสธคำขอ' and not staus='รออนุมัติ'";
+        }
+        else if (c2.isSelected()){ //wait
+            query = "select * from requestforcar where staus='รออนุมัติ'";
+        }
+        else if (c3.isSelected()){ //approve
+            query = "select * from requestforcar where staus='อนุมัติแล้ว'";
+        }
+        else if (c4.isSelected()){ //id
+            query = "select * from requestforcar where id='"+id.getText()+"'";
+        }
+        else if (c6.isSelected()){ //returned
+            query = "select * from requestforcar where staus='คืนแล้ว'";
+        }
+        else if (c7.isSelected()){ //reject
+            query = "select * from requestforcar where staus='ปฏิเสธคำขอ'";
+        }
+        else if (c8.isSelected()){ //date
+            ArrayList<String> ids = DatabaseConnecter.browseRfcIDByDate(startDate.getValue(),endDate.getValue(),"");
+            if (!ids.isEmpty()){
+                query = "select * from requestforcar where id='" + ids.get(0) + "'";
+                for (int i = 1; i < ids.size(); i++) {
+                    query += "or id='" + ids.get(i) + "'";
+                }
+            }
+        }
+        displayTable(query);
     }
 
     public void handleBtnChangeStutusAction(){

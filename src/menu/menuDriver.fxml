@@ -64,10 +64,13 @@
                                  <toggleGroup>
                                     <ToggleGroup fx:id="group" />
                                  </toggleGroup>
+                                 <GridPane.margin>
+                                    <Insets bottom="20.0" left="65.0" />
+                                 </GridPane.margin>
                               </RadioButton>
                               <TextField fx:id="id" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="157.0" prefHeight="35.0" prefWidth="157.0" promptText="รหัสใบขอใช้รถ" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                                  <GridPane.margin>
-                                    <Insets left="65.0" />
+                                    <Insets bottom="20.0" left="65.0" />
                                  </GridPane.margin>
                                  <font>
                                     <Font size="18.0" />
@@ -92,21 +95,24 @@
                                  </font>
                               </Label>
                               <DatePicker fx:id="endDate" editable="false" focusTraversable="false" prefHeight="35.0" prefWidth="253.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-                              <RadioButton fx:id="c2" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="c3" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                              <RadioButton fx:id="c7" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <RadioButton fx:id="c2" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" visible="false" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <RadioButton fx:id="c3" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets bottom="40.0" />
+                                 </GridPane.margin></RadioButton>
+                              <RadioButton fx:id="c7" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" visible="false" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
                               <RadioButton fx:id="c1" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" selected="true" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" />
                               <Label fx:id="startDay1" focusTraversable="false" layoutX="358.0" layoutY="21.0" prefHeight="17.0" prefWidth="390.0" text="เลือกทั้งหมด" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="startDay11" focusTraversable="false" layoutX="36.0" layoutY="21.0" prefHeight="17.0" prefWidth="390.0" text="รออนุมัติ " GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <Label fx:id="startDay11" focusTraversable="false" layoutX="36.0" layoutY="21.0" prefHeight="17.0" prefWidth="390.0" text="รออนุมัติ " visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="startDay111" focusTraversable="false" layoutX="36.0" layoutY="68.0" prefHeight="17.0" prefWidth="390.0" text="ปฎิเสธคำขอ" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                              <Label fx:id="startDay111" focusTraversable="false" layoutX="36.0" layoutY="68.0" prefHeight="17.0" prefWidth="390.0" text="ปฎิเสธคำขอ" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -115,12 +121,21 @@
                                  <font>
                                     <Font size="18.0" />
                                  </font>
+                                 <GridPane.margin>
+                                    <Insets bottom="40.0" />
+                                 </GridPane.margin>
                               </Label>
-                              <RadioButton fx:id="c6" layoutX="38.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                              <Label fx:id="startDay111112" focusTraversable="false" layoutX="59.0" layoutY="159.0" prefHeight="17.0" prefWidth="390.0" text="คืนแล้ว" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                              <RadioButton fx:id="c6" layoutX="38.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <GridPane.margin>
+                                    <Insets bottom="40.0" />
+                                 </GridPane.margin></RadioButton>
+                              <Label fx:id="startDay111112" focusTraversable="false" layoutX="59.0" layoutY="159.0" prefHeight="17.0" prefWidth="390.0" text="คืนแล้ว" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
+                                 <GridPane.margin>
+                                    <Insets bottom="40.0" />
+                                 </GridPane.margin>
                               </Label>
                            </children>
                         </GridPane>
