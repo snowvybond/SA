@@ -81,6 +81,7 @@ public class Controller {
         if(startDate.getValue().isAfter(endDate.getValue())) return false;
         if(destination.getValue() == null) return false;
 
+
         return true;
     }
 

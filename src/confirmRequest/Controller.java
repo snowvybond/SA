@@ -9,11 +9,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import menu.ControllerCivil;
+import model.DatabaseConnecter;
 import view.RequestTable;
 
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 public class Controller {
 
@@ -70,7 +75,15 @@ public class Controller {
 
     private RequestTable table;
 
+    private menu.Controller controller;
+
+    private ArrayList<String> data;
+    private ArrayList<String[]> liscenseList,driverList;
+
     public void initialize(){
+        liscenseList = new ArrayList<String[]>();
+        driverList = new ArrayList<String[]>();
+        data = new ArrayList<String>();
         tab.setOnSelectionChanged(new EventHandler<Event>() {
             @Override
             public void handle(Event arg0) {
@@ -78,6 +91,10 @@ public class Controller {
             }
         });
 //        scrollPane.setVvalue(0.0);
+    }
+
+    public void setController(menu.Controller controller) {
+        this.controller = controller;
     }
 
     public void fixScroll(){
@@ -134,7 +151,10 @@ public class Controller {
             Stage stage = new Stage();
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
+            controller.setController(this.controller);
             controller.setcConfirmRequest(this);
+            createData();
+            controller.setData(data,3);
             stage.setTitle("Confirmation");
             stage.setScene(new Scene(root, 380, 130));
             stage.setResizable(false);
@@ -172,6 +192,19 @@ public class Controller {
         this.table = table;
     }
 
+    public void checkChoice(){
+        fixScroll();
+        if(!liscensePlate.getSelectionModel().isEmpty()) {
+            int index = liscensePlate.getSelectionModel().getSelectedIndex();
+            typeCar.setText(liscenseList.get(index)[3]);
+            brandCar.setText(liscenseList.get(index)[1]);
+            genCar.setText(liscenseList.get(index)[2]);
+        }if(!idDriver.getSelectionModel().isEmpty()) {
+            int index = idDriver.getSelectionModel().getSelectedIndex();
+            nameDriver.setText(driverList.get(index)[1]);
+        }
+    }
+
     public void setUp(){
         id.setText(table.getId());
         name.setText(table.getName());
@@ -182,5 +215,51 @@ public class Controller {
         distance.setText(table.getDistance());
         priceGas.setText(table.getPriceGas());
         detail.setText(table.getDetail());
+        setUpCar();
+        setUpDriver();
+
+    }
+
+    private void setUpCar(){
+        ArrayList<String> unUseID = DatabaseConnecter.browseRfcIDByDate(LocalDate.parse(table.getStartDate()),LocalDate.parse(table.getEndDate()),"where staus='อนุมัติแล้ว'");
+        if (unUseID.isEmpty()){
+            liscenseList = DatabaseConnecter.browseCarInArray("select * from car where status='ใช้งานได้'");
+        }else{
+            String query = "select * from car where status='ใช้งานได้' and liscenseplate not in (";
+            String query2 = "select liscenseplate from workassign where requestforcarid='"+unUseID.get(0)+"'";
+            for (int i = 1;i<unUseID.size();i++){
+                query2 += "or requestforcarid='"+unUseID.get(i)+"'";
+            }
+            query += query2+")";
+//            System.out.println(query);
+            liscenseList = DatabaseConnecter.browseCarInArray(query);
+        }
+        for (String[] i: liscenseList){
+            liscensePlate.getItems().add(i[0]);
+            System.out.println(Arrays.toString(i));
+        }
+    }
+
+    private void setUpDriver(){
+        ArrayList<String> unUseID = DatabaseConnecter.browseRfcIDByDate(LocalDate.parse(table.getStartDate()),LocalDate.parse(table.getEndDate()),"where staus='อนุมัติแล้ว'");
+        if (unUseID.isEmpty()){
+            driverList = DatabaseConnecter.browseDriverInArray("select * from driver");
+        }else{
+            String query = "select id from driver where id not in (";
+            String query2 = "select driverid from workassign where requestforcarid='"+unUseID.get(0)+"'";
+            for (int i = 1;i<unUseID.size();i++){
+                query2 += "or requestforcarid='"+unUseID.get(i)+"'";
+            }
+            query += query2+")";
+//            System.out.println(query);
+            driverList = DatabaseConnecter.browseDriverInArray(query);
+        }
+        for (String[] i: driverList){
+            idDriver.getItems().add(i[0]);
+            System.out.println(Arrays.toString(i));
+        }
+    }
+    private void createData() {
+        Collections.addAll(data,table.getId(),liscensePlate.getSelectionModel().getSelectedItem().toString(),idDriver.getSelectionModel().getSelectedItem().toString());
     }
 }

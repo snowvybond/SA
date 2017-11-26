@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -215,6 +216,9 @@ public class DatabaseConnecter {
 
 
 
+
+
+
     public static ArrayList browseUserData(String query) {
         Connection conn = null;
         ArrayList<ArrayList> rfc = new ArrayList<>();
@@ -307,13 +311,16 @@ public class DatabaseConnecter {
 //                System.out.println("Product name: "+dm.getDatabaseProductName());
 //                System.out.println("Insert :"+name);
                 PreparedStatement pstmt = conn.prepareStatement(query);
-                pstmt.setString(1,data.get(0));
-                pstmt.setString(2,data.get(1));
-                pstmt.setString(3,data.get(2));
-                pstmt.setString(4,data.get(3));
-                pstmt.setString(5,data.get(4));
-                pstmt.setString(6,data.get(5));
-                pstmt.setString(7,data.get(6));
+                for (int i=0;i<data.size();i++){
+                    pstmt.setString(i+1,data.get(i));
+                }
+//                pstmt.setString(1,data.get(0));
+//                pstmt.setString(2,data.get(1));
+//                pstmt.setString(3,data.get(2));
+//                pstmt.setString(4,data.get(3));
+//                pstmt.setString(5,data.get(4));
+//                pstmt.setString(6,data.get(5));
+//                pstmt.setString(7,data.get(6));
                 pstmt.executeUpdate();
                 System.out.println("Insert finish");
             }
@@ -387,6 +394,155 @@ public class DatabaseConnecter {
             }
         }
         return cars;
+    }
+
+    public static ArrayList browseRfcIDByDate(LocalDate startR,LocalDate endR,String s) {
+        Connection conn = null;
+        ArrayList<String> unUseAbleId = new ArrayList<>();
+        ArrayList<ArrayList> allId = DatabaseConnecter.browseAllIDAndDate(s);
+        int startRequest = startR.getDayOfYear();
+        int endRequest = endR.getDayOfYear();
+
+        for (ArrayList<String> i : allId){
+            String id = i.get(0);
+            LocalDate startRfc = LocalDate.parse(i.get(1));
+            LocalDate endRfc = LocalDate.parse(i.get(2));
+            int startRfcDayOfY = startRfc.getDayOfYear();
+            int endRfcDayOfY = endRfc.getDayOfYear();
+
+            if (startRfcDayOfY <= startRequest && startRequest <= endRfcDayOfY){
+                unUseAbleId.add(id);
+            }else if(startRfcDayOfY <= endRequest && endRequest <= endRfcDayOfY){
+                unUseAbleId.add(id);
+            }
+
+        }
+        return unUseAbleId;
+    }
+
+    private static ArrayList browseAllIDAndDate(String s) {
+        Connection conn = null;
+        ArrayList<ArrayList> rfc = new ArrayList<>();
+        String query = "select id, startdate,enddate FROM requestforcar " + s;
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:databaseFile.db";
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+//            System.out.println("Connection to SQLite has been established.");
+            if (conn != null){
+                DatabaseMetaData dm = (DatabaseMetaData)conn.getMetaData();
+//                System.out.println("Driver name: "+dm.getDriverName());
+//                System.out.println("Product name: "+dm.getDatabaseProductName());
+//                System.out.println("----------------DATA----------------");
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+                while (resultSet.next()) {
+                    String id = resultSet.getString("id");
+                    String start = resultSet.getString("startdate");
+                    String end = resultSet.getString("enddate");
+                    ArrayList<String> data = new ArrayList<>();
+                    Collections.addAll(data,id,start,end);
+                    rfc.add(data);
+                }
+
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+//                    System.out.println("closeDB");
+                    return rfc;
+                }
+            }
+            catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return rfc;
+    }
+
+
+
+
+    public static ArrayList<String[]> browseCarInArray(String query) {
+        Connection conn = null;
+        ArrayList<String[]> aStr = new ArrayList<>();
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:databaseFile.db";
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+//            System.out.println("Connection to SQLite has been established.");
+            if (conn != null) {
+                DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
+//                System.out.println("Driver name: "+dm.getDriverName());
+//                System.out.println("Product name: "+dm.getDatabaseProductName());
+//                System.out.println("----------------DATA----------------");
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+                while (resultSet.next()) {
+                    String[] data = {resultSet.getString("liscenseplate"),resultSet.getString("brand"),resultSet.getString("model"),resultSet.getString("type")};
+                    aStr.add(data);
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+//                    System.out.println("closeDB");
+                    return aStr;
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return aStr;
+    }
+
+    public static ArrayList<String[]> browseDriverInArray(String query) {
+        Connection conn = null;
+        ArrayList<String[]> aStr = new ArrayList<>();
+        try {
+            // db parameters
+            String url = "jdbc:sqlite:databaseFile.db";
+            // create a connection to the database
+            conn = DriverManager.getConnection(url);
+//            System.out.println("Connection to SQLite has been established.");
+            if (conn != null) {
+                DatabaseMetaData dm = (DatabaseMetaData) conn.getMetaData();
+//                System.out.println("Driver name: "+dm.getDriverName());
+//                System.out.println("Product name: "+dm.getDatabaseProductName());
+//                System.out.println("----------------DATA----------------");
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery(query);
+                while (resultSet.next()) {
+                    String[] data = {resultSet.getString("id"),DatabaseConnecter.browserString("select name from user where username='"+resultSet.getString("id")+"'")+"  "+DatabaseConnecter.browserString("select surname from user where username='"+resultSet.getString("id")+"'")};
+                    aStr.add(data);
+                }
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+//                    System.out.println("closeDB");
+                    return aStr;
+                }
+            } catch (SQLException ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return aStr;
     }
 
 

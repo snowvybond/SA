@@ -69,6 +69,12 @@ public class Controller {
             String id = data.get(0);
             DatabaseConnecter.updateString("update requestforcar set staus='ปฏิเสธคำขอ' where id='"+id+"'");
             controller.search();
+        }else if (check == 3){
+            DatabaseConnecter.insertStringByArray(data,"INSERT INTO workassign(requestforcarid, liscenseplate, driverid) VALUES (?, ?, ?)");
+            String id = data.get(0);
+            System.out.println(id);
+            DatabaseConnecter.updateString("update requestforcar set staus='อนุมัติแล้ว' where id='"+id+"'");
+            controller.search();
         }
         if(cConfirmRequest != null) cConfirmRequest.handleBtnCancelClickAction();
         if (cRequest != null) cRequest.handleBtnCancelClickAction();

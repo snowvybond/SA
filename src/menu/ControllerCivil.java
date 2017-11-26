@@ -35,6 +35,7 @@ public class ControllerCivil extends Controller{
             controller.setStage(stage);
             controller.setTable(table.getSelectionModel().getSelectedItem());
             controller.setUp();
+            controller.setController(this);
             stage.setTitle("Confirm Request");
             stage.setScene(new Scene(root, 490, 590));
             stage.setResizable(false);
