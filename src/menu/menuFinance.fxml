@@ -196,7 +196,7 @@
             </ScrollPane>
             <TableView fx:id="table" focusTraversable="false" onContextMenuRequested="#checkChoice" onDragDetected="#checkChoice" onDragDone="#checkChoice" onDragEntered="#checkChoice" onDragOver="#checkChoice" onMouseClicked="#checkChoice" onMouseDragged="#checkChoice" onMouseEntered="#checkChoice" onMouseMoved="#checkChoice" prefHeight="382.0" prefWidth="232.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn fx:id="idColumn" maxWidth="155.0" onEditCommit="#checkChoice" prefWidth="110.0" style="-fx-font-size: 18;" text="ID" />
+                <TableColumn fx:id="idColumn" maxWidth="155.0" onEditCommit="#checkChoice" prefWidth="110.0" sortType="DESCENDING" style="-fx-font-size: 18;" text="ID" />
                   <TableColumn fx:id="causeTextColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="167.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
                   <TableColumn fx:id="statusColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="100.0" style="-fx-font-size: 18;" text="สถานะ" />
                   <TableColumn fx:id="startDateColumn" minWidth="0.0" onEditCommit="#checkChoice" prefWidth="195.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
