@@ -96,12 +96,12 @@
                               </Label>
                               <DatePicker fx:id="endDate" editable="false" focusTraversable="false" prefHeight="35.0" prefWidth="253.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
                               <RadioButton fx:id="c2" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" visible="false" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-                              <RadioButton fx:id="c3" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                              <RadioButton fx:id="c3" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" selected="true" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets bottom="40.0" />
                                  </GridPane.margin></RadioButton>
                               <RadioButton fx:id="c7" layoutX="15.0" layoutY="22.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" visible="false" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
-                              <RadioButton fx:id="c1" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" selected="true" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" />
+                              <RadioButton fx:id="c1" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleRadioClickAction" textFill="TRANSPARENT" toggleGroup="$group" GridPane.halignment="RIGHT" />
                               <Label fx:id="startDay1" focusTraversable="false" layoutX="358.0" layoutY="21.0" prefHeight="17.0" prefWidth="390.0" text="เลือกทั้งหมด" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="18.0" />
