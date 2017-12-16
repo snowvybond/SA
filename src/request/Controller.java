@@ -55,7 +55,7 @@ public class Controller {
 
     public void showComfirmRequest(){
         if(checkData()) {
-            showConfirm();
+            confirmRequest();
         }else{
             showAlert();
         }
@@ -105,26 +105,26 @@ public class Controller {
         }
     }
 
-    private void showConfirm(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertConfirm.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            AlertMsg.Controller controller = loader.getController();
-            controller.setStage(stage);
-            controller.setcRequest(this);
-            this.createData();
-            controller.setData(data,1);
-            stage.setTitle("Confirmation");
-            stage.setScene(new Scene(root, 380, 130));
-            stage.setResizable(false);
-            controller.setHeaderConfirm("ยืนยันคำขอใช้รถ");
-            stage.show();
-
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-    }
+//    private void showConfirm(){
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertConfirm.fxml"));
+//            Parent root = loader.load();
+//            Stage stage = new Stage();
+//            AlertMsg.Controller controller = loader.getController();
+//            controller.setStage(stage);
+//            controller.setcRequest(this);
+//            this.createData();
+//            controller.setData(data,1);
+//            stage.setTitle("Confirmation");
+//            stage.setScene(new Scene(root, 380, 130));
+//            stage.setResizable(false);
+//            controller.setHeaderConfirm("ยืนยันคำขอใช้รถ");
+//            stage.show();
+//
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
+//    }
 
     public void handleBtnCancelClickAction(){
         goToMenu();
@@ -188,5 +188,30 @@ public class Controller {
         data.add("รออนุมัติ");
     }
 
+    private void confirmRequest(){
+        this.createData();
+        DatabaseConnecter.insertStringByArray(data ,"INSERT INTO requestforcar(startdate, enddate, detail, provience, causeofuse, user, staus) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        this.createNewRequest();
+    }
+
+    private void createNewRequest(){
+        try {
+            this.stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/request/request.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            request.Controller controller = loader.getController();
+            controller.setStage(stage);
+            controller.setUserID(userID);
+            controller.setUp();
+            stage.setTitle("รายละเอียดขอใช้รถ");
+            stage.setScene(new Scene(root, 425, 740));
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
 
 }

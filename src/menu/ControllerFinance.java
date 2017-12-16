@@ -16,32 +16,33 @@ public class ControllerFinance extends Controller {
 
 
     public void handleBtnCreateAction(){
-        if (isCreate()){
-            showAlertWarning();
-        }
-        else{
-            createRequest();
-        }
+        createRequest();
+//        if (isCreate()){
+//            showAlertWarning();
+//        }
+//        else{
+//            createRequest();
+//        }
     }
 
 
-    private void showAlertWarning(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertWarning.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            AlertMsg.Controller controller = loader.getController();
-            controller.setStage(stage);
-            controller.setHeaderWarning("คุณมีรายการขอใช้รถแล้ว");
-            stage.setTitle("Warning");
-            stage.setScene(new Scene(root, 380, 100));
-            stage.setResizable(false);
-            stage.show();
-
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-    }
+//    private void showAlertWarning(){
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertWarning.fxml"));
+//            Parent root = loader.load();
+//            Stage stage = new Stage();
+//            AlertMsg.Controller controller = loader.getController();
+//            controller.setStage(stage);
+//            controller.setHeaderWarning("คุณมีรายการขอใช้รถแล้ว");
+//            stage.setTitle("Warning");
+//            stage.setScene(new Scene(root, 380, 100));
+//            stage.setResizable(false);
+//            stage.show();
+//
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
+//    }
 
     private void createRequest(){
         try {
@@ -111,19 +112,19 @@ public class ControllerFinance extends Controller {
         }
     }
 
-    private boolean isCreate(){
-        boolean check;
-        String query = "select id from requestforcar where user='"+userID+"' and (staus='อนุมัติแล้ว' or staus='รออนุมัติ') ";
-        ArrayList<String> idForRequestForCarS = DatabaseConnecter.browseStringInArray(query);
-        int remainRequestForCar = idForRequestForCarS.size();
-        System.out.println(remainRequestForCar);
-        if (remainRequestForCar == 0){
-            check = false;
-        }
-        else {
-            check = true;
-        }
-        return check;
-    }
+//    private boolean isCreate(){
+//        boolean check;
+//        String query = "select id from requestforcar where user='"+userID+"' and (staus='อนุมัติแล้ว' or staus='รออนุมัติ') ";
+//        ArrayList<String> idForRequestForCarS = DatabaseConnecter.browseStringInArray(query);
+//        int remainRequestForCar = idForRequestForCarS.size();
+//        System.out.println(remainRequestForCar);
+//        if (remainRequestForCar == 0){
+//            check = false;
+//        }
+//        else {
+//            check = true;
+//        }
+//        return check;
+//    }
 
 }
