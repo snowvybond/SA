@@ -49,14 +49,14 @@
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Label fx:id="lableReport" alignment="CENTER" layoutX="27.0" layoutY="5.0" prefHeight="30.0" prefWidth="618.0" text="รายงานการใช้รถยนต์เดือนมกราคม">
+                              <Label fx:id="lableReport" alignment="CENTER" layoutX="150.0" layoutY="5.0" prefHeight="30.0" prefWidth="511.0" text="รายงานการใช้รถยนต์ประจำเดือนมกราคม">
                                  <font>
                                     <Font name="System Bold" size="20.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
-                        <Label fx:id="date" alignment="CENTER" prefHeight="30.0" prefWidth="550.0" text="ค้นหาเมื่อวันที่ " GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+                        <Label fx:id="date" alignment="CENTER" prefHeight="30.0" prefWidth="694.0" text="ค้นหาเมื่อวันที่ " GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>

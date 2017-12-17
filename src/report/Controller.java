@@ -81,7 +81,7 @@ public class Controller {
         if(!cache.equals(choiceBox.getValue().toString())){
             cache = choiceBox.getValue().toString();
             System.out.println(cache);
-            lableReport.setText("รายงานการใช้รถยนต์เดือน"+cache);
+            lableReport.setText("รายงานการใช้รถยนต์ประจำเดือน"+cache);
 //            totalDistanceColumn.setVisible(false);
 //            blackColumn.setVisible(true);
         }

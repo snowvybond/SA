@@ -96,16 +96,15 @@ public class ControllerCar extends Controller{
 
     private void showAlertChangeStatusCar(){
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/statusCar.fxml"));
+            getStage().close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/changeStatus/change.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
-            AlertMsg.Controller controller = loader.getController();
+            changeStatus.Controller controller = loader.getController();
             controller.setStage(stage);
-            stage.setTitle("ค้นหารถยนต์");
-            stage.setScene(new Scene(root, 370, 230));
+            stage.setTitle("Change Status Car");
+            stage.setScene(new Scene(root, 590, 590));
             stage.setResizable(false);
-            controller.setStage(stage);
-            controller.getOk().setDisable(true);
             stage.show();
 
         } catch (IOException e1) {

@@ -263,4 +263,5 @@ public class Controller {
     private void createData() {
         Collections.addAll(data,table.getId(),liscensePlate.getSelectionModel().getSelectedItem().toString(),idDriver.getSelectionModel().getSelectedItem().toString());
     }
+
 }

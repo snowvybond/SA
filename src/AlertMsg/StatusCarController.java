@@ -53,8 +53,6 @@ public class StatusCarController extends Controller{
         String query = "update car set status='"+status+"' where liscenseplate='"+liscenseResult+"'";
         DatabaseConnecter.updateString(query);
         close();
-
-
     }
 
 }
