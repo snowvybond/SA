@@ -1,5 +1,6 @@
 package menu;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,9 +23,17 @@ public class ControllerCivil extends Controller{
 
     @FXML protected TableColumn<RequestTable , String> nameColumn;
 
+    @FXML
+    public void initialize(){
+        super.initialize();
+        table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    }
+
     public void handkeBtnConfirmClickAction(){
         showConfirmRequest();
     }
+
+
 
     private void showConfirmRequest(){
         try {
@@ -52,33 +61,39 @@ public class ControllerCivil extends Controller{
     }
 
     private void ShowAlertReject(){
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertConfirm.fxml"));
-            Parent root = loader.load();
-            Stage stage = new Stage();
-            AlertMsg.Controller controller = loader.getController();
-            controller.setStage(stage);
-            ArrayList<String> data = new ArrayList<>();
-            data.add(table.getSelectionModel().getSelectedItem().getId());
-            controller.setData(data,2);
-            controller.setController(this);
-            stage.setTitle("Confirmation");
-            stage.setScene(new Scene(root, 380, 130));
-            stage.setResizable(false);
-            controller.setHeaderConfirm("ยืนยันคำปฎิเสธการขอใช้รถรหัส "+table.getSelectionModel().getSelectedItem().getId());
-            stage.show();
-
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
+        reject();
+//        try {
+//            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AlertMsg/AlertConfirm.fxml"));
+//            Parent root = loader.load();
+//            Stage stage = new Stage();
+//            AlertMsg.Controller controller = loader.getController();
+//            controller.setStage(stage);
+//            ArrayList<String> data = new ArrayList<>();
+//            data.add(table.getSelectionModel().getSelectedItem().getId());
+//            controller.setData(data,2);
+//            controller.setController(this);
+//            stage.setTitle("Confirmation");
+//            stage.setScene(new Scene(root, 380, 130));
+//            stage.setResizable(false);
+//            controller.setHeaderConfirm("ยืนยันคำปฎิเสธการขอใช้รถรหัส "+table.getSelectionModel().getSelectedItem().getId());
+//            stage.show();
+//
+//        } catch (IOException e1) {
+//            e1.printStackTrace();
+//        }
     }
 
     @Override
     public void checkChoice(){
         super.checkChoice();
+
+
         if(!table.getSelectionModel().isEmpty()&&table.getSelectionModel().getSelectedItem().getStatus().equals("รออนุมัติ")) {
-            btnApprove.setDisable(false);
+            if (table.getSelectionModel().getSelectedItems().size() > 1){
+                btnApprove.setDisable(true);
+            }else{
+                btnApprove.setDisable(false);
+            }
             btnReject.setDisable(false);
         }else {
             btnApprove.setDisable(true);
@@ -167,6 +182,17 @@ public class ControllerCivil extends Controller{
         } catch (IOException e1) {
             e1.printStackTrace();
         }
+    }
+
+    private void reject(){
+        ObservableList<RequestTable> selected = table.getSelectionModel().getSelectedItems();
+        for(RequestTable t:selected){
+            String id = t.getId();
+            DatabaseConnecter.updateString("update requestforcar set staus='ปฏิเสธคำขอ' where id='"+id+"'");
+        }
+        search();
+
+
     }
 
 
