@@ -263,7 +263,7 @@ public class Controller {
             driverList = DatabaseConnecter.browseDriverInArray(query);
         }
         for (String[] i: driverList){
-            idDriver.getItems().add(i[0]);
+            idDriver.getItems().add(i[0]+" "+i[1]);
             System.out.println(Arrays.toString(i));
         }
     }
