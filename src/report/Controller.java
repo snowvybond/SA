@@ -16,17 +16,22 @@ import java.util.ArrayList;
 
 public class Controller {
 
+    @FXML protected Label lableReport;
+    @FXML protected ChoiceBox choiceBox;
+
     @FXML protected TableColumn<TableReport , String> typeCarColumn;
     @FXML protected TableColumn<TableReport , String> licensedPlateColumn;
     @FXML protected TableColumn<TableReport , String> brandCarColumn;
     @FXML protected TableColumn<TableReport , String> modelCarColumn;
-    @FXML protected TableColumn<TableReport , String> totalHourColumn;
     @FXML protected TableColumn<TableReport , String> totalDistanceColumn;
+    @FXML protected TableColumn<TableReport , String> blackColumn;
+    @FXML protected TableColumn<TableReport , String> totalHourColumn;
     @FXML protected TableView<TableReport> table;
     @FXML protected Label missionText;
     @FXML protected Label distanceText;
     @FXML protected Label date;
 
+    private String cache;
 
     private Stage stage;
 
@@ -41,8 +46,45 @@ public class Controller {
         String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd MMM yyyy"));
         System.out.println(date);
         this.date.setText(this.date.getText()+date);
-
+        addChoiceBox();
         displayTable();
+    }
+
+    private void addChoiceBox(){
+        choiceBox.getItems().add("มกราคม");
+        choiceBox.getItems().add("กุมภาพันธ์");
+        choiceBox.getItems().add("มีนาคม");
+        choiceBox.getItems().add("เมษายน");
+        choiceBox.getItems().add("พฤษภาคม");
+        choiceBox.getItems().add("มิถุนายน");
+        choiceBox.getItems().add("กรกฎาคม");
+        choiceBox.getItems().add("สิงหาคม");
+        choiceBox.getItems().add("กันยายน");
+        choiceBox.getItems().add("ตุลาคม");
+        choiceBox.getItems().add("พฤศจิกายน");
+        choiceBox.getItems().add("ธันวาคม");
+        choiceBox.getItems().add("ประจำปี");
+
+        choiceBox.getSelectionModel().selectFirst();
+        cache = choiceBox.getValue().toString();
+    }
+
+    @FXML
+    private void updateReport(){
+        if(!cache.equals(choiceBox.getValue().toString()) && choiceBox.getValue().equals("ประจำปี")){
+            cache = choiceBox.getValue().toString();
+            System.out.println(cache);
+            lableReport.setText("รายงานการใช้รถยนต์"+cache);
+            totalDistanceColumn.setVisible(true);
+            blackColumn.setVisible(false);
+        }
+        if(!cache.equals(choiceBox.getValue().toString())){
+            cache = choiceBox.getValue().toString();
+            System.out.println(cache);
+            lableReport.setText("รายงานการใช้รถยนต์เดือน"+cache);
+            totalDistanceColumn.setVisible(false);
+            blackColumn.setVisible(true);
+        }
     }
 
     private void displayTable(){
