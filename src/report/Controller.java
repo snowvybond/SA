@@ -75,15 +75,15 @@ public class Controller {
             cache = choiceBox.getValue().toString();
             System.out.println(cache);
             lableReport.setText("รายงานการใช้รถยนต์"+cache);
-            totalDistanceColumn.setVisible(true);
-            blackColumn.setVisible(false);
+//            totalDistanceColumn.setVisible(true);
+//            blackColumn.setVisible(false);
         }
         if(!cache.equals(choiceBox.getValue().toString())){
             cache = choiceBox.getValue().toString();
             System.out.println(cache);
             lableReport.setText("รายงานการใช้รถยนต์เดือน"+cache);
-            totalDistanceColumn.setVisible(false);
-            blackColumn.setVisible(true);
+//            totalDistanceColumn.setVisible(false);
+//            blackColumn.setVisible(true);
         }
     }
 

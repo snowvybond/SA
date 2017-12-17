@@ -112,7 +112,7 @@ public class ControllerCivil extends Controller{
             report.Controller controller = loader.getController();
             controller.setStage(stage);
             stage.setTitle("Report");
-            stage.setScene(new Scene(root, 940, 600));
+            stage.setScene(new Scene(root, 740, 630));
             stage.setResizable(false);
             stage.show();
 
