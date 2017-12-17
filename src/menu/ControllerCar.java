@@ -101,7 +101,7 @@ public class ControllerCar extends Controller{
             Stage stage = new Stage();
             AlertMsg.Controller controller = loader.getController();
             controller.setStage(stage);
-            stage.setTitle("ตารางรายการขอใช้รถ");
+            stage.setTitle("ค้นหารถยนต์");
             stage.setScene(new Scene(root, 370, 230));
             stage.setResizable(false);
             controller.setStage(stage);

@@ -155,11 +155,12 @@ public class Controller {
             controller.setcConfirmRequest(this);
             createData();
             controller.setData(data,3);
-            stage.setTitle("Confirmation");
-            stage.setScene(new Scene(root, 380, 130));
-            stage.setResizable(false);
-            controller.setHeaderConfirm("ยืนยันคำอนุมัติการขอใช้รถ");
-            stage.show();
+            controller.handleBtnOKClickAction();
+//            stage.setTitle("Confirmation");
+//            stage.setScene(new Scene(root, 380, 130));
+//            stage.setResizable(false);
+//            controller.setHeaderConfirm("ยืนยันคำอนุมัติการขอใช้รถ");
+//            stage.show();
 
         } catch (IOException e1) {
             e1.printStackTrace();

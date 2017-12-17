@@ -81,7 +81,7 @@
                       <RowConstraints maxHeight="159.0" minHeight="0.0" prefHeight="43.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TableView fx:id="table" minWidth="0.0" prefHeight="407.0" prefWidth="938.0" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+                        <TableView fx:id="table" focusTraversable="false" minWidth="0.0" pickOnBounds="false" prefHeight="407.0" prefWidth="938.0" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
                           <columns>
                               <TableColumn fx:id="typeCarColumn" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" style="-fx-font-size: 18;" text="ประเภทรถ" />
                               <TableColumn fx:id="licensedPlateColumn" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
@@ -143,7 +143,7 @@
             </GridPane>
          </children>
       </GridPane>
-      <Button alignment="TOP_CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleBtnBackClickAction" prefHeight="35.0" prefWidth="97.0" style="-fx-font-size: 18;" text="กลับ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Button alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#handleBtnBackClickAction" pickOnBounds="false" prefHeight="35.0" prefWidth="97.0" style="-fx-font-size: 18;" text="กลับ" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
@@ -151,7 +151,7 @@
             <Insets bottom="5.0" right="10.0" />
          </GridPane.margin>
       </Button>
-      <Button alignment="TOP_CENTER" contentDisplay="TOP" layoutX="503.0" layoutY="387.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="97.0" text="พิมพ์" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+      <Button alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" layoutX="503.0" layoutY="387.0" mnemonicParsing="false" pickOnBounds="false" prefHeight="35.0" prefWidth="97.0" text="พิมพ์" GridPane.halignment="RIGHT" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>

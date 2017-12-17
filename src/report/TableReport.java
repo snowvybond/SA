@@ -1,5 +1,8 @@
 package report;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class TableReport {
 
     private String typeCar;
@@ -14,8 +17,12 @@ public class TableReport {
         this.licensedPlate = licensedPlate;
         this.brandCar = brandCar;
         this.genCar = genCar;
-        this.totalMission = totalHour;
-        this.totalDistance = totalDistance;
+        this.totalMission = addComma(totalHour);
+        this.totalDistance = addComma(totalDistance);
+    }
+
+    String addComma(String value){
+        return NumberFormat.getNumberInstance(Locale.US).format(Integer.parseInt(value));
     }
 
     public String getTypeCar() {

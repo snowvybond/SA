@@ -1,5 +1,16 @@
 package view;
 
+import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Locale;
+
+import static java.lang.Math.round;
+import static java.lang.String.format;
+
 public class RequestTable {
 
     private String id;
@@ -24,11 +35,11 @@ public class RequestTable {
         this.name = name;
         this.causeText = causeText;
         this.status = staus;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.startDate = formatDate(startDate);
+        this.endDate = formatDate(endDate);
         this.destination = destination;
-        this.distance = distance;
-        this.priceGas = priceGas;
+        this.distance = formatComma(distance);
+        this.priceGas = format2Decimal(formatComma(priceGas));
         this.idDriver = idDriver;
         this.nameDriver = nameDriver;
         this.licensedPlate = liscensePlate;
@@ -36,6 +47,20 @@ public class RequestTable {
         this.brandCar = brandCar;
         this.genCar = genCar;
         this.detail = detail;
+    }
+
+    String formatComma(String value){
+        return NumberFormat.getNumberInstance(Locale.US).format(Integer.parseInt(value));
+    }
+
+    String format2Decimal(String value){
+        return value+".00";
+    }
+
+    String formatDate(String value){
+        String[] date = value.split("-");
+//        System.out.println(Arrays.toString(date));
+        return date[2]+"-"+date[1]+"-"+date[0];
     }
 
     public String getId() {

@@ -40,7 +40,7 @@
                               <Insets bottom="5.0" />
                            </GridPane.margin>
                            <content>
-                              <TextArea fx:id="detail" editable="false" prefHeight="221.0" prefWidth="437.0" promptText="ไม่มี">
+                              <TextArea fx:id="detail" disable="true" editable="false" prefHeight="221.0" prefWidth="437.0" promptText="ไม่มี">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -86,7 +86,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </TextField>
-                                    <ChoiceBox fx:id="idDriver" prefHeight="39.0" prefWidth="263.0" GridPane.columnIndex="1" />
+                                    <ChoiceBox fx:id="idDriver" prefHeight="39.0" prefWidth="263.0" style="-fx-font-size: 18;" GridPane.columnIndex="1" />
                                  </children>
                               </GridPane>
                            </content>
@@ -132,7 +132,7 @@
                                           <Font size="18.0" />
                                        </font>
                                     </TextField>
-                                    <ChoiceBox fx:id="liscensePlate" prefHeight="25.0" prefWidth="284.0" GridPane.columnIndex="1" />
+                                    <ChoiceBox fx:id="liscensePlate" prefHeight="39.0" prefWidth="284.0" style="-fx-font-size: 18;" GridPane.columnIndex="1" />
                                     <Label alignment="CENTER_RIGHT" focusTraversable="false" layoutX="20.0" layoutY="79.0" prefHeight="17.0" prefWidth="148.0" text="รุ่น" GridPane.rowIndex="3">
                                        <GridPane.margin>
                                           <Insets right="5.0" />
@@ -217,7 +217,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="name" editable="false" focusTraversable="false" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                              <TextField fx:id="name" disable="true" editable="false" focusTraversable="false" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -230,7 +230,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="causeText" editable="false" focusTraversable="false" layoutX="112.0" layoutY="12.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <TextField fx:id="causeText" disable="true" editable="false" focusTraversable="false" layoutX="112.0" layoutY="12.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -243,7 +243,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="startDate" editable="false" focusTraversable="false" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                              <TextField fx:id="startDate" disable="true" editable="false" focusTraversable="false" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -264,12 +264,12 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="endDate" editable="false" focusTraversable="false" layoutX="112.0" layoutY="87.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <TextField fx:id="endDate" disable="true" editable="false" focusTraversable="false" layoutX="112.0" layoutY="87.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="destination" editable="false" focusTraversable="false" layoutX="112.0" layoutY="113.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                              <TextField fx:id="destination" disable="true" editable="false" focusTraversable="false" layoutX="112.0" layoutY="113.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                  <font>
                                     <Font size="18.0" />
                                     </font>
@@ -290,12 +290,12 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="distance" editable="false" focusTraversable="false" layoutX="112.0" layoutY="126.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                              <TextField fx:id="distance" disable="true" editable="false" focusTraversable="false" layoutX="112.0" layoutY="126.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </TextField>
-                              <TextField fx:id="priceGas" editable="false" focusTraversable="false" layoutX="112.0" layoutY="150.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                              <TextField fx:id="priceGas" disable="true" editable="false" focusTraversable="false" layoutX="112.0" layoutY="150.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -308,7 +308,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="id" editable="false" focusTraversable="false" layoutX="172.0" layoutY="51.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1">
+                              <TextField fx:id="id" disable="true" editable="false" focusTraversable="false" layoutX="172.0" layoutY="51.0" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1">
                                  <font>
                                     <Font size="18.0" />
                                  </font>

@@ -111,7 +111,7 @@
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="startDay1111" focusTraversable="false" layoutX="36.0" layoutY="126.0" prefHeight="17.0" prefWidth="390.0" text="อมุมัติแล้ว" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                              <Label fx:id="startDay1111" focusTraversable="false" layoutX="36.0" layoutY="126.0" prefHeight="17.0" prefWidth="390.0" text="อนุมัติแล้ว" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
@@ -204,21 +204,21 @@
             </ScrollPane>
             <TableView fx:id="table" focusTraversable="false" onDragOver="#checkChoice" onMouseDragOver="#checkChoice" onMouseDragged="#checkChoice" onMouseMoved="#checkChoice" onMousePressed="#checkChoice" onMouseReleased="#checkChoice" prefHeight="382.0" prefWidth="2325.0" GridPane.rowIndex="1">
               <columns>
-                <TableColumn fx:id="idColumn" maxWidth="155.0" prefWidth="110.0" sortType="DESCENDING" style="-fx-font-size: 18;" text="ID" />
-                  <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="200.0" style="-fx-font-size: 18;" text="ชื่อ-สกุล ผู้ขอใช้รถ" />
-                  <TableColumn fx:id="causeTextColumn" minWidth="0.0" prefWidth="167.0" style="-fx-font-size: 18;" text="สาเหตุการขอใช้รถ" />
-                  <TableColumn fx:id="statusColumn" minWidth="0.0" prefWidth="100.0" style="-fx-font-size: 18;" text="สถานะ" />
-                  <TableColumn fx:id="startDateColumn" minWidth="0.0" prefWidth="195.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการปฎิบัติงาน" />
-                  <TableColumn fx:id="endDateColumn" minWidth="0.0" prefWidth="192.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการปฎิบัติงาน" />
-                  <TableColumn fx:id="destinationColumn" minWidth="0.0" prefWidth="115.0" style="-fx-font-size: 18;" text="ปลายทาง" />
-                  <TableColumn fx:id="distanceColumn" minWidth="0.0" prefWidth="155.0" style="-fx-font-size: 18;" text="ระยะทาง(กิโลเมตร)" />
-                  <TableColumn fx:id="priceGasColumn" minWidth="0.0" prefWidth="135.0" style="-fx-font-size: 18;" text="ค่าน้ำมัน(บาท)" />
-                  <TableColumn fx:id="idDriverColumn" minWidth="0.0" prefWidth="159.0" style="-fx-font-size: 18;" text="รหัสพนักงานขับรถ" />
-                  <TableColumn fx:id="nameDriverColumn" minWidth="0.0" prefWidth="200.0" style="-fx-font-size: 18;" text="ชื่อ-สกุล พนักงานขับรถ" />
-                  <TableColumn fx:id="licensedPlateColumn" minWidth="0.0" prefWidth="128.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
-                  <TableColumn fx:id="typeCarColumn" minWidth="0.0" prefWidth="97.0" style="-fx-font-size: 18;" text="ประเภท" />
-                  <TableColumn fx:id="brandCarColumn" minWidth="0.0" prefWidth="107.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
-                  <TableColumn fx:id="modelCarColumn" minWidth="0.0" prefWidth="76.0" style="-fx-font-size: 18;" text="รุ่น" />
+                <TableColumn fx:id="idColumn" maxWidth="155.0" sortType="DESCENDING" style="-fx-font-size: 18;" text="ID" />
+                  <TableColumn fx:id="nameColumn" minWidth="0.0" prefWidth="100.0" style="-fx-font-size: 18;" text="ชื่อ-สกุล&#10;ผู้ขอใช้รถ" />
+                  <TableColumn fx:id="causeTextColumn" minWidth="0.0" prefWidth="90.0" style="-fx-font-size: 18;" text="สาเหตุการ&#10;ขอใช้รถ" />
+                  <TableColumn fx:id="statusColumn" minWidth="0.0" style="-fx-font-size: 18;" text="สถานะ" />
+                  <TableColumn fx:id="startDateColumn" minWidth="0.0" prefWidth="120.0" style="-fx-font-size: 18;" text="วันเริ่มต้นการ&#10;ปฎิบัติงาน" />
+                  <TableColumn fx:id="endDateColumn" minWidth="0.0" prefWidth="120.0" style="-fx-font-size: 18;" text="วันสิ้นสุดการ&#10;ปฎิบัติงาน" />
+                  <TableColumn fx:id="destinationColumn" minWidth="0.0" prefWidth="90.0" style="-fx-font-size: 18;" text="ปลายทาง" />
+                  <TableColumn fx:id="distanceColumn" minWidth="0.0" prefWidth="90.0" style="-fx-font-size: 18; -fx-alignment: CENTER-RIGHT;" text="ระยะทาง&#10;(กิโลเมตร)" />
+                  <TableColumn fx:id="priceGasColumn" minWidth="0.0" prefWidth="90.0" style="-fx-font-size: 18; -fx-alignment: CENTER-RIGHT;" text="ค่าน้ำมัน&#10;(บาท)" />
+                  <TableColumn fx:id="idDriverColumn" minWidth="0.0" prefWidth="120.0" style="-fx-font-size: 18;" text="รหัสพนักงาน&#10;ขับรถ" />
+                  <TableColumn fx:id="nameDriverColumn" minWidth="0.0" prefWidth="120.0" style="-fx-font-size: 18;" text="ชื่อ-สกุล&#10;พนักงานขับรถ" />
+                  <TableColumn fx:id="licensedPlateColumn" minWidth="0.0" prefWidth="90.0" style="-fx-font-size: 18;" text="ทะเบียนรถ" />
+                  <TableColumn fx:id="typeCarColumn" minWidth="0.0" prefWidth="70.0" style="-fx-font-size: 18;" text="ประเภท" />
+                  <TableColumn fx:id="brandCarColumn" minWidth="0.0" prefWidth="60.0" style="-fx-font-size: 18;" text="ยี่ห้อ" />
+                  <TableColumn fx:id="modelCarColumn" minWidth="0.0" prefWidth="60.0" style="-fx-font-size: 18;" text="รุ่น" />
                   <TableColumn fx:id="detailColumn" minWidth="0.0" prefWidth="236.0" style="-fx-font-size: 18;" text="รายละเอียดเพิ่มเติม" />
               </columns>
             </TableView>
