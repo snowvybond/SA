@@ -15,6 +15,7 @@ import view.RequestTable;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -222,7 +223,10 @@ public class Controller {
     }
 
     private void setUpCar(){
-        ArrayList<String> unUseID = DatabaseConnecter.browseRfcIDByDate(LocalDate.parse(table.getStartDate()),LocalDate.parse(table.getEndDate()),"where staus='อนุมัติแล้ว'");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate start = LocalDate.parse(table.getStartDate(),formatter);
+        LocalDate end = LocalDate.parse(table.getEndDate(),formatter);
+        ArrayList<String> unUseID = DatabaseConnecter.browseRfcIDByDate(start,end,"where staus='อนุมัติแล้ว'");
         if (unUseID.isEmpty()){
             liscenseList = DatabaseConnecter.browseCarInArray("select * from car where status='ใช้งานได้'");
         }else{
@@ -242,7 +246,10 @@ public class Controller {
     }
 
     private void setUpDriver(){
-        ArrayList<String> unUseID = DatabaseConnecter.browseRfcIDByDate(LocalDate.parse(table.getStartDate()),LocalDate.parse(table.getEndDate()),"where staus='อนุมัติแล้ว'");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate start = LocalDate.parse(table.getStartDate(),formatter);
+        LocalDate end = LocalDate.parse(table.getEndDate(),formatter);
+        ArrayList<String> unUseID = DatabaseConnecter.browseRfcIDByDate(start,end,"where staus='อนุมัติแล้ว'");
         if (unUseID.isEmpty()){
             driverList = DatabaseConnecter.browseDriverInArray("select * from driver");
         }else{

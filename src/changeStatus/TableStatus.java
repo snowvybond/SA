@@ -1,6 +1,6 @@
 package changeStatus;
 
-public class TableReport {
+public class TableStatus {
 
     private String typeCar;
     private String licensedPlate;
@@ -8,7 +8,7 @@ public class TableReport {
     private String genCar;
     private String status;
 
-    public TableReport(String typeCar, String licensedPlate, String brandCar, String genCar, String status) {
+    public TableStatus(String typeCar, String licensedPlate, String brandCar, String genCar, String status) {
         this.typeCar = typeCar;
         this.licensedPlate = licensedPlate;
         this.brandCar = brandCar;

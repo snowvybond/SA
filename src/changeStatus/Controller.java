@@ -1,13 +1,11 @@
 package changeStatus;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import menu.ControllerCar;
@@ -22,12 +20,12 @@ public class Controller {
     @FXML protected Label lableReport;
     @FXML protected ChoiceBox choiceBox;
 
-    @FXML protected TableColumn<TableReport, String> typeCarColumn;
-    @FXML protected TableColumn<TableReport, String> licensedPlateColumn;
-    @FXML protected TableColumn<TableReport, String> brandCarColumn;
-    @FXML protected TableColumn<TableReport, String> modelCarColumn;
-    @FXML protected TableColumn<TableReport, String> statusColumn;
-    @FXML protected TableView<TableReport> table;
+    @FXML protected TableColumn<TableStatus, String> typeCarColumn;
+    @FXML protected TableColumn<TableStatus, String> licensedPlateColumn;
+    @FXML protected TableColumn<TableStatus, String> brandCarColumn;
+    @FXML protected TableColumn<TableStatus, String> modelCarColumn;
+    @FXML protected TableColumn<TableStatus, String> statusColumn;
+    @FXML protected TableView<TableStatus> table;
 //    @FXML protected Label missionText;
 //    @FXML protected Label distanceText;
     @FXML protected Label date;
@@ -44,29 +42,29 @@ public class Controller {
 
 
     public void initialize(){
+        table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         System.out.println(date);
         displayTable();
     }
 
     @FXML
     private void updateReport(){
-        System.out.println("yes");
+
     }
 
     private void displayTable(){
-        String query = "select * from car";
-        ArrayList<ArrayList> allData = DatabaseConnecter.browseCar(query);
-        int totalMission = 0;
-        int totalDistance = 0;
+        table.getItems().clear();
+        String query = "select type, liscenseplate, brand, model, status from car where liscenseplate not in (select liscenseplate from workassign where requestforcarid in (select id from requestforcar where staus='กำลังปฏิบัติงาน' or staus='อนุมัติแล้ว' or staus='รออนุมัติ'))";
+        ArrayList<ArrayList> allData = DatabaseConnecter.browseCarForStaus(query);
         int count = 0;
         for (ArrayList<String> i : allData){
-            table.getItems().add(count++,new TableReport(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4)));
+            table.getItems().add(count++,new TableStatus(i.get(0),i.get(1),i.get(2),i.get(3),i.get(4)));
             typeCarColumn.setCellValueFactory(new PropertyValueFactory<>("typeCar"));
             licensedPlateColumn.setCellValueFactory(new PropertyValueFactory<>("licensedPlate"));
             brandCarColumn.setCellValueFactory(new PropertyValueFactory<>("brandCar"));
             modelCarColumn.setCellValueFactory(new PropertyValueFactory<>("genCar"));
             statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-            totalMission += Integer.parseInt(i.get(4));
+
         }
 //        missionText.setText(Integer.toString(totalMission));
 //        distanceText.setText(Integer.toString(totalDistance));
@@ -90,4 +88,34 @@ public class Controller {
             e1.printStackTrace();
         }
     }
+
+    @FXML
+    protected void handleBtnUseAction(){
+        useSet();
+        displayTable();
+
+    }
+    @FXML
+    protected void handleBtnUnUseAction(){
+        unUseSet();
+        displayTable();
+
+    }
+
+    private void useSet(){
+        ObservableList<TableStatus> selected= table.getSelectionModel().getSelectedItems();
+        for (TableStatus t:selected){
+            String query = "update car set status='ใช้งานได้' where liscenseplate='"+t.getLicensedPlate()+"'";
+            DatabaseConnecter.updateString(query);
+        }
+
+    }
+    private void unUseSet(){
+        ObservableList<TableStatus> selected= table.getSelectionModel().getSelectedItems();
+        for (TableStatus t:selected){
+            String query = "update car set status='ไม่สามารถใช้งานได้' where liscenseplate='"+t.getLicensedPlate()+"'";
+            DatabaseConnecter.updateString(query);
+        }
+    }
+
 }

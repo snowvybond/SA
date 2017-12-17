@@ -21,7 +21,7 @@ public class TableReport {
         this.totalDistance = addComma(totalDistance);
     }
 
-    String addComma(String value){
+    public String addComma(String value){
         return NumberFormat.getNumberInstance(Locale.US).format(Integer.parseInt(value));
     }
 

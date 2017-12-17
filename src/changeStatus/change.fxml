@@ -95,7 +95,7 @@
             <Insets bottom="20.0" right="10.0" />
          </GridPane.margin>
       </Button>
-      <Button alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#handleBtnBackClickAction" pickOnBounds="false" prefHeight="35.0" prefWidth="115.0" style="-fx-font-size: 18;" text="ใช้งานได้" GridPane.rowIndex="1">
+      <Button alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#handleBtnUseAction" pickOnBounds="false" prefHeight="35.0" prefWidth="115.0" style="-fx-font-size: 18;" text="ใช้งานได้" GridPane.rowIndex="1">
          <font>
             <Font size="18.0" />
          </font>
@@ -103,7 +103,7 @@
             <Insets bottom="20.0" left="5.0" />
          </GridPane.margin>
       </Button>
-      <Button alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#handleBtnBackClickAction" pickOnBounds="false" prefHeight="35.0" prefWidth="115.0" style="-fx-font-size: 18;" text="ใช้งานไม่ได้" GridPane.rowIndex="1">
+      <Button alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" mnemonicParsing="false" onAction="#handleBtnUnUseAction" pickOnBounds="false" prefHeight="35.0" prefWidth="115.0" style="-fx-font-size: 18;" text="ใช้งานไม่ได้" GridPane.rowIndex="1">
          <font>
             <Font size="18.0" />
          </font>

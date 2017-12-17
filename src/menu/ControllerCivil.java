@@ -43,7 +43,8 @@ public class ControllerCivil extends Controller{
             Stage stage = new Stage();
             confirmRequest.Controller controller = loader.getController();
             controller.setStage(stage);
-            controller.setTable(table.getSelectionModel().getSelectedItem());
+            RequestTable t = table.getSelectionModel().getSelectedItem();
+            controller.setTable(t);
             controller.setUp();
             controller.setController(this);
             stage.setTitle("Confirm Request");
