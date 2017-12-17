@@ -30,7 +30,8 @@ public class ReturnCarController extends Controller {
         String query2 ="update car set totalmission='"+totalMission+"' where liscenseplate='"+table.getLicensedPlate()+"'";
         DatabaseConnecter.updateString(query2);
         int totalDistance = Integer.parseInt(DatabaseConnecter.browserString("select totaldistance from car where liscenseplate='"+liscensePlate+"'"));
-        totalDistance+=Integer.parseInt(table.getDistance());
+        int dis = Integer.parseInt(table.getDistance().replaceAll(",", ""));
+        totalDistance+=dis;
         String query3 ="update car set totaldistance='"+totalDistance+"' where liscenseplate='"+table.getLicensedPlate()+"'";
         DatabaseConnecter.updateString(query3);
         String status ="";

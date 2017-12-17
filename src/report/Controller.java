@@ -76,6 +76,8 @@ public class Controller {
             cache = choiceBox.getValue().toString();
             System.out.println(cache);
             lableReport.setText("รายงานการใช้รถยนต์"+cache);
+            displayTable();
+
 //            totalDistanceColumn.setVisible(true);
 //            blackColumn.setVisible(false);
         }
@@ -85,7 +87,9 @@ public class Controller {
             lableReport.setText("รายงานการใช้รถยนต์ประจำเดือน"+cache);
 //            totalDistanceColumn.setVisible(false);
 //            blackColumn.setVisible(true);
+            displayTable();
         }
+
     }
 
 //    private void displayTable(){
@@ -161,6 +165,7 @@ public class Controller {
             String query = "select * from car";
             ArrayList<ArrayList> cars = DatabaseConnecter.browseCar(query);
             for (ArrayList<String> c:cars){
+                System.out.println(c.get(1));
                 c.set(4,"0");
                 c.set(5,"0");
             }
@@ -168,16 +173,23 @@ public class Controller {
                 for (String id:ids){
                     ArrayList<String> distance = DatabaseConnecter.browseStringInArray("select distance from destination where provience in(select provience from requestforcar where id='"+id+"')");
                     ArrayList<String> liscense = DatabaseConnecter.browseStringInArray("select liscenseplate from workassign where requestforcarid='"+id+"'");
-                    int totalMission = Integer.parseInt(c.get(4));
-                    int totalDistance = Integer.parseInt(c.get(5));
+                    for (int i=0;i<liscense.size();i++){
+                        System.out.println(liscense.get(i));
+                        if (c.get(1).equals(liscense.get(i))){
+                            int totalMission = Integer.parseInt(c.get(4));
+                            int totalDistance = Integer.parseInt(c.get(5));
+                            totalMission++;
+                            totalDistance+=Integer.parseInt(distance.get(i));
+                            c.set(4,Integer.toString(totalMission));
+                            c.set(5,Integer.toString(totalDistance));
+                        }
+                    }
+
+
 
                 }
-
-
             }
-
-
-
+            allData=cars;
         }
 
 
@@ -187,6 +199,7 @@ public class Controller {
 
 
     private void displayTable() {
+        table.getItems().clear();
         ArrayList<ArrayList> allData = setupTableData(cache);
         int totalMission = 0;
         int totalDistance = 0;
