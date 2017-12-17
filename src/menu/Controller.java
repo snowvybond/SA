@@ -236,7 +236,7 @@ public class Controller {
     }
 
     public void checkChoice(){
-        if(table.getSelectionModel().getSelectedIndex() >= 0) btnSeeDetail.setDisable(false);
+        if(table.getSelectionModel().getSelectedIndex() >= 0 ) btnSeeDetail.setDisable(false);
         else btnSeeDetail.setDisable(true);
 //        System.out.println(group.getSelectedToggle().getUserData().toString());
 //        System.out.println(startDate.getValue());

@@ -10,10 +10,12 @@ import javafx.stage.Stage;
 import menu.ControllerCivil;
 import model.DatabaseConnecter;
 import java.io.IOException;
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Controller {
 
@@ -215,9 +217,10 @@ public class Controller {
             totalMission += Integer.parseInt(i.get(4));
             totalDistance += Integer.parseInt(i.get(5));
         }
-        missionText.setText(Integer.toString(totalMission));
-        distanceText.setText(Integer.toString(totalDistance));
+        distanceText.setText(NumberFormat.getNumberInstance(Locale.US).format(totalMission));
+        missionText.setText(NumberFormat.getNumberInstance(Locale.US).format(totalDistance)+".00");
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+
     }
 
 

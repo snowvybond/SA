@@ -17,12 +17,16 @@ public class TableReport {
         this.licensedPlate = licensedPlate;
         this.brandCar = brandCar;
         this.genCar = genCar;
-        this.totalMission = addComma(totalHour);
-        this.totalDistance = addComma(totalDistance);
+        this.totalMission = addColon(totalHour);
+        this.totalDistance = add2Decimal(addColon(totalDistance));
     }
 
-    public String addComma(String value){
+    public String addColon(String value){
         return NumberFormat.getNumberInstance(Locale.US).format(Integer.parseInt(value));
+    }
+
+    String add2Decimal(String value){
+        return value+".00";
     }
 
     public String getTypeCar() {

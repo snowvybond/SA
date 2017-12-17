@@ -92,8 +92,10 @@ public class ControllerCivil extends Controller{
         if(!table.getSelectionModel().isEmpty()&&table.getSelectionModel().getSelectedItem().getStatus().equals("รออนุมัติ")) {
             if (table.getSelectionModel().getSelectedItems().size() > 1){
                 btnApprove.setDisable(true);
+                btnSeeDetail.setDisable(true);
             }else{
                 btnApprove.setDisable(false);
+                btnSeeDetail.setDisable(false);
             }
             btnReject.setDisable(false);
         }else {

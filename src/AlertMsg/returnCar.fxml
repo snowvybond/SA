@@ -44,7 +44,7 @@
                   <ToggleGroup fx:id="group" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="unused" focusTraversable="false" layoutX="264.0" layoutY="75.0" mnemonicParsing="false" text="ไม่พร้อมใช้งาน" toggleGroup="$group">
+            <RadioButton fx:id="unused" focusTraversable="false" layoutX="264.0" layoutY="75.0" mnemonicParsing="false" text="ไม่สามารถใช้งานได้" toggleGroup="$group">
                <font>
                   <Font size="18.0" />
                </font>
